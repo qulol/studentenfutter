@@ -229,7 +229,7 @@ header {
 }
 
 .recipe-detail {
-/*margin-left: -0.1%;*/
+    /*margin-left: -0.1%;*/
     position: absolute;
     justify-content: center;
     align-items: center;
@@ -308,6 +308,58 @@ article.infobox section:target h4 a {
     color: red;
 }
 
+table {
+    margin: 3%;
+}
+
+.calculateIngredientsAmount {
+    margin: 3%;
+    text-align: left;
+    position: static;
+    display: block;
+    width: 30%;
+    float: left;
+    }
+
+.ingredientsTable {
+    position: static;
+    display: block;
+    width: 58%;
+    float: right;
+    right: 0;
+    text-align: left;
+}
+
+#numberOfPersons {
+    margin-left: 17%;
+    width: 27%;
+    text-align: center;
+}
+
+#ingredientsTab {
+float: left;
+}
+
+#amount, #unit {
+    width: 90px;
+    padding-bottom: 2%;
+}
+
+#singleIngredient {
+    width: 300px;
+    padding-bottom: 2%;
+}
+
+.buttonAddToShoppingList {
+    position: static;
+    margin-top: 2%;
+    z-index: 100;
+    display: block;
+    width: 66%;
+    height: 7%;
+    text-align: center;
+}
+
 .footer-content {
     z-index: 10;
     overflow: hidden;
@@ -384,3 +436,4 @@ article.infobox section:target h4 a {
     width: 5%;
     height: auto;
 }
+

@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <script src="./js/recipes_detail.js"></script>
     <link rel="stylesheet" href="./css/recipes_detail.css">
     <link rel="stylesheet" href="./plugins/fontawesome/css/all.css">
     <!--    <script src="./js/index.js"></script>-->
@@ -30,7 +31,9 @@
                 class="fas fa-search"></i></label>
 
         </div>
-        <a href="http://lieferando.de">"<img class="panicbutton" src="./images/panicbutton.png"></a>
+        <a href="http://lieferando.de" title="PANIC - Lieferando ist dein Freund :) ">"<img class="panicbutton"
+                                                                                            src="./images/panicbutton.png"
+                                                                                            alt="PanicButtonImage"></a>
     </header>
 
     <div class="top-content">
@@ -44,25 +47,67 @@
 
                 <article class="infobox">
 
-                    <section id="ingredients">
-                        <h4><a href="#ingredients">Zutaten</a></h4>
+                    <section id="ingredientsTab">
+                        <h4><a href="#ingredientsTab">Zutaten</a></h4>
 
-                        <table>
+                        <div class="calculateIngredientsAmount">
+                            <label for="numberOfPersons">Portionen: </label>
+                            <input name="numberOfPersons" id="numberOfPersons"
+                                   oninput="calculateAmount()" placeholder="1"
+                                   type="number" min="1" step="1">
+                            <button class="buttonAddToShoppingList" id="addIngredientsToShoppingList"
+                                    onClick=addIngredientsToShoppingList()>
+                                Zutaten zur Einkaufsliste hinzufügen
+                            </button>
+                        </div>
+
+
+
+                        <table class="ingredientsTable">
                             <thead>
-                            <td>Menge</td>
-                            <td>Zutat</td>
-                            </thead>
                             <tr>
-                                <td>1</td>
+                                <td id="amount"><b>Menge</b></td>
+                                <td id="unit"><b>Einheit</b></td>
+                                <td id="singleIngredient"><b>Zutat</b></td>
                             </tr>
+                            </thead>
+
+                            <tbody class="tableIngredients" id="tableIngredients">
+                            </tbody>
 
                         </table>
 
-                        <p>Liste mit Zutaten und Umrechner etc.</p>
                     </section>
-                    <section id="instructions">
-                        <h4><a href="#instructions">Anleitung</a></h4>
-                        <p>Kochanleitung</p>
+
+                    <section id="instructionsTab">
+                        <h4><a href="#instructionsTab">Anleitung</a></h4>
+                        <table class="tableInstructions">
+                            <!--                            <tbody id="recipeWrapper">-->
+                            <tr>
+                                <td>1. Schritt</td>
+                            </tr>
+                            <tr>
+                                <td>Wasser kochen und so</td>
+                            </tr>
+                            <tr>
+                                <td>2. Schritt</td>
+                            </tr>
+                            <tr>
+                                <td>Nudeln reinwerfen</td>
+                            </tr>
+                            <tr>
+                                <td>3. Schritt</td>
+                            </tr>
+                            <tr>
+                                <td>Warten, bis Nudeln fertig</td>
+                            </tr>
+                            <tr>
+                                <td>4. Schritt</td>
+                            </tr>
+                            <tr>
+                                <td>Nudeln abtropfen und servieren etc.</td>
+                            </tr>
+                        </table>
                     </section>
 
                 </article>
