@@ -45,11 +45,9 @@ var ingredientReference;
 var tableIngredientsReference;
 
 window.addEventListener('DOMContentLoaded', (event) => {
-    tableIngredientsReference = document.getElementById("tableIngredients");
     tableIngredientsReference.innerHTML = buildTable(mealObject);
-
+    tableIngredientsReference = document.getElementById("tableIngredients");
     ingredientReference = document.getElementsByClassName("ingredient");
-
     numberOfPersonsReference = document.getElementById("numberOfPersons");
 });
 
