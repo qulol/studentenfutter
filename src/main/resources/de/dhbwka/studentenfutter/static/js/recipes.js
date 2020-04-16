@@ -20,48 +20,48 @@ var recipeOverviewObject = {
     recipes: [
         {
             id: 1,
-            headline: "Nudeln",
-            image: "images/foodpictures/noodles.png",
+            headline: "Einfacher Pfannkuchen",
+            image: "images/foodpictures/pfannkuchen.jpg",
         },
         {
             id: 2,
-            headline: "Nudelferz2",
-            image: "images/foodpictures/noodles.jpg",
+            headline: "Kartoffel-Brokkoli-Auflauf",
+            image: "images/foodpictures/brokkoli-kartoffel-auflauf.jpg",
         },
         {
             id: 3,
-            headline: "Nudelferz3",
-            image: "images/foodpictures/noodles.jpg",
+            headline: "Pasta mit Frühlingszwiebeln",
+            image: "images/foodpictures/pasta-frühlingszwiebeln.jpg",
         },
         {
             id: 4,
-            headline: "Nudelferz4",
-            image: "images/foodpictures/noodles.jpg",
+            headline: "Käsespätzle",
+            image: "images/foodpictures/käsespätzle.jpg",
         },
         {
             id: 5,
-            headline: "Nudelferz5",
-            image: "images/foodpictures/noodles.jpg",
+            headline: "Spinat mit Kartoffeln und Spiegelei",
+            image: "images/foodpictures/spinat-kartoffeln-ei.jpg",
         },
         {
             id: 6,
-            headline: "Nudelferz6",
-            image: "images/foodpictures/noodles.jpg",
+            headline: "Pasta mit Spinat, Mozzarella und Kirschtomaten",
+            image: "images/foodpictures/pasta-spinat-tomaten.jpg",
         },
         {
             id: 7,
-            headline: "Nudelferz7",
-            image: "images/foodpictures/noodles.jpg",
+            headline: "Pesto-Nudeln",
+            image: "images/foodpictures/pestonudeln.jpg",
         },
         {
             id: 8,
-            headline: "Nudelferz8",
-            image: "images/foodpictures/noodles.jpg",
+            headline: "Tomate-Mozzarella-Salat",
+            image: "images/foodpictures/tomate-mozzarella-salat.jpg",
         },
         {
             id: 9,
-            headline: "Nudelferz9",
-            image: "images/foodpictures/noodles.jpg",
+            headline: "Unterschiedliche Soßen - beliebig zu Kombinieren",
+            image: "images/foodpictures/soße.jpg",
         }
     ]
 }
