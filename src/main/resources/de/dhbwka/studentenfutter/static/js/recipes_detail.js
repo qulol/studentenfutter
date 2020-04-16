@@ -69,7 +69,6 @@ var mealObject = {
 }
 
 
-
 // ----------------------------
 
 
@@ -146,7 +145,7 @@ function buildIngredientsTable(mealObject) {
             "</tr>";
     }
 
-    return ingredientsTable; // sonst kommt nichts zurück :)
+    return ingredientsTable;
 }
 
 function buildInstructionsTable(mealObject) {
