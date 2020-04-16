@@ -11,7 +11,7 @@
 var mealObject = {
     id: 1,
     headline: "Spaghetti",
-    image: "./images/foodpictures/noodles.png",
+    image: "images/foodpictures/noodles.png",
     ingredients: [
         {
             name: "Nudeln",
@@ -67,6 +67,9 @@ var mealObject = {
     seasons: ["Salz", "Pfeffer", "Oregano", "Thymian", "Knoblauchpulver"],
     steps: ["Wasser kochen Wasser kochen Wasser kochen Wasser kochen Wasser kochen Wasser kochen Wasser kochen Wasser kochen Wasser kochen Wasser kochen Wasser kochen Wasser kochen Wasser kochen Wasser kochen Wasser kochen Wasser kochen Wasser kochen Wasser kochen Wasser kochen Wasser kochen Wasser kochen Wasser kochen Wasser kochen Wasser kochen Wasser kochen Wasser kochen Wasser kochen Wasser kochen Wasser kochen Wasser kochen Wasser kochen Wasser kochen Wasser kochen Wasser kochen Wasser kochen Wasser kochen Wasser kochen Wasser kochen Wasser kochen Wasser kochen Wasser kochen Wasser kochen Wasser kochen Wasser kochen Wasser kochen Wasser kochen Wasser kochen Wasser kochen Wasser kochen Wasser kochen Wasser kochen Wasser kochen Wasser kochen Wasser kochen Wasser kochen Wasser kochen Wasser kochen Wasser kochen Wasser kochen Wasser kochen Wasser kochen Wasser kochen Wasser kochen Wasser kochen Wasser kochen Wasser kochen ", "Nudeln reinwerfen Nudeln reinwerfen Nudeln reinwerfen Nudeln reinwerfen Nudeln reinwerfen ", "Wenn Nudeln gar -> abschütten", "Mampf"]
 }
+
+
+
 // ----------------------------
 
 
@@ -75,14 +78,20 @@ var ingredientReference;
 var ingredientsTableReference;
 var instructionsListReference;
 var seasonsListReference;
+var headlineReference;
+var imageReference;
 
 window.addEventListener('DOMContentLoaded', (event) => {
     ingredientsTableReference = document.getElementById("ingredientsTable");
     instructionsListReference = document.getElementById("instructions");
     seasonsListReference = document.getElementById("seasonsList");
+    headlineReference = document.getElementById("headline");
+    imageReference = document.getElementById("recipe-image")
 
     ingredientReference = document.getElementsByClassName("ingredient");
     numberOfPersonsReference = document.getElementById("numberOfPersons");
+    headlineReference.innerHTML = mealObject.headline;
+    imageReference.src = mealObject.image;
     ingredientsTableReference.innerHTML = buildIngredientsTable(mealObject);
     instructionsListReference.innerHTML = buildInstructionsTable(mealObject);
     seasonsListReference.innerHTML = buildSeasonsList(mealObject);
