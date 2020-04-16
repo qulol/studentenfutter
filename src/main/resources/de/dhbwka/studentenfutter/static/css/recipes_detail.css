@@ -238,7 +238,6 @@ header {
 }
 
 .recipe-detail {
-    /*margin-left: -0.1%;*/
     position: absolute;
     justify-content: center;
     align-items: center;
@@ -248,10 +247,9 @@ header {
     z-index: 50;
     display: block;
     text-align: center;
-    background-color: gray;
+    background-color: #dbe1e1;
     margin: 0 auto;
     bottom: 0;
-    /*margin: 0.3% 0.7% 0 0.7%;*/
 }
 
 #recipe-image {
