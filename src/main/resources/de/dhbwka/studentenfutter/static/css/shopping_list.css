@@ -282,3 +282,13 @@ header {
     width: 30%;
     height: auto;
 }
+
+.panicbutton {
+    position: fixed;
+    z-index: 100;
+    display: block;
+    top: 0;
+    right: 0;
+    width: 5%;
+    height: auto;
+}
