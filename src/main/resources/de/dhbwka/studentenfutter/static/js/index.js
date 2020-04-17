@@ -20,7 +20,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
     currentYPosition = document.documentElement.scrollTop;
     window.scrollBy({ top: -currentYPosition, left: 0, behavior: "smooth"});
 
-    topText = document.getElementById("top-text");
+    topText = document.getElementById("topText");
     firstIcon = document.getElementById("firstIcon");
     secondIcon = document.getElementById("secondIcon");
     firstStep = document.getElementById("firstStep");

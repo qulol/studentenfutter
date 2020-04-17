@@ -1,13 +1,4 @@
-// var mealObject = {
-//     id: 1,
-//     headline: "Spaghetti",
-//     image: "./images/foodpictures/noodles.png",
-//     ingredients: ["Nudeln", "passierte Tomaten", "Parmesan", "Zwiebel(n)"],
-//     amount: [500, 500, 50, 0.5],
-//     unit: ["g", "ml", "g", "Stk."],
-//     seasons: ["Salz", "Pfeffer", "Oregano", "Thymian", "Knoblauchpulver"],
-//     steps: ["1. Schritt", "Wasser kochen", "2. Schritt", "Nudeln reinwerfen", "3. Schritt", "Wenn Nudeln gar -> abschütten", "4. Schritt", "Mampf"]
-// };
+
 var mealObject = {
     id: 1,
     headline: "Spaghetti",
@@ -85,7 +76,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
     instructionsListReference = document.getElementById("instructions");
     seasonsListReference = document.getElementById("seasonsList");
     headlineReference = document.getElementById("headline");
-    imageReference = document.getElementById("recipe-image")
+    imageReference = document.getElementById("recipe-image-detail")
 
     ingredientReference = document.getElementsByClassName("ingredient");
     numberOfPersonsReference = document.getElementById("numberOfPersons");

@@ -50,6 +50,10 @@ h2 {
     margin: 0 auto;
 }
 
+.linear-gradient {
+    background: linear-gradient(to right, rgba(51, 51, 51, 0.9) 40%, rgba(51, 51, 51, 0), rgba(51, 51, 51, 0) 100%);
+}
+
 h3 {
     color: black;
     transform: rotate(-22deg);
@@ -61,10 +65,26 @@ h4 {
 }
 
 h5 {
+    display: block;
+    font-weight: 800;
+    position: static;
+    z-index: 99;
+    margin: 0 auto;
+    text-decoration: none;
+    color: #4aa121;
+    background-color: #333333;
+    width: 98%;
+    text-align: left;
+    padding: 1%;
+}
+
+h6 {
     margin: 3% 3% 0 3%;
     font-family: "Roboto-Light", serif;
     font-size: 16px;
 }
+
+
 
 p, .navbar, .footer-content-block {
     font-family: "Roboto-Light", serif;
@@ -74,12 +94,16 @@ p, .navbar, .footer-content-block {
 
 p {
     font-size: 16px;
-    padding-left: 3%;
 }
+
+/*.padding {*/
+/*    padding-left: 5.2%;*/
+/*}*/
 
 .text-paragraph {
     margin: 5%;
 }
+
 
 @-webkit-keyframes fadein {
     0% {
@@ -106,7 +130,7 @@ p {
     animation: fadein 0.3s linear;
 }
 
-html, body {
+body {
     height: 100%;
     width: 100%;
     margin: 0 auto;
@@ -114,6 +138,10 @@ html, body {
     letter-spacing: 0.1px;
     font-size: 16px;
     overflow: hidden;
+}
+
+#indexBody {
+    overflow-y: scroll;
 }
 
 html {
@@ -128,7 +156,7 @@ body {
 }
 
 .wrapper * {
-   /*border: 0.5px solid !important;*/
+    /*border: 0.5px solid !important;*/
 }
 
 header {
@@ -214,6 +242,23 @@ header {
     display: block;
 }
 
+.index-top-content {
+    background-image: url("../images/slide-2.jpg");
+    width: 100%;
+    display: block;
+    position: absolute;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    background-attachment: fixed;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    z-index: 30;
+    color: white;
+}
+
+
 .top-content {
     margin: 5% auto 3% auto;
     width: 100%;
@@ -227,6 +272,24 @@ header {
     top: 0;
 }
 
+#top-content-image {
+    display: inline;
+    position: absolute;
+    z-index: 10;
+    margin: 0 auto;
+    bottom: 0;
+    padding: 0 7.6%;
+}
+
+.index-top-content-block {
+    position: fixed;
+    margin: 15% auto auto 10%;
+    Z-index: 30;
+    word-wrap: break-word;
+    width: 50%;
+    height: 40%;
+}
+
 .top-content-block {
     text-align: justify;
     position: static;
@@ -234,7 +297,119 @@ header {
     word-wrap: break-word;
     width: 60%;
     height: 100%;
+}
+
+.firstStep, .secondStep {
+    padding-left: 2%;
+    position: static;
+    width: 30.5%;
+    height: 100%;
+    display: block;
+    text-align: justify;
+    float: left;
+}
+
+
+.black-bg {
     background-color: black;
+}
+
+.white-bg {
+    background-color: white;
+}
+
+.scrollbar {
+    overflow-y: scroll;
+}
+
+.index-middle-content {
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    float: left;
+    margin: auto auto 0 0;
+    padding: 3.5% 0;
+    height: 20%;
+    width: 100%;
+    background: #dbe1e1;
+    z-index: 50;
+    display: block;
+    vertical-align: center;
+    text-align: center;
+    bottom: 0;
+}
+
+.index-middle-content-block {
+    position: static;
+    width: 35%;
+    height: 100%;
+    text-align: center;
+    float: left;
+    margin: 0 auto;
+    display: inline-block;
+    padding-top: 1.9%;
+}
+
+.icons {
+    display: inline-block;
+    padding: 1.5%;
+    position: static;
+    margin: 3%;
+    width: auto;
+    height: 50%;
+    z-index: 20;
+}
+
+#firstIcon, #secondIcon {
+    background: radial-gradient(circle, #4aa121 50%, rgba(74, 161, 33, 0) 100%);
+}
+
+.index-bottom-content {
+    background-image: url("../images/slide-3.jpeg");
+    width: 100%;
+    position: absolute;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 67%;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    z-index: 10;
+    top: 100%;
+}
+
+.index-bottom-content-block {
+    margin-left: 50%;
+    bottom: 16%;
+    position: fixed;
+    width: 25%;
+    z-index: 15;
+    word-wrap: break-word;
+}
+
+
+
+
+.formated-table {
+    margin-left: 5%;
+    margin-top: 2%;
+}
+
+.formated-table-data {
+    width: 300px;
+}
+
+.recipes-overview {
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    float: left;
+    height: 80%;
+    width: 60%;
+    z-index: 50;
+    display: block;
+    text-align: center;
 }
 
 .recipe-detail {
@@ -252,12 +427,40 @@ header {
     bottom: 0;
 }
 
-#recipe-image {
+.recipes {
+    width: 100%;
+    position: static;
+    height: 100%;
+    text-align: center;
+    float: left;
+}
 
+#recipe-image {
+    width: inherit;
+    height: inherit;
+}
+
+#recipe-image-detail {
     display: block;
     position: relative;
     margin: 0 auto;
 }
+
+.recipes a{
+    width: 30%;
+    margin: 2% 1% 3% 2%;
+    background-color: white;
+    position: static;
+    height: 30%;
+    text-align: left;
+    float: left;
+    display: inline-block;
+}
+
+.recipes a:hover{
+    box-shadow: 0px 0px 25px rgba(255, 0, 0, 1);
+}
+
 
 .image-wrapper {
     background-color: black;
@@ -322,7 +525,7 @@ article.infobox section:target h4 a {
     display: block;
     width: 21%;
     float: left;
-    }
+}
 
 .ingredientsTableWrapper {
     margin: 3% 3% 0 3%;
@@ -353,7 +556,7 @@ article.infobox section:target h4 a {
 #seasonsList {
     margin: 0 3% 3% 3%;
     float: left;
-    }
+}
 
 #numberOfPersons {
     /*margin-left: 21%;*/
@@ -363,7 +566,7 @@ article.infobox section:target h4 a {
 }
 
 #ingredientsTab, #instructionsTab{
-float: left;
+    float: left;
 }
 
 #amount, #unit {
@@ -441,6 +644,7 @@ li {
     text-align: center;
 }
 
+
 .footer-content {
     z-index: 10;
     overflow: hidden;
@@ -517,4 +721,3 @@ li {
     width: 5%;
     height: auto;
 }
-

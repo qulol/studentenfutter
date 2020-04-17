@@ -89,29 +89,29 @@ p {
     animation: fadein 0.3s linear;
 }
 
-    html, body {
-        height: 100%;
-        width: 100%;
-        margin: 0 auto;
-        overflow-x: hidden;
-    }
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+    overflow-x: hidden;
+}
 
-    .middle-content {
-        position: absolute;
-        justify-content: center;
-        align-items: center;
-        float: left;
-        margin: auto auto 0 0;
-        padding: 3.5% 0;
-        height: 20%;
-        width: 100%;
-        background: #dbe1e1;
-        z-index: 50;
-        display: block;
-        vertical-align: center;
-        text-align: center;
-        bottom: 0;
-    }
+.middle-content {
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    float: left;
+    margin: auto auto 0 0;
+    padding: 3.5% 0;
+    height: 20%;
+    width: 100%;
+    background: #dbe1e1;
+    z-index: 50;
+    display: block;
+    vertical-align: center;
+    text-align: center;
+    bottom: 0;
+}
 
 .wrapper * {
     /*border: 0.5px solid !important;*/
