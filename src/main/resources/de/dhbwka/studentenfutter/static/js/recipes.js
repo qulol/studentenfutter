@@ -84,7 +84,7 @@ function buildRecipesOverview(recipeOverviewObject) {
         recipesOverview +=
 
             "<a href='recipes_detail.html#ingredientsTab'>" +
-            "<div class='recipes'><img src='" + currentRecipe.image +"' id='recipe-image'>" +
+            "<div class='single-recipe-block'><img src='" + currentRecipe.image +"' id='recipe-image'>" +
             "<h5>" + currentRecipe.headline + "</h5></div></a>"
     }
 

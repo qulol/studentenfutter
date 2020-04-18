@@ -5,58 +5,24 @@
 }
 
 @font-face {
-    font-family: 'Cardo-Bold';
-    font-style: normal;
-    src: url('../fonts/Cardo-Bold.ttf');
-}
-
-@font-face {
-    font-family: 'Cardo-Italic';
-    font-style: normal;
-    src: url('../fonts/Cardo-Italic.ttf');
-}
-
-@font-face {
-    font-family: 'Cardo-Regular';
-    font-style: normal;
-    src: url('../fonts/Cardo-Regular.ttf');
-}
-
-@font-face {
-    font-family: 'Roboto-Regular';
-    font-style: normal;
-    src: url('../fonts/Roboto-Regular.ttf');
-}
-
-@font-face {
     font-family: 'Roboto-Light';
     font-style: normal;
     src: url('../fonts/Roboto-Light.ttf');
 }
 
-h1, h3 {
-    padding: 1% 2%;
-    font-family: Cookie-Regular, serif;
-    font-size: 50px;
-    color: #4aa121;
-}
-
-h2 {
+h1 {
     padding: 0 2%;
     font-family: UpperEastSide, serif;
     font-size: 35px;
-    color: #4aa121;
+    color: white;
     background: rgb(51, 51, 51);
-    margin: 0 auto;
 }
 
-.linear-gradient {
-    background: linear-gradient(to right, rgba(51, 51, 51, 0.9) 40%, rgba(51, 51, 51, 0), rgba(51, 51, 51, 0) 100%);
-}
-
-h3 {
-    color: black;
-    transform: rotate(-22deg);
+h2 {
+    padding: 1% 2%;
+    font-family: Cookie-Regular, serif;
+    font-size: 50px;
+    color: white;
 }
 
 h4 {
@@ -71,7 +37,7 @@ h5 {
     z-index: 99;
     margin: 0 auto;
     text-decoration: none;
-    color: #4aa121;
+    color: white;
     background-color: #333333;
     width: 98%;
     text-align: left;
@@ -80,30 +46,34 @@ h5 {
 
 h6 {
     margin: 3% 3% 0 3%;
-    font-family: "Roboto-Light", serif;
+    font-family: Roboto-Light, serif;
     font-size: 16px;
 }
 
+.centered {
+    margin: 0 auto;
+}
 
+.text-indent {
+    margin-left: 10%;
+}
+
+.rotate {
+    color: black;
+    transform: rotate(-22deg);
+}
+
+.linear-gradient {
+    background: linear-gradient(to right, rgba(51, 51, 51, 0.9) 40%, rgba(51, 51, 51, 0), rgba(51, 51, 51, 0) 100%);
+}
 
 p, .navbar, .footer-content-block {
-    font-family: "Roboto-Light", serif;
     padding: 1% 2%;
-    letter-spacing: 0.1px;
 }
-
-p {
-    font-size: 16px;
-}
-
-/*.padding {*/
-/*    padding-left: 5.2%;*/
-/*}*/
 
 .text-paragraph {
     margin: 5%;
 }
-
 
 @-webkit-keyframes fadein {
     0% {
@@ -134,25 +104,32 @@ body {
     height: 100%;
     width: 100%;
     margin: 0 auto;
-    font-family: "Roboto-Light", serif;
+    font-family: Roboto-Light, serif;
     letter-spacing: 0.1px;
     font-size: 16px;
     overflow: hidden;
 }
 
-#indexBody {
+.index-body {
     overflow-y: scroll;
 }
 
-html {
+.bg-image {
+    position: static;
+    z-index: 2;
     background-image: url("../images/bg/brown-wallpaper-1.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
 }
 
-body {
+.gray-coating {
     background-color: rgba(51, 51, 51, 0.4);
+    position: fixed;
+    display: block;
+    z-index: 3;
+    height: 100%;
+    width: 100%;
 }
 
 .wrapper * {
@@ -242,14 +219,14 @@ header {
     display: block;
 }
 
-.index-top-content {
+.index-top-content-wrapper {
     background-image: url("../images/slide-2.jpg");
     width: 100%;
+    height: 100%;
     display: block;
     position: absolute;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 100%;
     background-attachment: fixed;
     justify-content: center;
     align-items: center;
@@ -257,9 +234,16 @@ header {
     z-index: 30;
     color: white;
 }
+.index-top-content-block {
+    position: fixed;
+    margin: 15% auto auto 10%;
+    Z-index: 30;
+    word-wrap: break-word;
+    width: 50%;
+    height: 40%;
+}
 
-
-.top-content {
+.regular-top-content-wrapper {
     margin: 5% auto 3% auto;
     width: 100%;
     display: flex;
@@ -272,31 +256,21 @@ header {
     top: 0;
 }
 
-#top-content-image {
-    display: inline;
-    position: absolute;
-    z-index: 10;
-    margin: 0 auto;
-    bottom: 0;
-    padding: 0 7.6%;
-}
-
-.index-top-content-block {
-    position: fixed;
-    margin: 15% auto auto 10%;
-    Z-index: 30;
-    word-wrap: break-word;
-    width: 50%;
-    height: 40%;
-}
-
-.top-content-block {
+.regular-top-content-block {
     text-align: justify;
     position: static;
     Z-index: 5;
     word-wrap: break-word;
     width: 60%;
     height: 100%;
+}
+#cookie-image {
+    display: inline;
+    position: absolute;
+    z-index: 10;
+    margin: 0 auto;
+    bottom: 0;
+    padding: 0 7.6%;
 }
 
 .firstStep, .secondStep {
@@ -308,7 +282,6 @@ header {
     text-align: justify;
     float: left;
 }
-
 
 .black-bg {
     background-color: black;
@@ -322,7 +295,7 @@ header {
     overflow-y: scroll;
 }
 
-.index-middle-content {
+.index-middle-content-wrapper {
     position: absolute;
     justify-content: center;
     align-items: center;
@@ -364,7 +337,7 @@ header {
     background: radial-gradient(circle, #4aa121 50%, rgba(74, 161, 33, 0) 100%);
 }
 
-.index-bottom-content {
+.index-bottom-content-wrapper {
     background-image: url("../images/slide-3.jpeg");
     width: 100%;
     position: absolute;
@@ -388,9 +361,6 @@ header {
     word-wrap: break-word;
 }
 
-
-
-
 .formated-table {
     margin-left: 5%;
     margin-top: 2%;
@@ -400,7 +370,7 @@ header {
     width: 300px;
 }
 
-.recipes-overview {
+.recipes-overview-wrapper {
     position: absolute;
     justify-content: center;
     align-items: center;
@@ -410,6 +380,29 @@ header {
     z-index: 50;
     display: block;
     text-align: center;
+}
+
+.single-recipe-block {
+    width: 100%;
+    position: static;
+    height: 100%;
+    text-align: center;
+    float: left;
+}
+
+.single-recipe-block a {
+    width: 30%;
+    margin: 2% 1% 3% 2%;
+    background-color: white;
+    position: static;
+    height: 30%;
+    text-align: left;
+    float: left;
+    display: inline-block;
+}
+
+.single-recipe-block a:hover {
+    box-shadow: 0 0 25px rgba(255, 0, 0, 1);
 }
 
 .recipe-detail {
@@ -427,14 +420,6 @@ header {
     bottom: 0;
 }
 
-.recipes {
-    width: 100%;
-    position: static;
-    height: 100%;
-    text-align: center;
-    float: left;
-}
-
 #recipe-image {
     width: inherit;
     height: inherit;
@@ -446,23 +431,7 @@ header {
     margin: 0 auto;
 }
 
-.recipes a{
-    width: 30%;
-    margin: 2% 1% 3% 2%;
-    background-color: white;
-    position: static;
-    height: 30%;
-    text-align: left;
-    float: left;
-    display: inline-block;
-}
-
-.recipes a:hover{
-    box-shadow: 0px 0px 25px rgba(255, 0, 0, 1);
-}
-
-
-.image-wrapper {
+.recipe-detail-image-wrapper {
     background-color: black;
     height: auto;
     width: 60%;
@@ -559,13 +528,12 @@ article.infobox section:target h4 a {
 }
 
 #numberOfPersons {
-    /*margin-left: 21%;*/
     width: 27%;
     text-align: center;
     float: right;
 }
 
-#ingredientsTab, #instructionsTab{
+#ingredientsTab, #instructionsTab {
     float: left;
 }
 
@@ -595,6 +563,7 @@ ol.instructions {
     margin: 0;
     padding: 0.1%;
 }
+
 ol.instructions li {
     counter-increment: my-first-counter;
     display: flex;
@@ -602,6 +571,7 @@ ol.instructions li {
     line-height: 20px;
     padding: 0.1%;
 }
+
 ol.instructions li::before {
     content: '' counter(my-first-counter);
     font-weight: bold;
@@ -645,7 +615,7 @@ li {
 }
 
 
-.footer-content {
+.footer-content-wrapper {
     z-index: 10;
     overflow: hidden;
     float: left;
@@ -699,7 +669,6 @@ li {
 
 .fa-search {
     color: white;
-
 }
 
 .logo {
@@ -718,6 +687,6 @@ li {
     display: block;
     top: 0;
     right: 0;
-    width: 5%;
+    width: 4.4%;
     height: auto;
 }
