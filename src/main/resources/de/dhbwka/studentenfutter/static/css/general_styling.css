@@ -307,7 +307,6 @@ header {
     background: #dbe1e1;
     z-index: 50;
     display: block;
-    vertical-align: center;
     text-align: center;
     bottom: 0;
 }
@@ -545,7 +544,7 @@ article.infobox section:target h4 a {
 }
 
 .instructionsListWrapper {
-    margin: 3% 3% 0% 3%;
+    margin: 3% 3% 0 3%;
     position: static;
     display: block;
     width: 94%;
