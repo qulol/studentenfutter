@@ -3,14 +3,20 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
          http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
-    <!--
     <servlet>
-        <servlet-name>studentenfutter_machwas</servlet-name>
-        <servlet-class>de.dhbwka.studentenfutter.Servlets.machwasServlet</servlet-class>
+        <servlet-name>RedirectionServlet</servlet-name>
+        <servlet-class>de.dhbwka.studentenfutter.servlets.RedirectionServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>IndexServlet</servlet-name>
+        <servlet-class>de.dhbwka.studentenfutter.servlets.IndexServlet</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>studentenfutter_machwas</servlet-name>
-        <url-pattern>/*</url-pattern>
+        <servlet-name>RedirectionServlet</servlet-name>
+        <url-pattern>/</url-pattern>
     </servlet-mapping>
-    -->
+    <servlet-mapping>
+        <servlet-name>IndexServlet</servlet-name>
+        <url-pattern>/index</url-pattern>
+    </servlet-mapping>
 </web-app>
