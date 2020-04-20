@@ -33,19 +33,8 @@ window.addEventListener('DOMContentLoaded', (event) => {
     document.body.style.setProperty('width', windowWidth + "px");
 });
 
-
-
 window.onscroll = function () {
     currentYPosition = document.documentElement.scrollTop;
-    //
-    // if (currentYPosition > 5 && currentYPosition < 15) {
-    //     window.scrollBy({ top: 712, left: 0, behavior: "smooth" });
-    // } else {
-    //     window.scrollBy({ top: -currentYPosition, left: 0, behavior: "smooth" });
-    // }
-    // console.log(currentYPosition);
-    //
-
     hideTopText(currentYPosition);
     highlightIcons(currentYPosition);
 }
@@ -74,7 +63,6 @@ highlightIcons = function (currentPosition) {
         secondIcon.style.background = "transparent";
         secondStep.style.display = "none";
     }
-
 }
 
 

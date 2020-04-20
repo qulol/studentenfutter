@@ -30,26 +30,30 @@
                 class="fas fa-search"></i></label>
 
         </div>
-        <a href="http://lieferando.de" target="_blank" title="PANIC - Lieferando ist dein Freund :) ">"<img class="panicbutton"
-                                                                                                            src="images/panicbutton.png"
-                                                                                                            alt="PanicButtonImage"></a>
+        <a href="http://lieferando.de" target="_blank" title="PANIC - Lieferando ist dein Freund :) ">"<img
+                class="panicbutton"
+                src="images/panicbutton.png"
+                alt="PanicButtonImage"></a>
     </header>
 
     <div class="regular-top-content-wrapper">
         <div class="regular-top-content-block white-bg scrollbar" id="top-text">
             <h1 class="centered">Einkaufsliste</h1>
-
+            <button class="buttonPrintShoppingList" id="printShoppingList"
+                    onClick=printShoppingList()>
+                Einkaufsliste drucken
+            </button>
             <div class="shoppingListTableWrapper">
                 <table class="ingredientsTable">
-                    <thead>
-                    <tr>
+                    <thead class="th-fixed">
+                    <tr class="shopping-list">
                         <td id="amount"><b>Menge</b></td>
                         <td id="unit"><b>Einheit</b></td>
                         <td id="singleIngredient"><b>Zutat</b></td>
                     </tr>
                     </thead>
 
-                    <tbody id="shoppingList">
+                    <tbody class="with-margin-top" id="shoppingList">
                     </tbody>
                 </table>
             </div>

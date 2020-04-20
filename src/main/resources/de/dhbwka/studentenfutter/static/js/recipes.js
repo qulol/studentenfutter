@@ -31,12 +31,12 @@ var recipeOverviewObject = {
         {
             id: 3,
             headline: "Pasta mit Frühlingszwiebeln",
-            image: "images/foodpictures/pasta-frühlingszwiebeln.jpg",
+            image: "images/foodpictures/pasta-fruehlingszwiebeln.jpg",
         },
         {
             id: 4,
             headline: "Käsespätzle",
-            image: "images/foodpictures/käsespätzle.jpg",
+            image: "images/foodpictures/kaesespaetzle.jpg",
         },
         {
             id: 5,

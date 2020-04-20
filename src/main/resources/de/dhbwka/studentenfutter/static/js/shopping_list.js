@@ -16,6 +16,156 @@ var shoppingListObject = {
             unit: "g"
         },
         {
+            name: "Nudeln",
+            amount: 500,
+            unit: "g",
+        },
+        {
+            name: "passierte Tomaten",
+            amount: 500,
+            unit: "ml"
+        },
+        {
+            name: "Parmesan",
+            amount: 50,
+            unit: "g"
+        },
+        {
+            name: "Nudeln",
+            amount: 500,
+            unit: "g",
+        },
+        {
+            name: "passierte Tomaten",
+            amount: 500,
+            unit: "ml"
+        },
+        {
+            name: "Parmesan",
+            amount: 50,
+            unit: "g"
+        },
+        {
+            name: "Nudeln",
+            amount: 500,
+            unit: "g",
+        },
+        {
+            name: "passierte Tomaten",
+            amount: 500,
+            unit: "ml"
+        },
+        {
+            name: "Parmesan",
+            amount: 50,
+            unit: "g"
+        },
+        {
+            name: "Nudeln",
+            amount: 500,
+            unit: "g",
+        },
+        {
+            name: "passierte Tomaten",
+            amount: 500,
+            unit: "ml"
+        },
+        {
+            name: "Parmesan",
+            amount: 50,
+            unit: "g"
+        },
+        {
+            name: "Nudeln",
+            amount: 500,
+            unit: "g",
+        },
+        {
+            name: "passierte Tomaten",
+            amount: 500,
+            unit: "ml"
+        },
+        {
+            name: "Parmesan",
+            amount: 50,
+            unit: "g"
+        },
+        {
+            name: "Nudeln",
+            amount: 500,
+            unit: "g",
+        },
+        {
+            name: "passierte Tomaten",
+            amount: 500,
+            unit: "ml"
+        },
+        {
+            name: "Parmesan",
+            amount: 50,
+            unit: "g"
+        },
+        {
+            name: "Nudeln",
+            amount: 500,
+            unit: "g",
+        },
+        {
+            name: "passierte Tomaten",
+            amount: 500,
+            unit: "ml"
+        },
+        {
+            name: "Parmesan",
+            amount: 50,
+            unit: "g"
+        },
+        {
+            name: "Nudeln",
+            amount: 500,
+            unit: "g",
+        },
+        {
+            name: "passierte Tomaten",
+            amount: 500,
+            unit: "ml"
+        },
+        {
+            name: "Parmesan",
+            amount: 50,
+            unit: "g"
+        },
+        {
+            name: "Nudeln",
+            amount: 500,
+            unit: "g",
+        },
+        {
+            name: "passierte Tomaten",
+            amount: 500,
+            unit: "ml"
+        },
+        {
+            name: "Parmesan",
+            amount: 50,
+            unit: "g"
+        },
+        {
+            name: "Nudeln",
+            amount: 500,
+            unit: "g",
+        },
+        {
+            name: "passierte Tomaten",
+            amount: 500,
+            unit: "ml"
+        },
+        {
+            name: "Parmesan",
+            amount: 50,
+            unit: "g"
+        },
+        {
             name: "Zwiebel(n)",
             amount: 0.5,
             unit: "Stk."
@@ -47,11 +197,17 @@ function buildShoppingListTable(shoppingListObject) {
             "</tr>";
     }
 
-    for (i = 0; i < shoppingListObject.ingredients.length; i++) {
+    for (i = 0; i < shoppingListObject.seasons.length; i++) {
         var currentSeason = shoppingListObject.seasons[i];
         shoppingListTable += "<tr>" +
             "<td></td><td></td><td id='seasons'>" + currentSeason + "</td>" +
         "</tr>"
     }
     return shoppingListTable;
+}
+
+function printShoppingList() {
+
+
+
 }
