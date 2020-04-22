@@ -70,7 +70,7 @@ var recipeOverviewObject = {
 
 var recipeOverviewReference;
 
-window.addEventListener('DOMContentLoaded', (event) => {
+window.addEventListener('DOMContentLoaded', () => {
     recipeOverviewReference = document.getElementById("recipes");
     recipeOverviewReference.innerHTML = buildRecipesOverview(recipeOverviewObject);
 });

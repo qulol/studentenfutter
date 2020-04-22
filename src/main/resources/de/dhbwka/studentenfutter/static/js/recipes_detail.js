@@ -71,7 +71,7 @@ var seasonsListReference;
 var headlineReference;
 var imageReference;
 
-window.addEventListener('DOMContentLoaded', (event) => {
+window.addEventListener('DOMContentLoaded', () => {
     ingredientsTableReference = document.getElementById("ingredientsTable");
     instructionsListReference = document.getElementById("instructions");
     seasonsListReference = document.getElementById("seasonsList");

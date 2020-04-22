@@ -16,9 +16,12 @@ var windowWidth = window.screen.availWidth
     || document.documentElement.clientWidth
     || document.body.clientWidth;
 
-window.addEventListener('DOMContentLoaded', (event) => {
+window.addEventListener('DOMContentLoaded', () => {
     currentYPosition = document.documentElement.scrollTop;
-    window.scrollBy({ top: -currentYPosition, left: 0, behavior: "smooth"});
+
+    if (currentYPosition > 0) {
+        window.scrollBy({top: -currentYPosition, left: 0, behavior: "smooth"});
+    }
 
     topText = document.getElementById("topContentBlock");
     firstIcon = document.getElementById("firstIcon");

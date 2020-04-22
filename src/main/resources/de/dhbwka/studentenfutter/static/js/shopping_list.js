@@ -178,7 +178,7 @@ var shoppingListObject = {
 
 var shoppingListReference;
 
-window.addEventListener('DOMContentLoaded', (event) => {
+window.addEventListener('DOMContentLoaded', () => {
     shoppingListReference = document.getElementById("shoppingList");
     shoppingListReference.innerHTML = buildShoppingListTable(shoppingListObject);
 
