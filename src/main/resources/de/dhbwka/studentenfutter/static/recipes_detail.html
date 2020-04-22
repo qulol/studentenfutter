@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/general_styling.css">
@@ -40,14 +40,13 @@
         <div class="regular-top-content-block black-bg" id="top-text">
             <h1 class="centered" id="headline">Überschrift Rezept</h1>
             <div class="recipe-detail-image-wrapper">
-                <img id="recipe-image-detail">
+                <img id="recipe-image-detail" src="images/food.png" alt="recipe-image-detail">
             </div>
             <div class="recipe-detail">
 
 
                 <article class="infobox">
-
-                    <section id="ingredientsTab">
+                    <div class="tab" id="ingredientsTab">
                         <h4><a href="#ingredientsTab">Zutaten</a></h4>
 
                         <div class="calculateIngredientsAmount">
@@ -65,9 +64,9 @@
                             <table class="ingredientsTable">
                                 <thead>
                                 <tr>
-                                    <td id="amount"><b>Menge</b></td>
-                                    <td id="unit"><b>Einheit</b></td>
-                                    <td id="singleIngredient"><b>Zutat</b></td>
+                                    <td class="amount header" id="amount"><b>Menge</b></td>
+                                    <td class="unit header" id="unit"><b>Einheit</b></td>
+                                    <td class="singleIngredient header" id="singleIngredient"><b>Zutat</b></td>
                                 </tr>
                                 </thead>
 
@@ -81,9 +80,9 @@
                             </div>
 
                         </div>
-                    </section>
+                    </div>
 
-                    <section id="instructionsTab">
+                    <div class="tab" id="instructionsTab">
                         <h4><a href="#instructionsTab">Anleitung</a></h4>
                         <div class="instructionsListWrapper">
                             <div class="instructionsList" id="instructionsList">
@@ -91,7 +90,7 @@
                                 </ol>
                             </div>
                         </div>
-                    </section>
+                    </div>
                 </article>
             </div>
         </div>

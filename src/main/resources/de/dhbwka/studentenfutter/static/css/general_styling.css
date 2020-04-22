@@ -462,7 +462,7 @@ header {
     margin: 0 auto;
 }
 
-article.infobox section {
+article.infobox .tab{
     position: absolute;
     display: block;
     background-color: white;
@@ -471,7 +471,7 @@ article.infobox section {
 }
 
 /*nicht verändern*/
-article.infobox section h4 {
+article.infobox .tab h4 {
     position: absolute;
     left: 0;
     top: -6%;
@@ -483,13 +483,13 @@ article.infobox section h4 {
     z-index: 1;
 }
 
-article.infobox section:nth-child(2) h4 {
+article.infobox .tab:nth-child(2) h4 {
     left: 11%;
     z-index: 0;
 }
 
 /*nicht verändern*/
-article.infobox section h4 a {
+article.infobox .tab h4 a {
     display: block;
     margin: 5% 0 0 0;
     text-align: center;
@@ -498,14 +498,14 @@ article.infobox section h4 a {
 }
 
 /*nicht verändern*/
-article.infobox section:target, article.infobox section:target h4 {
+article.infobox .tab:target, article.infobox .tab:target h4 {
     color: #000000;
     background-color: white;
     z-index: 1;
 }
 
 /*nicht verändern*/
-article.infobox section:target h4 a {
+article.infobox .tab:target h4 a {
     color: red;
 }
 
@@ -559,17 +559,27 @@ article.infobox section:target h4 a {
     float: left;
 }
 
-#amount, #unit {
-    width: 13%;
+.amount, .unit , .singleIngredient{
+    width: 8%;
+    border-bottom: #333333 dashed 0.5px;
+}
+
+.amount {
+    text-align: right;
+    padding-right: 1%;
+}
+
+.singleIngredient {
+    width: 60%;
+}
+
+.header {
+    text-align: left;
     border-bottom: #333333 solid 0.5px;
     background-color: #dbe1e1;
 }
 
-#singleIngredient {
-    width: 60%;
-    border-bottom: #333333 solid 0.5px;
-    background-color: #dbe1e1;
-}
+
 
 .instructionsListWrapper {
     margin: 3% 3% 0 3%;

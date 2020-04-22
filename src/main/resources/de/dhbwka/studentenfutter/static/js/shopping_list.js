@@ -191,9 +191,9 @@ function buildShoppingListTable(shoppingListObject) {
         var currentIngredient = shoppingListObject.ingredients[i];
 
         shoppingListTable += "<tr>" +
-            "<td id='amount" + i + "'>" + currentIngredient.amount + "</td>" +
-            "<td id='unit" + i + "'>" + currentIngredient.unit + "</td>" +
-            "<td id=" + i + "'singleIngredient'>" + currentIngredient.name + "</td>" +
+            "<td class='amount' id='amount" + i + "'>" + currentIngredient.amount + "</td>" +
+            "<td class='unit' id='unit" + i + "'>" + currentIngredient.unit + "</td>" +
+            "<td class='singleIngredient' id=" + i + "'singleIngredient'>" + currentIngredient.name + "</td>" +
             "</tr>";
     }
 
