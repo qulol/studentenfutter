@@ -39,7 +39,7 @@
                 <configuration>
                     <username>deployment-user</username>
                     <password>8egmzWO9s^E@3$</password>
-                    <url>http://studentenfutter.it.dh-karlsruhe.de:8080/manager/text</url>
+                    <url>http://studentenfutter.it.dh-karlsruhe.de/manager/text</url>
                     <server>TomcatServerTrailMix</server>
                 </configuration>
             </plugin>
