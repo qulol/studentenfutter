@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/general_styling.css">
-    <link rel="stylesheet" href="plugins/fontawesome/css/all.css">
+    <link rel="stylesheet" href="fontawesome.css">
+    <script src="js/recipes.js"></script>
     <link rel="icon" href="images/icons_logo/icon.png" type="image/png">
-    <title>Datenschutz - Trail-Mix</title>
+    <title>Übersicht - Trail-Mix</title>
 </head>
 
 <body>
@@ -28,28 +29,22 @@
             <!--            </div>-->
             <input type="search" class="search" id="search" placeholder="Suchbegriff eingeben"><label for="search"><i
                 class="fas fa-search"></i></label>
+
         </div>
+        <a href="http://lieferando.de" target="_blank" title="PANIC - Lieferando ist dein Freund :) ">"<img class="panicbutton"
+                                                                                                            src="images/icons_logo/panicbutton.png"
+                                                                                                            alt="PanicButtonImage"></a>
     </header>
 
     <div class="regular-top-content-wrapper">
-
-        <div class="regular-top-content-block white-bg">
-            <h1 class="centered">Datenschutz</h1>
-            <div class="text-paragraph">
-                <h4>Grundlegendes</h4>
-                <p>
-                    Diese Datenschutzerklärung soll die Nutzer dieser Website über die Art, den Umfang und den Zweck der
-                    Erhebung und Verwendung personenbezogener Daten durch den Websitebetreiber <a
-                        href="legal_notice.html">[
-                    Hier geht's zum Impressum ]</a>
-                    informieren.
-                </p>
-                <p>
-                    Der Websitebetreiber nimmt Ihren Datenschutz sehr ernst und verwendet aus diesem Grund keine
-                    (ungesunden) Cookies oder ähnliche Datenbomben <i class="far fa-smile"></i>
-                </p>
+        <div class="regular-top-content-block" id="top-text">
+            <h1 class="centered">Übersicht unserer studentenfreundlichen Rezepte</h1>
+            <div class="recipes-overview-wrapper">
+                <div class="single-recipe-block">
+                    <div class="single-recipe-block" id="recipes">
+                    </div>
+                </div>
             </div>
-            <img src="images/icons_logo/cookies.png" id="cookie-image" alt="cookie-image">
         </div>
     </div>
 
@@ -61,5 +56,6 @@
         </footer>
     </div>
 </div>
+
 </body>
 </html>

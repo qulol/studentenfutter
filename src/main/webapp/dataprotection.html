@@ -3,10 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/general_styling.css">
-    <link rel="stylesheet" href="plugins/fontawesome/css/all.css">
-    <script src="js/shopping_list.js"></script>
+    <link rel="stylesheet" href="fontawesome.css">
     <link rel="icon" href="images/icons_logo/icon.png" type="image/png">
-    <title>Einkaufsliste - Trail-Mix</title>
+    <title>Datenschutz - Trail-Mix</title>
 </head>
 
 <body>
@@ -29,35 +28,28 @@
             <!--            </div>-->
             <input type="search" class="search" id="search" placeholder="Suchbegriff eingeben"><label for="search"><i
                 class="fas fa-search"></i></label>
-
         </div>
-        <a href="http://lieferando.de" target="_blank" title="PANIC - Lieferando ist dein Freund :) ">"<img
-                class="panicbutton"
-                src="images/icons_logo/panicbutton.png"
-                alt="PanicButtonImage"></a>
     </header>
 
     <div class="regular-top-content-wrapper">
-        <div class="regular-top-content-block white-bg scrollbar" id="top-text">
-            <h1 class="centered">Einkaufsliste</h1>
-            <button class="buttonPrintShoppingList" id="printShoppingList"
-                    onClick=printShoppingList()>
-                Einkaufsliste drucken
-            </button>
-            <div class="shoppingListTableWrapper">
-                <table class="ingredientsTable">
-                    <thead class="th-fixed">
-                    <tr class="shopping-list">
-                        <td class="amount header" id="amount"><b>Menge</b></td>
-                        <td class="unit header" id="unit"><b>Einheit</b></td>
-                        <td class="singleIngredient header" id="singleIngredient"><b>Zutat</b></td>
-                    </tr>
-                    </thead>
 
-                    <tbody class="with-margin-top" id="shoppingList">
-                    </tbody>
-                </table>
+        <div class="regular-top-content-block white-bg">
+            <h1 class="centered">Datenschutz</h1>
+            <div class="text-paragraph">
+                <h4>Grundlegendes</h4>
+                <p>
+                    Diese Datenschutzerklärung soll die Nutzer dieser Website über die Art, den Umfang und den Zweck der
+                    Erhebung und Verwendung personenbezogener Daten durch den Websitebetreiber <a
+                        href="legal_notice.html">[
+                    Hier geht's zum Impressum ]</a>
+                    informieren.
+                </p>
+                <p>
+                    Der Websitebetreiber nimmt Ihren Datenschutz sehr ernst und verwendet aus diesem Grund keine
+                    (ungesunden) Cookies oder ähnliche Datenbomben <i class="far fa-smile"></i>
+                </p>
             </div>
+            <img src="images/icons_logo/cookies.png" id="cookie-image" alt="cookie-image">
         </div>
     </div>
 
@@ -69,6 +61,5 @@
         </footer>
     </div>
 </div>
-
 </body>
 </html>

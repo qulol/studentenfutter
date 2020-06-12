@@ -1,16 +1,13 @@
-<!DOCTYPE html>
-<html lang="de">
+<%@ page contentType="text/html; charset=UTF-8" language="java" %>
+<%@page errorPage="error.jsp"%>
+<html>
 <head>
-    <meta charset="UTF-8">
-
-    <link rel="stylesheet" href="css/general_styling.css">
-    <link rel="stylesheet" href="plugins/fontawesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="css/general_styling.css">
+    <link rel="stylesheet" type="" href="fontawesome/css/all.css">
     <script rel="script" src="js/index.js"></script>
     <link rel="icon" href="images/icons_logo/icon.png" type="image/png">
-
     <title>Trail-Mix: DIY-Omnomnom!</title>
 </head>
-
 <body class="index-body">
 <div class="wrapper" id="wrapper">
     <a href="index.html"><img class="logo" src="images/icons_logo/logo.png" alt="logo"></a>
@@ -18,19 +15,8 @@
         <div class="navbar">
             <a href="recipes.html">Rezepte</a>
             <a href="shopping_list.html">Einkaufsliste</a>
-            <!--            <div class="dropdown">-->
-            <!--                <button class="dropbtn">Dropdown-->
-            <!--                    <i class="fa fa-caret-down"></i>-->
-            <!--                </button>-->
-            <!--                <div class="dropdown-content">-->
-            <!--                    <a href="#">Link 1</a>-->
-            <!--                    <a href="#">Link 2</a>-->
-            <!--                    <a href="#">Link 3</a>-->
-            <!--                </div>-->
-            <!--            </div>-->
             <input type="search" class="search" id="search" placeholder="Suchbegriff eingeben"><label for="search"><i
                 class="fas fa-search"></i></label>
-
         </div>
         <a href="http://lieferando.de" target="_blank" title="PANIC - Lieferando ist dein Freund :) ">"<img
                 class="panicbutton"
@@ -72,7 +58,7 @@
 
 
     <div class="index-bottom-content-wrapper">
-             <div class="index-bottom-content-block" id="bottom-text">
+        <div class="index-bottom-content-block" id="bottom-text">
             <h2 class="rotate">Auch du schaffst es! :) </h2>
 
         </div>
