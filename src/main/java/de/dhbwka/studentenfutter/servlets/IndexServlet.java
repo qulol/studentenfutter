@@ -13,11 +13,10 @@ import java.io.IOException;
 @WebServlet(urlPatterns = "/index")
 public class IndexServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        doGet(request, response);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.setAttribute("welcome", "Hallo Team Studentenfutter :)");
         request.getRequestDispatcher("/jsp/index.jsp").forward(request, response);
     }
 }

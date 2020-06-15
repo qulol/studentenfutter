@@ -1,16 +1,21 @@
 package de.dhbwka.studentenfutter;
 
+import de.dhbwka.studentenfutter.database.DatabaseConnection;
+import de.dhbwka.studentenfutter.database.DatabaseConnectionDescriptor;
+
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
 import javax.servlet.http.HttpSessionAttributeListener;
+import javax.servlet.http.HttpSessionBindingEvent;
 import javax.servlet.http.HttpSessionEvent;
 import javax.servlet.http.HttpSessionListener;
-import javax.servlet.http.HttpSessionBindingEvent;
+import java.io.IOException;
+import java.net.URISyntaxException;
+import java.sql.SQLException;
 
 /**
- * Listener to establish database connection on startup.
- * Maybe shutdown gracefully if needed later
+ * Listener to initialize server from @{@link javax.servlet.ServletContext}.
  */
 @WebListener()
 public class WebEventListener implements ServletContextListener,
@@ -18,6 +23,7 @@ public class WebEventListener implements ServletContextListener,
 
     // Public constructor is required by servlet spec
     public WebEventListener() {
+
     }
 
     // -------------------------------------------------------
@@ -28,7 +34,18 @@ public class WebEventListener implements ServletContextListener,
          initialized(when the Web application is deployed). 
          You can initialize servlet context related data here.
       */
-        System.out.println("Call onStartup functions here...");
+
+        var context = sce.getServletContext();
+        var url = context.getInitParameter("database_url");
+        var connection = new DatabaseConnection(new DatabaseConnectionDescriptor(url));
+
+        try {
+            connection.onLoad();
+        } catch (IOException | URISyntaxException | SQLException e) {
+            e.printStackTrace();
+        }
+
+        context.setAttribute("database", connection);
     }
 
     public void contextDestroyed(ServletContextEvent sce) {
@@ -36,7 +53,8 @@ public class WebEventListener implements ServletContextListener,
          (the Web application) is undeployed or 
          Application Server shuts down.
       */
-        System.out.println("Call onShutdown functions here...");
+        var connection = (DatabaseConnection) sce.getServletContext().getAttribute("database");
+        connection.onShutdown();
     }
 
     // -------------------------------------------------------

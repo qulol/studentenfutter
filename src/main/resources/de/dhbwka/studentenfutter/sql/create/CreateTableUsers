@@ -1,0 +1,6 @@
+create table if not exists users (
+    id_user integer primary key autoincrement ,
+    name varchar ,
+    last_login_date timestamp ,
+    creation_date timestamp
+);
