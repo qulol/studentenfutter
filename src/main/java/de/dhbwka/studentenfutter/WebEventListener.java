@@ -8,6 +8,10 @@ import javax.servlet.http.HttpSessionEvent;
 import javax.servlet.http.HttpSessionListener;
 import javax.servlet.http.HttpSessionBindingEvent;
 
+/**
+ * Listener to establish database connection on startup.
+ * Maybe shutdown gracefully if needed later
+ */
 @WebListener()
 public class WebEventListener implements ServletContextListener,
         HttpSessionListener, HttpSessionAttributeListener {
@@ -24,7 +28,7 @@ public class WebEventListener implements ServletContextListener,
          initialized(when the Web application is deployed). 
          You can initialize servlet context related data here.
       */
-        System.out.println("Context initialized");
+        System.out.println("Call onStartup functions here...");
     }
 
     public void contextDestroyed(ServletContextEvent sce) {
@@ -32,7 +36,7 @@ public class WebEventListener implements ServletContextListener,
          (the Web application) is undeployed or 
          Application Server shuts down.
       */
-        System.out.println("Context destroyed");
+        System.out.println("Call onShutdown functions here...");
     }
 
     // -------------------------------------------------------
