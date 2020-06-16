@@ -1,5 +1,3 @@
--- noinspection SqlResolveForFile
-
 create table if not exists recipe(
     id_recipe integer primary key autoincrement ,
     id_user integer ,

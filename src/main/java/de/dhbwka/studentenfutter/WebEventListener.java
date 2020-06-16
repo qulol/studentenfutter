@@ -1,6 +1,6 @@
 package de.dhbwka.studentenfutter;
 
-import de.dhbwka.studentenfutter.database.DatabaseConnection;
+import de.dhbwka.studentenfutter.database.DatabaseAccess;
 import de.dhbwka.studentenfutter.database.DatabaseConnectionDescriptor;
 
 import javax.servlet.ServletContextEvent;
@@ -11,7 +11,6 @@ import javax.servlet.http.HttpSessionBindingEvent;
 import javax.servlet.http.HttpSessionEvent;
 import javax.servlet.http.HttpSessionListener;
 import java.io.IOException;
-import java.net.URISyntaxException;
 import java.sql.SQLException;
 
 /**
@@ -35,17 +34,16 @@ public class WebEventListener implements ServletContextListener,
          You can initialize servlet context related data here.
       */
 
-        var context = sce.getServletContext();
-        var url = context.getInitParameter("database_url");
-        var connection = new DatabaseConnection(new DatabaseConnectionDescriptor(url));
+        var url = "jdbc:sqlite:studentenfutter.db";
+        var connection = new DatabaseAccess(new DatabaseConnectionDescriptor(url));
 
         try {
             connection.onLoad();
-        } catch (IOException | URISyntaxException | SQLException e) {
+        } catch (IOException | SQLException e) {
             e.printStackTrace();
         }
 
-        context.setAttribute("database", connection);
+        sce.getServletContext().setAttribute("database", connection);
     }
 
     public void contextDestroyed(ServletContextEvent sce) {
@@ -53,7 +51,7 @@ public class WebEventListener implements ServletContextListener,
          (the Web application) is undeployed or 
          Application Server shuts down.
       */
-        var connection = (DatabaseConnection) sce.getServletContext().getAttribute("database");
+        var connection = (DatabaseAccess) sce.getServletContext().getAttribute("database");
         connection.onShutdown();
     }
 

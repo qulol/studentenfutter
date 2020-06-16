@@ -1,21 +1,24 @@
 package de.dhbwka.studentenfutter.database.query;
 
-public abstract class Query implements IQuery {
-    private final String name;
-    private final String query;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
-    protected Query(String name, String query) {
-        this.name = name;
-        this.query = query;
-    }
+public abstract class Query<T> implements IQuery<T> {
 
     @Override
-    public String getFullName() {
-        return name;
+    public T execute(Connection connection, String sql) throws SQLException {
+        try(var statement = connection.prepareStatement(sql)) {
+            prepareStatement(statement);
+            if (statement.execute()) {
+                return map(statement.getResultSet());
+            }
+            return null;
+        }
     }
 
-    @Override
-    public String getQuery() {
-        return query;
-    }
+    protected abstract void prepareStatement(PreparedStatement statement) throws SQLException;
+
+    protected abstract T map(ResultSet result) throws SQLException;
 }
