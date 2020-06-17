@@ -4,14 +4,11 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
-@WebServlet(urlPatterns = "/index")
-public class IndexServlet extends AbstractServlet {
+@WebServlet(urlPatterns = "/login")
+public class LoginServlet extends AbstractServlet {
 
     @Override
     protected void handleDoGet(HttpServletRequest req, HttpServletResponse res) throws Exception {
-        System.out.println("hello");
-
-        req.getRequestDispatcher("/jsp/index.jsp").forward(req, res);
+        System.out.println("login");
     }
 }

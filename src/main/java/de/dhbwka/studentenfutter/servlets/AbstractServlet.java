@@ -11,36 +11,36 @@ public abstract class AbstractServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         try {
-            actualDoGet(req, resp);
+            handleDoGet(req, resp);
         } catch (Exception e) {
             e.printStackTrace(); //log
             if(resp.isCommitted()) {
                 return;
             }
-            resp.sendRedirect("/jsp/error.jsp");
+            resp.sendRedirect("/error.html");
         }
     }
 
-    protected void actualDoGet(HttpServletRequest req, HttpServletResponse res) throws Exception {
+    protected void handleDoGet(HttpServletRequest req, HttpServletResponse res) throws Exception {
         //log no implementation of get method
-        req.getRequestDispatcher("/jsp/error.jsp").forward(req, res);
+        req.getRequestDispatcher("/error.html").forward(req, res);
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         try {
-            actualDoPost(req, resp);
+            handleDoPost(req, resp);
         } catch (Exception e) {
             e.printStackTrace(); //log
             if(resp.isCommitted()) {
                return;
             }
-            resp.sendRedirect("/jsp/error.jsp");
+            resp.sendRedirect("/error.html");
         }
     }
 
-    protected void actualDoPost(HttpServletRequest req, HttpServletResponse res) throws Exception {
+    protected void handleDoPost(HttpServletRequest req, HttpServletResponse res) throws Exception {
         //log no implementation of get method
-        req.getRequestDispatcher("/jsp/error.jsp").forward(req, res);
+        req.getRequestDispatcher("/error.html").forward(req, res);
     }
 }
