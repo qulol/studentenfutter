@@ -7,6 +7,6 @@
 
     <error-page>
         <error-code>404</error-code>
-        <location>/jsp/error.jsp</location>
+        <location>/error.html</location>
     </error-page>
 </web-app>
