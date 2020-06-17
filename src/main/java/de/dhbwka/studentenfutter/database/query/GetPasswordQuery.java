@@ -29,6 +29,6 @@ public class GetPasswordQuery extends Query<String> {
     @Override
     protected String map(ResultSet result) throws SQLException {
         result.next();
-        return result.getString(0);
+        return result.getString(1);
     }
 }
