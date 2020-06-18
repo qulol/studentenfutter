@@ -272,6 +272,24 @@ header {
     padding: 0 7.6%;
 }
 
+#error-image {
+    padding: 3% 0 0 0;
+    display: block;
+    z-index: 10;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.error-message {
+    position: relative;
+    margin: 0 auto;
+    text-align: right;
+}
+
+.error-content {
+    height: fit-content;
+}
+
 .firstStep, .secondStep {
     padding-top: 1%;
     position: static;

@@ -1,20 +1,21 @@
-/*
-fetch('./recipes.html',
-    {
-        method: 'get',
-        headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-        },
-    })
-    .then(function (response) {
+//
+// fetch('./recipes.html',
+//     {
+//         method: 'get',
+//         headers: {
+//             'Accept': 'application/json',
+//             'Content-Type': 'application/json'
+//         },
+//     })
+//     .then(function (recipes) {
+//
+//         console.log(recipes);
+//
+//     })
+//     .catch(function (error) {
+//         console.error(error);
+//     });
 
-        console.log(response);
-    })
-    .catch(function (error) {
-        console.error(error);
-    });
-    */
 
 var recipeOverviewObject = {
     recipes: [
