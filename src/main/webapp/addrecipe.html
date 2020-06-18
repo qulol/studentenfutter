@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="css/general_styling.css">
     <link rel="stylesheet" href="fontawesome/css/all.css">
     <link rel="icon" href="images/icons_logo/icon.png" type="image/png">
-    <title>FAQ - Trail-Mix</title>
+    <title>Userverwaltung - Trail-Mix</title>
 </head>
 
 <body>
@@ -16,25 +16,33 @@
         <div class="navbar">
             <a href="recipes.html">Rezepte</a>
             <a href="shopping_list.html">Einkaufsliste</a>
-            <!--            <div class="dropdown">-->
-            <!--                <button class="dropbtn">Dropdown-->
-            <!--                    <i class="fa fa-caret-down"></i>-->
-            <!--                </button>-->
-            <!--                <div class="dropdown-content">-->
-            <!--                    <a href="#">Link 1</a>-->
-            <!--                    <a href="#">Link 2</a>-->
-            <!--                    <a href="#">Link 3</a>-->
-            <!--                </div>-->
-            <!--            </div>-->
+
+            <div class="dropdown">
+                <span class="dropbtn">Userverwaltung
+                    <i class="fa fa-caret-down"></i>
+                </span>
+                <span class="dropdown-content">
+                    <input type="text" class="username" id="username" placeholder="Username"><label
+                        for="username"></label>
+                    <input type="text" class="password" id="password" placeholder="Password"><label
+                        for="password"></label>
+                    <button>Einloggen</button>
+                                        <button>Registrieren</button>
+                    <a href="addrecipe.html">Eigene Rezepte hinzufügen</a>
+                </span>
+            </div>
             <input type="search" class="search" id="search" placeholder="Suchbegriff eingeben"><label for="search"><i
                 class="fas fa-search"></i></label>
-
         </div>
+        <a href="http://lieferando.de" target="_blank" title="PANIC - Lieferando ist dein Freund :) ">"<img
+                class="panicbutton"
+                src="images/icons_logo/panicbutton.png"
+                alt="PanicButtonImage"></a>
     </header>
 
     <div class="regular-top-content-wrapper">
         <div class="regular-top-content-block scrollbar white-bg" id="top-text">
-            <h1 class="centered">FAQ</h1>
+            <h1 class="centered">Rezept hinzufügen</h1>
             <div class="text-paragraph">
 <!--                <h4>Angaben gem. § 5 TMG:</h4>-->
 <!--                <table class="formated-table">-->
