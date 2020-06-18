@@ -34,16 +34,16 @@ public class WebEventListener implements ServletContextListener,
          You can initialize servlet context related data here.
       */
 
-        var url = "jdbc:sqlite:studentenfutter.db";
+        var url = "jdbc:sqlite:studentenfutter.db"; //read from config
         var connection = new DatabaseAccess(new DatabaseConnectionDescriptor(url));
 
         try {
             connection.onLoad();
-        } catch (IOException | SQLException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
 
-        sce.getServletContext().setAttribute("database", connection);
+        sce.getServletContext().setAttribute(DatabaseAccess.ATTRIBUTE_KEY, connection);
     }
 
     public void contextDestroyed(ServletContextEvent sce) {
@@ -51,7 +51,7 @@ public class WebEventListener implements ServletContextListener,
          (the Web application) is undeployed or 
          Application Server shuts down.
       */
-        var connection = (DatabaseAccess) sce.getServletContext().getAttribute("database");
+        var connection = (DatabaseAccess) sce.getServletContext().getAttribute(DatabaseAccess.ATTRIBUTE_KEY);
         connection.onShutdown();
     }
 

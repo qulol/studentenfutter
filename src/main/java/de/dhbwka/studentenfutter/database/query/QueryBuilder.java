@@ -1,7 +1,11 @@
 package de.dhbwka.studentenfutter.database.query;
 
 import de.dhbwka.studentenfutter.database.IConnectionSupplier;
+import de.dhbwka.studentenfutter.database.query.encoder.QueryResultEncoder;
+import de.dhbwka.studentenfutter.database.query.executor.QueryExecutor;
+import de.dhbwka.studentenfutter.database.query.executor.ResultQueryExecutor;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,13 +24,15 @@ public class QueryBuilder {
         return this;
     }
 
-    public <T> QueryExecutor<T> encodeAs(Class<T> clazz) {
-        var query = new Query(connectionSupplier, sql, params);
-        return new QueryExecutor<>(query, clazz);
+    public <T> ResultQueryExecutor<T> encodeAs(Class<T> clazz) {
+        return new ResultQueryExecutor<>(createQuery(), new QueryResultEncoder<>(clazz));
     }
 
-    //add default void executor
-//    public void run() throws SQLException {
-//        runQuery();
-//    }
+    public void run() throws SQLException {
+        new QueryExecutor(createQuery()) {}.run(resultSet -> null);
+    }
+
+    private Query createQuery() {
+        return new Query(connectionSupplier, sql, params);
+    }
 }

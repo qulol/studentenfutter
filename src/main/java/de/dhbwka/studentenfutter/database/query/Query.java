@@ -1,7 +1,6 @@
 package de.dhbwka.studentenfutter.database.query;
 
 import de.dhbwka.studentenfutter.database.IConnectionSupplier;
-import de.dhbwka.studentenfutter.util.CheckedConsumer;
 import de.dhbwka.studentenfutter.util.CheckedFunction;
 
 import java.sql.PreparedStatement;
@@ -18,15 +17,6 @@ public class Query {
         this.connectionSupplier = connectionSupplier;
         this.sql = sql;
         this.params = params;
-    }
-
-    public void execute(CheckedConsumer<ResultSet, SQLException> consumer) throws SQLException {
-        try (var connection = connectionSupplier.get();
-             var statement = connection.prepareStatement(sql)) {
-            prepareQuery(statement);
-            statement.execute();
-            consumer.accept(statement.getResultSet());
-        }
     }
 
     public <T> T execute(CheckedFunction<ResultSet, T, SQLException> function) throws SQLException {

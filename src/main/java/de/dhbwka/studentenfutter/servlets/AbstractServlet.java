@@ -1,5 +1,8 @@
 package de.dhbwka.studentenfutter.servlets;
 
+import de.dhbwka.studentenfutter.database.DatabaseAccess;
+
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -42,5 +45,9 @@ public abstract class AbstractServlet extends HttpServlet {
     protected void handleDoPost(HttpServletRequest req, HttpServletResponse res) throws Exception {
         //log no implementation of get method
         req.getRequestDispatcher("/error.html").forward(req, res);
+    }
+
+    protected DatabaseAccess getDataAccess() {
+        return (DatabaseAccess) getServletContext().getAttribute(DatabaseAccess.ATTRIBUTE_KEY);
     }
 }
