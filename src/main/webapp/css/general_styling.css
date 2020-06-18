@@ -754,17 +754,19 @@ li {
     height: auto;
 }
 .login{
-    position: fixed;
     z-index: 100;
     float: left;
     display: block;
-    margin: 5% 0 auto auto;
-    width: 30%;
+    margin: 5% 0 auto 16%;
+    width: auto;
     height: auto;
-    color: white;
-
+    color: black;
+    background-color: white;
+    padding: 1%;
+    position: fixed;
 }
 
 .login a{
-    color: white;
+    color: black;
+    background-color: white;
 }
