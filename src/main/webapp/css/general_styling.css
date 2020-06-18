@@ -757,16 +757,35 @@ li {
     z-index: 100;
     float: left;
     display: block;
-    margin: 5% 0 auto 16%;
+    margin: 5% 0 auto 0%;
     width: auto;
     height: auto;
     color: black;
     background-color: white;
-    padding: 1%;
+    padding-left: 17%;
+    padding-right: 17%;
+    padding-top: 5%;
+    padding-bottom: 5%;
     position: fixed;
 }
 
 .login a{
     color: black;
     background-color: white;
+}
+
+.register{
+    z-index: 100;
+    float: left;
+    display: block;
+    margin: 5% 0 auto 0%;
+    width: auto;
+    height: auto;
+    color: black;
+    background-color: white;
+    padding-left: 23.5%;
+    padding-right: 23.2%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    position: fixed;
 }
