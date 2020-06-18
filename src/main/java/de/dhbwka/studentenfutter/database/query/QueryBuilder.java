@@ -2,8 +2,6 @@ package de.dhbwka.studentenfutter.database.query;
 
 import de.dhbwka.studentenfutter.database.IConnectionSupplier;
 import de.dhbwka.studentenfutter.database.query.encoder.QueryResultEncoder;
-import de.dhbwka.studentenfutter.database.query.executor.QueryExecutor;
-import de.dhbwka.studentenfutter.database.query.executor.ResultQueryExecutor;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -24,12 +22,12 @@ public class QueryBuilder {
         return this;
     }
 
-    public <T> ResultQueryExecutor<T> encodeAs(Class<T> clazz) {
-        return new ResultQueryExecutor<>(createQuery(), new QueryResultEncoder<>(clazz));
+    public <T> QueryExecutor<T> encodeAs(Class<T> clazz) {
+        return new QueryExecutor<>(createQuery(), new QueryResultEncoder<T>(clazz));
     }
 
     public void run() throws SQLException {
-        new QueryExecutor(createQuery()) {}.run(resultSet -> null);
+        createQuery().execute(result -> null);
     }
 
     private Query createQuery() {

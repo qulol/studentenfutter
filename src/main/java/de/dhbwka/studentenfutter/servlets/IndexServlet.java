@@ -1,7 +1,6 @@
 package de.dhbwka.studentenfutter.servlets;
 
 import de.dhbwka.studentenfutter.bean.Recipe;
-import de.dhbwka.studentenfutter.database.DatabaseAccess;
 
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
