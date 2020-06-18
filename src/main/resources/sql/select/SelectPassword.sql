@@ -1,1 +1,0 @@
-select password from password where id_user='?'
