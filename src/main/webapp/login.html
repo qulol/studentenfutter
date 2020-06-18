@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/general_styling.css">
     <link rel="stylesheet" href="fontawesome/css/all.css">
+    <script src="js/recipes.js"></script>
     <link rel="icon" href="images/icons_logo/icon.png" type="image/png">
-    <title>FAQ - Trail-Mix</title>
+    <title>Übersicht - Trail-Mix</title>
 </head>
 
 <body>
@@ -22,13 +23,24 @@
                 class="fas fa-search"></i></label>
 
         </div>
+        <a href="http://lieferando.de" target="_blank" title="PANIC - Lieferando ist dein Freund :) ">"<img class="panicbutton"
+                                                                                                            src="images/icons_logo/panicbutton.png"
+                                                                                                            alt="PanicButtonImage"></a>
     </header>
 
-    <div class="regular-top-content-wrapper error-content">
-        <div class="regular-top-content-block white-bg" id="top-text">
-            <h1 class="centered">Hoppala!</h1>
-                <img id="error-image" src="images/error.png" alt="bg-image">
-                <h1 class="error-message">Es ist wohl ein Fehler unterlaufen... :(</h1>
+    <div class="regular-top-content-wrapper">
+        <div class="regular-top-content-block" id="top-text">
+            <h1 class="centered">Login</h1>
+            <div class="login">
+            <form>
+                <label for="username">Username:</label><br>
+                <input type="text" id="username" name="username" value=""><br>
+                <label for="password">Password:</label><br>
+                <input type="password" id="password" name="password" value=""><br><br>
+                <input type="submit" value="Submit"><br><br>
+                <a href="test/register.html">Du bist noch nicht Registriert? Dann klicke Hier!</a><br>
+            </form>
+            </div>
         </div>
     </div>
 
@@ -40,5 +52,6 @@
         </footer>
     </div>
 </div>
+
 </body>
 </html>
