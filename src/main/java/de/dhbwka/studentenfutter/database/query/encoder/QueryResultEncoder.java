@@ -5,7 +5,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Map;
 
-public class QueryResultEncoder<T> {
+public class QueryResultEncoder<T> implements IQueryResultEncoder<T> {
     private static final Map<Class<?>, IQueryResultEncoder<?>> primitiveEncoders = Map.ofEntries(
             Map.entry(Boolean.class, (IQueryResultEncoder<Boolean>) set -> set.getBoolean(1)),
             Map.entry(Byte.class, (IQueryResultEncoder<Byte>) set -> set.getByte(1)),
@@ -28,6 +28,7 @@ public class QueryResultEncoder<T> {
 //        return clazz.cast(primitiveEncoders.get(clazz).encode(result));
 //    }
 
+    @Override
     public T encode(ResultSet result) throws SQLException {
         return (T) primitiveEncoders.get(clazz).encode(result);
 
