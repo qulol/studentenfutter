@@ -9,7 +9,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class DatabaseAccess {
-    public static final String ATTRIBUTE_KEY = "database_access";
+    public static final String ATTRIBUTE_KEY = DatabaseAccess.class.getName();
     private final String url;
 
 //    caching?
