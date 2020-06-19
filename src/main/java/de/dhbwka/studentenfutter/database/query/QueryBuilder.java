@@ -22,8 +22,8 @@ public class QueryBuilder {
         return this;
     }
 
-    public <T> QueryExecutor<T> encodeAs(Class<T> clazz) {
-        return new QueryExecutor<>(createQuery(), new QueryResultEncoder<T>(clazz));
+    public <T> QueryExecutor<T> runAs(Class<T> clazz) {
+        return new QueryExecutor<>(createQuery(), new QueryResultEncoder<>(clazz));
     }
 
     public void run() throws SQLException {
