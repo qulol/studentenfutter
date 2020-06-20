@@ -4,8 +4,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet(urlPatterns = "/login")
-public class LoginServlet extends AbstractServlet {
+@WebServlet(urlPatterns = "/register")
+public class RegisterServlet extends AbstractServlet {
 
     @Override
     protected void handleDoGet(HttpServletRequest req, HttpServletResponse res) throws Exception {
@@ -15,15 +15,8 @@ public class LoginServlet extends AbstractServlet {
     protected void handleDoPost(HttpServletRequest req, HttpServletResponse res) throws Exception {
         String username = req.getParameter("username");
         String password = req.getParameter("password");
+        String passwordRepeat = req.getParameter("password_repeat");
 
-        res.setContentType("text/html");
-
-        if(username.equals("user") && password.equals("passwort")) {
-            res.sendRedirect("index.html");
-        }
-        else {
-            res.getWriter().print("Wrong username or password. Please try again!");
-            req.getRequestDispatcher("/login.html").include(req, res);
-        }
+        res.sendRedirect("login.html");
     }
 }
