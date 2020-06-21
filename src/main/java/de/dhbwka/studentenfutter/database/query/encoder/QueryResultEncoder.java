@@ -8,16 +8,21 @@ import java.sql.SQLException;
 import java.util.Map;
 
 public class QueryResultEncoder<T> implements IQueryResultEncoder<T> {
-    private static final Map<Class<?>, IQueryResultEncoder<?>> primitiveEncoders = Map.ofEntries(
-            Map.entry(Boolean.class, (IQueryResultEncoder<Boolean>) set -> set.getBoolean(1)),
-            Map.entry(Byte.class, (IQueryResultEncoder<Byte>) set -> set.getByte(1)),
-            Map.entry(Short.class, (IQueryResultEncoder<Short>) set -> set.getShort(1)),
-            Map.entry(Integer.class, (IQueryResultEncoder<Integer>) set -> set.getInt(1)),
-            Map.entry(Float.class, (IQueryResultEncoder<Float>) set -> set.getFloat(1)),
-            Map.entry(Long.class, (IQueryResultEncoder<Long>) set -> set.getLong(1)),
-            Map.entry(Double.class, (IQueryResultEncoder<Double>) set -> set.getDouble(1)),
-            Map.entry(String.class, (IQueryResultEncoder<String>) set -> set.getString(1)),
-            Map.entry(Date.class, (IQueryResultEncoder<Date>) set -> set.getDate(1))
+    private interface IPropertyEncoder<T> {
+        T encode(ResultSet result, int index) throws SQLException;
+    }
+
+    //sql primitive encoders
+    private static final Map<Class<?>, IPropertyEncoder<?>> primitiveEncoders = Map.ofEntries(
+            Map.entry(Boolean.class, ResultSet::getBoolean),
+            Map.entry(Byte.class, ResultSet::getByte),
+            Map.entry(Short.class, ResultSet::getShort),
+            Map.entry(Integer.class, ResultSet::getInt),
+            Map.entry(Float.class, ResultSet::getFloat),
+            Map.entry(Long.class, ResultSet::getLong),
+            Map.entry(Double.class, ResultSet::getDouble),
+            Map.entry(String.class, ResultSet::getString),
+            Map.entry(Date.class, ResultSet::getDate)
     );
 
     private final Class<T> clazz;
@@ -29,7 +34,7 @@ public class QueryResultEncoder<T> implements IQueryResultEncoder<T> {
     @Override
     public T encode(ResultSet result) throws SQLException {
         if (isPrimitiveType()) {
-            return encodePrimitive(result);
+            return encodeAsPrimitive(result);
         }
 
         T instance;
@@ -38,19 +43,10 @@ public class QueryResultEncoder<T> implements IQueryResultEncoder<T> {
             for (var field : clazz.getDeclaredFields()) {
                 var desc = field.getDeclaredAnnotation(QueryResult.class);
                 var index = desc.index();
-                var type = field.getType(); //check only for primitive, casting done by jdbc :)
+                var type = field.getType();
 
                 field.setAccessible(true); //reflection only
-                //primitive encoding
-                field.set(instance, result.getObject(index));
-
-
-                //todo specific encoder
-//                var encoderClazz = desc.encoder();
-//                var encoder = encoderClazz.getDeclaredConstructor().newInstance();
-//                //todo
-//                field.set(instance, encoder.encode());
-
+                field.set(instance, encodePrimitive(result, type, index));
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -63,7 +59,11 @@ public class QueryResultEncoder<T> implements IQueryResultEncoder<T> {
         return primitiveEncoders.containsKey(clazz);
     }
 
-    private T encodePrimitive(ResultSet result) throws SQLException {
-        return clazz.cast(primitiveEncoders.get(clazz).encode(result));
+    private T encodeAsPrimitive(ResultSet result) throws SQLException {
+        return encodePrimitive(result, clazz, 1);
+    }
+
+    private <R> R encodePrimitive(ResultSet result, Class<R> clazz, int index) throws SQLException {
+        return clazz.cast(primitiveEncoders.get(clazz).encode(result, index));
     }
 }
