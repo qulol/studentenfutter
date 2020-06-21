@@ -12,7 +12,7 @@ public class QueryResultEncoder<T> implements IQueryResultEncoder<T> {
         T encode(ResultSet result, int index) throws SQLException;
     }
 
-    //sql primitive encoders
+    //jdbc driver specific encoding
     private static final Map<Class<?>, IPropertyEncoder<?>> primitiveEncoders = Map.ofEntries(
             Map.entry(Boolean.class, ResultSet::getBoolean),
             Map.entry(Byte.class, ResultSet::getByte),
