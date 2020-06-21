@@ -59,6 +59,7 @@
                     <password>8egmzWO9s^E@3$</password>
                     <url>http://studentenfutter.it.dh-karlsruhe.de/manager/text</url>
                     <server>TomcatServerTrailMix</server>
+                    <path>/</path>
                 </configuration>
             </plugin>
         </plugins>
