@@ -21,7 +21,7 @@ public class IndexServlet extends AbstractServlet {
 
         var name =
                 getDataAccess().query("select name from user where id_user=?")
-                        .withParam(userId).runAs(String.class).get().get();
+                        .withParam(userId).collectAs(String.class).get().get();
         req.getSession().setAttribute("username", name);
 
         req.getRequestDispatcher("/jsp/index.jsp").forward(req, res);

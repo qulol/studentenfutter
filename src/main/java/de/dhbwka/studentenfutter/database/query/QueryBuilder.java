@@ -22,7 +22,7 @@ public class QueryBuilder {
         return this;
     }
 
-    public <T> QueryExecutor<T> runAs(Class<T> clazz) {
+    public <T> QueryExecutor<T> collectAs(Class<T> clazz) {
         return new QueryExecutor<>(createQuery(), new QueryResultEncoder<>(clazz));
     }
 
