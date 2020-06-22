@@ -12,15 +12,15 @@ import java.io.IOException;
 public abstract class AbstractServlet extends HttpServlet {
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
         try {
-            handleDoGet(req, resp);
+            handleDoGet(req, res);
         } catch (Exception e) {
             e.printStackTrace(); //log
-            if(resp.isCommitted()) {
+            if(res.isCommitted()) {
                 return;
             }
-            resp.sendRedirect("/error.html");
+            res.sendRedirect("/error.html");
         }
     }
 
@@ -30,15 +30,15 @@ public abstract class AbstractServlet extends HttpServlet {
     }
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
         try {
-            handleDoPost(req, resp);
+            handleDoPost(req, res);
         } catch (Exception e) {
             e.printStackTrace(); //log
-            if(resp.isCommitted()) {
+            if(res.isCommitted()) {
                return;
             }
-            resp.sendRedirect("/error.html");
+            res.sendRedirect("/error.html");
         }
     }
 

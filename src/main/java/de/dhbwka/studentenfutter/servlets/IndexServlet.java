@@ -18,13 +18,14 @@ public class IndexServlet extends AbstractServlet {
 
     @Override
     protected void handleDoGet(HttpServletRequest req, HttpServletResponse res) throws Exception {
-        var userId = "1"; //req.getParameter("userId");
-
+        var session = req.getSession();
+        var userId = session.getAttribute("userId");
 
         var name =
                 getDataAccess().query("select name from user where id_user=?")
                         .withParam(userId).collectAs(String.class).get().get();
-        req.getSession().setAttribute("username", name);
+
+        session.setAttribute("username", name);
 
         req.getRequestDispatcher("/jsp/index.jsp").forward(req, res);
     }
