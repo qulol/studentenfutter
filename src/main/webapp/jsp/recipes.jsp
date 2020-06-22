@@ -9,29 +9,29 @@
 <html lang="de">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="css/general_styling.css">
-    <link rel="stylesheet" href="fontawesome/css/all.css">
-    <script src="js/recipes.js"></script>
-    <link rel="icon" href="images/icons_logo/icon.png" type="image/png">
+    <link rel="stylesheet" href="../css/general_styling.css">
+    <link rel="stylesheet" href="../fontawesome/css/all.css">
+    <script src="../js/recipes.js"></script>
+    <link rel="icon" href="../images/icons_logo/icon.png" type="image/png">
     <title>Übersicht - Trail-Mix</title>
 </head>
 
 <body>
 <div class="wrapper" id="wrapper">
-    <img class="bg-image" src="images/bg/wood-wallpaper.jpg" alt="bg-image">
-    <a href="index.html"><img class="logo" src="images/icons_logo/logo.png" alt="logo"></a>
+    <img class="bg-image" src="../images/bg/wood-wallpaper.jpg" alt="bg-image">
+    <a href="index.jsp"><img class="logo" src="../images/icons_logo/logo.png" alt="logo"></a>
     <header>
         <div class="navbar">
-            <a href="login.html">Login</a>
-            <a href="recipes.html">Kategorien</a>
-            <a href="create_recipe.html ">Rezept hinzufügen</a>
-            <a href="shopping_list.html">Einkaufsliste</a>
+            <a href="login.jsp">Login</a>
+            <a href="recipes.jsp">Kategorien</a>
+            <a href="create_recipe.jsp">Rezept hinzufügen</a>
+            <a href="shopping_list.jsp">Einkaufsliste</a>
             <input type="search" class="search" id="search" placeholder="Suchbegriff eingeben"><label for="search"><i
                 class="fas fa-search"></i></label>
 
         </div>
         <a href="http://lieferando.de" target="_blank" title="PANIC - Lieferando ist dein Freund :) ">"<img class="panicbutton"
-                                                                                                            src="images/icons_logo/panicbutton.png"
+                                                                                                            src="../images/icons_logo/panicbutton.png"
                                                                                                             alt="PanicButtonImage"></a>
     </header>
 
@@ -49,9 +49,9 @@
 
     <div class="footer-content-wrapper">
         <footer class="footer-content-block">
-            <a href="faq.html">FAQ</a>
-            <a href="legal_notice.html">Impressum</a>
-            <a href="dataprotection.html">Datenschutz</a>
+            <a href="faq.jsp">FAQ</a>
+            <a href="legal_notice.jsp">Impressum</a>
+            <a href="dataprotection.jsp">Datenschutz</a>
         </footer>
     </div>
 </div>
