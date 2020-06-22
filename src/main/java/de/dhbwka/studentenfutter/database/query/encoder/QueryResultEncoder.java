@@ -14,16 +14,24 @@ public class QueryResultEncoder<T> implements IQueryResultEncoder<T> {
 
     //jdbc driver specific encoding
     private static final Map<Class<?>, IPropertyEncoder<?>> primitiveEncoders = Map.ofEntries(
+            Map.entry(boolean.class, ResultSet::getBoolean),
             Map.entry(Boolean.class, ResultSet::getBoolean),
+            Map.entry(byte.class, ResultSet::getByte),
             Map.entry(Byte.class, ResultSet::getByte),
+            Map.entry(short.class, ResultSet::getShort),
             Map.entry(Short.class, ResultSet::getShort),
+            Map.entry(int.class, ResultSet::getInt),
             Map.entry(Integer.class, ResultSet::getInt),
+            Map.entry(float.class, ResultSet::getFloat),
             Map.entry(Float.class, ResultSet::getFloat),
+            Map.entry(long.class, ResultSet::getLong),
             Map.entry(Long.class, ResultSet::getLong),
+            Map.entry(double.class, ResultSet::getDouble),
             Map.entry(Double.class, ResultSet::getDouble),
-            Map.entry(String.class, ResultSet::getString),
+            Map.entry(byte[].class, ResultSet::getBytes),
+            Map.entry(Byte[].class, ResultSet::getBytes),
             Map.entry(Date.class, ResultSet::getDate),
-            Map.entry(byte[].class, ResultSet::getBytes)
+            Map.entry(String.class, ResultSet::getString)
     );
 
     private final Class<T> clazz;
@@ -47,7 +55,7 @@ public class QueryResultEncoder<T> implements IQueryResultEncoder<T> {
                 var type = field.getType();
 
                 field.setAccessible(true); //reflection only
-                field.set(instance, encodePrimitive(result, type, index));
+                field.set(instance, encodePrimitiveUntyped(result, type, index));
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -63,8 +71,12 @@ public class QueryResultEncoder<T> implements IQueryResultEncoder<T> {
     private T encodeAsPrimitive(ResultSet result) throws SQLException {
         return encodePrimitive(result, clazz, 1);
     }
-
+    
     private <R> R encodePrimitive(ResultSet result, Class<R> clazz, int index) throws SQLException {
-        return clazz.cast(primitiveEncoders.get(clazz).encode(result, index));
+        return clazz.cast(encodePrimitiveUntyped(result, clazz, index));
+    }
+
+    private <R> Object encodePrimitiveUntyped(ResultSet result, Class<R> clazz, int index) throws SQLException {
+        return primitiveEncoders.get(clazz).encode(result, index);
     }
 }
