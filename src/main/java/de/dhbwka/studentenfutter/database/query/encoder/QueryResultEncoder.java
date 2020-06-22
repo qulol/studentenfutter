@@ -22,7 +22,8 @@ public class QueryResultEncoder<T> implements IQueryResultEncoder<T> {
             Map.entry(Long.class, ResultSet::getLong),
             Map.entry(Double.class, ResultSet::getDouble),
             Map.entry(String.class, ResultSet::getString),
-            Map.entry(Date.class, ResultSet::getDate)
+            Map.entry(Date.class, ResultSet::getDate),
+            Map.entry(byte[].class, ResultSet::getBytes)
     );
 
     private final Class<T> clazz;

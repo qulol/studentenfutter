@@ -22,7 +22,7 @@ public class IndexServlet extends AbstractServlet {
 
 
         var name =
-                getDataAccess().query("select name from asdfjk where id_user=?")
+                getDataAccess().query("select name from user where id_user=?")
                         .withParam(userId).collectAs(String.class).get().get();
         req.getSession().setAttribute("username", name);
 
