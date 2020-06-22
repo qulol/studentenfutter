@@ -12,8 +12,8 @@
     <a href="index.html"><img class="logo" src="images/icons_logo/logo.png" alt="logo"></a>
     <header>
         <div class="navbar">
-            <a href="recipes.html">Rezepte</a>
-            <a href="shopping_list.html">Einkaufsliste</a>
+            <a href="../recipes.html">Rezepte</a>
+            <a href="../shopping_list.html">Einkaufsliste</a>
             <input type="search" class="search" id="search" placeholder="Suchbegriff eingeben"><label for="search"><i
                 class="fas fa-search"></i></label>
         </div>
@@ -65,9 +65,9 @@
 
     <div class="footer-content-wrapper">
         <footer class="footer-content-block">
-            <a href="faq.html">FAQ</a>
-            <a href="legal_notice.html">Impressum</a>
-            <a href="dataprotection.html">Datenschutz</a>
+            <a href="../faq.html">FAQ</a>
+            <a href="../legal_notice.html">Impressum</a>
+            <a href="../dataprotection.html">Datenschutz</a>
         </footer>
     </div>
 </div>
