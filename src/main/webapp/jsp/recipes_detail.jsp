@@ -5,7 +5,7 @@
   Time: 18:35
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <html lang="de">
 <head>
     <meta charset="UTF-8">
@@ -19,21 +19,7 @@
 <body>
 <div class="wrapper" id="wrapper">
     <img class="bg-image" src="../images/bg/wood-wallpaper.jpg" alt="bg-image">
-    <a href="index.jsp"><img class="logo" src="../images/icons_logo/logo.png" alt="logo"></a>
-    <header>
-        <div class="navbar">
-            <a href="login.jsp">Login</a>
-            <a href="recipes.jsp">Kategorien</a>
-            <a href="create_recipe.jsp">Rezept hinzufügen</a>
-            <a href="shopping_list.jsp">Einkaufsliste</a>
-            <input type="search" class="search" id="search" placeholder="Suchbegriff eingeben"><label for="search"><i
-                class="fas fa-search"></i></label>
-
-        </div>
-        <a href="http://lieferando.de" target="_blank" title="PANIC - Lieferando ist dein Freund :) ">"<img class="panicbutton"
-                                                                                                            src="../images/icons_logo/panicbutton.png"
-                                                                                                            alt="PanicButtonImage"></a>
-    </header>
+    <jsp:include page="include/dynamic/header.jsp"/>
 
     <div class="regular-top-content-wrapper">
         <div class="regular-top-content-block black-bg" id="top-text">
@@ -95,13 +81,7 @@
         </div>
     </div>
 
-    <div class="footer-content-wrapper">
-        <footer class="footer-content-block">
-            <a href="faq.jsp">FAQ</a>
-            <a href="legal_notice.jsp">Impressum</a>
-            <a href="dataprotection.jsp">Datenschutz</a>
-        </footer>
-    </div>
+    <%@include file="include/static/footer.jsp"%>
 </div>
 
 </body>

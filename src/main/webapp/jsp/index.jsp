@@ -1,5 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ page contentType="text/html; charset=UTF-8" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
     <link rel="stylesheet" type="text/css" href="../css/general_styling.css">
@@ -10,8 +10,8 @@
 </head>
 <body class="index-body">
 <div class="wrapper" id="wrapper">
-    <jsp:include page="include/dynamic/header.jsp"/>
     <img class="bg-image" src="../images/bg/index-top.jpg" alt="bg-image">
+    <jsp:include page="include/dynamic/header.jsp"/>
     <div class="index-top-content-wrapper">
         <div class="index-top-content-block" id="topContentBlock">
             <h2>Do it yourself!</h2>
@@ -52,13 +52,7 @@
         </div>
     </div>
 
-    <div class="footer-content-wrapper">
-        <footer class="footer-content-block">
-            <a href="faq.jsp">FAQ</a>
-            <a href="legal_notice.jsp">Impressum</a>
-            <a href="dataprotection.jsp">Datenschutz</a>
-        </footer>
-    </div>
+    <%@include file="include/static/footer.jsp"%>
 </div>
 
 </body>

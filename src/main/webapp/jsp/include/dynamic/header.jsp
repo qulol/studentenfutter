@@ -10,12 +10,13 @@
 <a href="${pageContext.request.contextPath}/index"><img class="logo" src="../../../images/icons_logo/logo.png" alt="logo"></a>
 <header>
     <div class="navbar">
+        <c:set var="isLogged" value="${sessionScope.user != null}" scope="page"/>
         <c:choose>
-            <c:when test="${sessionScope.user != null}">
+            <c:when test="${isLogged}">
                 <a href="${pageContext.request.contextPath}/profile">Profil</a>
             </c:when>
             <c:otherwise>
-                <a href="${pageContext.request.contextPath}/login">Login</a>
+                <a href="${pageContext.request.contextPath}/login">Anmelden</a>
             </c:otherwise>
         </c:choose>
         <a href="../../recipes.jsp">Rezepte</a>
