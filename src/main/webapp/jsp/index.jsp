@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html; charset=UTF-8" %>
 <html>
 <head>
@@ -9,19 +10,7 @@
 </head>
 <body class="index-body">
 <div class="wrapper" id="wrapper">
-    <a href="index.jsp"><img class="logo" src="../images/icons_logo/logo.png" alt="logo"></a>
-    <header>
-        <div class="navbar">
-            <a href="recipes.jsp">Rezepte</a>
-            <a href="shopping_list.jsp">Einkaufsliste</a>
-            <input type="search" class="search" id="search" placeholder="Suchbegriff eingeben"><label for="search"><i
-                class="fas fa-search"></i></label>
-        </div>
-        <a href="http://lieferando.de" target="_blank" title="PANIC - Lieferando ist dein Freund :) ">"<img
-                class="panicbutton"
-                src="../images/icons_logo/panicbutton.png"
-                alt="PanicButtonImage"></a>
-    </header>
+    <jsp:include page="include/dynamic/header.jsp"/>
     <img class="bg-image" src="../images/bg/index-top.jpg" alt="bg-image">
     <div class="index-top-content-wrapper">
         <div class="index-top-content-block" id="topContentBlock">

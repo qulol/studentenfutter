@@ -29,18 +29,18 @@ public class RegisterServlet extends AbstractServlet {
 
         if(userExists) {
             res.getWriter().print("User already exists. Please login."); //Todo
-            req.getRequestDispatcher("/register.html").include(req, res);
+            req.getRequestDispatcher("/jsp/register.jsp").include(req, res);
             return;
         }
 
         if(!inputPassword.equals(inputPasswordRepeat)) {
             res.getWriter().print("Passwords don't match."); //Todo
-            req.getRequestDispatcher("/register.html").include(req, res);
+            req.getRequestDispatcher("/jsp/register.jsp").include(req, res);
             return;
         }
 
         if (addUser(inputUsername, inputPassword)) {
-            res.sendRedirect("login.html");
+            res.sendRedirect("/login");
         }
     }
 

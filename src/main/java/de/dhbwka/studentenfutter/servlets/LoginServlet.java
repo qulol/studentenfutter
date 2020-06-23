@@ -1,6 +1,7 @@
 package de.dhbwka.studentenfutter.servlets;
 
-import de.dhbwka.studentenfutter.bean.UserPasswordBean;
+import de.dhbwka.studentenfutter.model.afe.UserPasswordBean;
+import de.dhbwka.studentenfutter.model.bean.UserBean;
 
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -12,7 +13,7 @@ public class LoginServlet extends AbstractServlet {
 
     @Override
     protected void handleDoGet(HttpServletRequest req, HttpServletResponse res) throws Exception {
-        res.sendRedirect("jsp/login.jsp");
+        res.sendRedirect("/jsp/login.jsp");
     }
 
     @Override
@@ -31,14 +32,14 @@ public class LoginServlet extends AbstractServlet {
         if(result.isEmpty() || !result.get().getPassword().equals(inputPassword)) {
             onNoSuccess();
             req.getSession().setAttribute("login_error", true); //todo beans und so
-            res.sendRedirect("jsp/login.jsp");
+            res.sendRedirect("/login");
             return;
         }
 
         HttpSession session = req.getSession();
-        session.setAttribute("userId", result.get().getUserId());
+        session.setAttribute("user", new UserBean());
         session.setMaxInactiveInterval(60 * 60); // Session expires after 60 minutes
-        res.sendRedirect("jsp/index.jsp");
+        res.sendRedirect("/index");
     }
 
     public void onNoSuccess() {

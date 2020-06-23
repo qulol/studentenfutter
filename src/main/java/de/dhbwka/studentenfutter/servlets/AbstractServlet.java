@@ -20,7 +20,7 @@ public abstract class AbstractServlet extends HttpServlet {
             if(res.isCommitted()) {
                 return;
             }
-            res.sendRedirect("/error.html");
+            res.sendRedirect("/jsp/error.jsp");
         }
     }
 
@@ -38,7 +38,7 @@ public abstract class AbstractServlet extends HttpServlet {
             if(res.isCommitted()) {
                return;
             }
-            res.sendRedirect("/error.html");
+            res.sendRedirect("/jsp/error.jsp");
         }
     }
 
