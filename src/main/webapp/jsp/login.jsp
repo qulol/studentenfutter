@@ -5,7 +5,8 @@
   Time: 18:35
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html lang="de">
 <head>
     <meta charset="UTF-8">
@@ -39,9 +40,13 @@
         <div class="regular-top-content-block-text" id="top-text">
             <h1 class="centere">Login</h1>
             <div class="login">
-                <form action="login" method="post">
+                <form action="${pageContext.request.contextPath}/login" method="post">
                     <label for="username">Username:</label><br>
                     <input type="text" id="username" name="username" value=""><br>
+                    <c:if test="${sessionScope.get(\"username_error\")}">
+                        ${sessionScope.get(\"username_error\")}
+                        <br>
+                    </c:if>
                     <label for="password">Password:</label><br>
                     <input type="password" id="password" name="password" value=""><br><br>
                     <input type="submit" value="Login"><br><br>

@@ -17,15 +17,15 @@ public class RegisterServlet extends AbstractServlet {
 
     @Override
     protected void handleDoPost(HttpServletRequest req, HttpServletResponse res) throws Exception {
-        String enteredUsername = req.getParameter("username");
-        String enteredPassword = req.getParameter("password");
-        String passwordRepeat = req.getParameter("password_repeat");
+        String inputUsername = req.getParameter("username");
+        String inputPassword = req.getParameter("password");
+        String inputPasswordRepeat = req.getParameter("password_repeat");
 
         res.setContentType("text/html");
 
         var userExists =
                 getDataAccess().query("select id_user from user where name=?")
-                .withParam(enteredUsername).collectAs(String.class).get().isPresent();
+                .withParam(inputUsername).collectAs(String.class).get().isPresent();
 
         if(userExists) {
             res.getWriter().print("User already exists. Please login."); //Todo
@@ -33,13 +33,13 @@ public class RegisterServlet extends AbstractServlet {
             return;
         }
 
-        if(!enteredPassword.equals(passwordRepeat)) {
+        if(!inputPassword.equals(inputPasswordRepeat)) {
             res.getWriter().print("Passwords don't match."); //Todo
             req.getRequestDispatcher("/register.html").include(req, res);
             return;
         }
 
-        if (addUser(enteredUsername, enteredPassword)) {
+        if (addUser(inputUsername, inputPassword)) {
             res.sendRedirect("login.html");
         }
     }

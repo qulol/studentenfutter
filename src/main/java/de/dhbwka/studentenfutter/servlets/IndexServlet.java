@@ -6,7 +6,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 
-@WebServlet(urlPatterns = {"/index"})
+@WebServlet(urlPatterns = "/index")
 @MultipartConfig //need for retrieving multipart/form-data
 public class IndexServlet extends AbstractServlet {
 
