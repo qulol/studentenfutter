@@ -10,20 +10,21 @@
 <a href="${pageContext.request.contextPath}/index"><img class="logo" src="../../../images/icons_logo/logo.png" alt="logo"></a>
 <header>
     <div class="navbar">
+        <c:set var="contextPath" value="${pageContext.request.contextPath}" scope="page"/>
         <c:set var="isLogged" value="${sessionScope.user != null}" scope="page"/>
         <c:choose>
             <c:when test="${isLogged}">
-                <a href="${pageContext.request.contextPath}/profile">Profil</a>
+                <a href="${contextPath}/profile">Profil</a>
             </c:when>
             <c:otherwise>
-                <a href="${pageContext.request.contextPath}/login">Anmelden</a>
+                <a href="${contextPath}/login">Anmelden</a>
             </c:otherwise>
         </c:choose>
-        <a href="${pageContext.request.contextPath}/jsp/recipes.jsp">Rezepte</a>
-        <a href="${pageContext.request.contextPath}/jsp/create_recipe.jsp">Rezept hinzufügen</a>
-        <a href="${pageContext.request.contextPath}/jsp/shopping_list.jsp">Einkaufsliste</a>
+        <a href="${contextPath}/jsp/recipes.jsp">Rezepte</a>
+        <a href="${contextPath}/jsp/create_recipe.jsp">Rezept hinzufügen</a>
+        <a href="${contextPath}/jsp/shopping_list.jsp">Einkaufsliste</a>
         <c:if test="${isLogged}">
-            <a href="${pageContext.request.contextPath}/logout">Abmelden</a>
+            <a href="${contextPath}/logout">Abmelden</a>
         </c:if>
         <input type="search" class="search" id="search" placeholder="Suchbegriff eingeben"><label for="search"><i
             class="fas fa-search"></i></label>
