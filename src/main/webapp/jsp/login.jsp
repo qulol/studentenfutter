@@ -43,8 +43,8 @@
                 <form action="${pageContext.request.contextPath}/login" method="post">
                     <label for="username">Username:</label><br>
                     <input type="text" id="username" name="username" value=""><br>
-                    <c:if test="${sessionScope.get(\"username_error\")}">
-                        ${sessionScope.get(\"username_error\")}
+                    <c:if test="${sessionScope.username_error != null}">
+                        ${sessionScope.username_error}
                         <br>
                     </c:if>
                     <label for="password">Password:</label><br>

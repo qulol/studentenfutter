@@ -30,7 +30,7 @@ public class LoginServlet extends AbstractServlet {
 
         if(result.isEmpty() || !result.get().getPassword().equals(inputPassword)) {
             onNoSuccess();
-            //req.getSession().setAttribute("username_error", "käsekuchen");
+            req.getSession().setAttribute("username_error", "user ist nicht vorhanden"); //todo beans und so
             res.sendRedirect("jsp/login.jsp");
             return;
         }
