@@ -43,12 +43,12 @@
                 <form action="${pageContext.request.contextPath}/login" method="post">
                     <label for="username">Username:</label><br>
                     <input type="text" id="username" name="username" value=""><br>
-                    <c:if test="${sessionScope.username_error != null}">
-                        ${sessionScope.username_error}
-                        <br>
-                    </c:if>
                     <label for="password">Password:</label><br>
-                    <input type="password" id="password" name="password" value=""><br><br>
+                    <input type="password" id="password" name="password" value=""><br>
+                    <c:if test="${sessionScope.login_error != null}">
+                        Falscher Benutzername/Passwort
+                        <br>
+                    </c:if><br>
                     <input type="submit" value="Login"><br><br>
                     <a href="register.jsp">Du bist noch nicht Registriert? Dann klicke Hier!</a><br>
                 </form>
