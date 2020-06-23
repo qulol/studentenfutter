@@ -22,6 +22,9 @@
         <a href="../../recipes.jsp">Rezepte</a>
         <a href="../../create_recipe.jsp">Rezept hinzufügen</a>
         <a href="../../shopping_list.jsp">Einkaufsliste</a>
+        <c:if test="${isLogged}">
+            <a href="${pageContext.request.contextPath}/logout">Abmelden</a>
+        </c:if>
         <input type="search" class="search" id="search" placeholder="Suchbegriff eingeben"><label for="search"><i
             class="fas fa-search"></i></label>
     </div>
