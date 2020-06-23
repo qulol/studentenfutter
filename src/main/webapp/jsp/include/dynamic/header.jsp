@@ -20,7 +20,7 @@
                 <a href="${contextPath}/login">Anmelden</a>
             </c:otherwise>
         </c:choose>
-        <a href="${contextPath}/jsp/categories.jsp">Rezepte</a>
+        <a href="${contextPath}/jsp/categories.jsp">Kategorien</a>
         <a href="${contextPath}/jsp/create_recipe.jsp">Rezept hinzufügen</a>
         <a href="${contextPath}/jsp/shopping_list.jsp">Einkaufsliste</a>
         <c:if test="${isLogged}">
