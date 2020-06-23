@@ -1,5 +1,5 @@
 //
-// fetch('./recipes.jsp',
+// fetch('./categories.jsp',
 //     {
 //         method: 'get',
 //         headers: {
@@ -84,7 +84,7 @@ function buildRecipesOverview(recipeOverviewObject) {
 
         recipesOverview +=
 
-            "<a href='../jsp/recipes_detail.jsp#ingredientsTab'>" +
+            "<a href='../jsp/recipe_detail.jsp#ingredientsTab'>" +
             "<div class='single-recipe-block'><img src='" + currentRecipe.image +"' id='recipe-image'>" +
             "<h5>" + currentRecipe.headline + "</h5></div></a>"
     }
