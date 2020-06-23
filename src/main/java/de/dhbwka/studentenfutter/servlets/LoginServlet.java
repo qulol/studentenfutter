@@ -13,7 +13,7 @@ public class LoginServlet extends AbstractServlet {
 
     @Override
     protected void handleDoGet(HttpServletRequest req, HttpServletResponse res) throws Exception {
-        res.sendRedirect("/jsp/login.jsp");
+        res.sendRedirect(req.getContextPath().concat("/jsp/login.jsp"));
     }
 
     @Override
@@ -30,19 +30,14 @@ public class LoginServlet extends AbstractServlet {
                 .get();
 
         if(result.isEmpty() || !result.get().getPassword().equals(inputPassword)) {
-            onNoSuccess();
             req.setAttribute("login_error", true); //todo beans und so
-            req.getRequestDispatcher("/jsp/login.jsp").forward(req, res);
+            req.getRequestDispatcher(req.getContextPath().concat("/jsp/login.jsp")).forward(req, res);
             return;
         }
 
         HttpSession session = req.getSession();
         session.setAttribute("user", new UserBean());
         session.setMaxInactiveInterval(60 * 60); // Session expires after 60 minutes
-        res.sendRedirect("/index");
-    }
-
-    public void onNoSuccess() {
-
+        res.sendRedirect(req.getContextPath().concat("/index"));
     }
 }
