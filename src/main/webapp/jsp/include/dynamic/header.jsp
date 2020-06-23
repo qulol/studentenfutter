@@ -19,9 +19,9 @@
                 <a href="${pageContext.request.contextPath}/login">Anmelden</a>
             </c:otherwise>
         </c:choose>
-        <a href="../../recipes.jsp">Rezepte</a>
-        <a href="../../create_recipe.jsp">Rezept hinzufügen</a>
-        <a href="../../shopping_list.jsp">Einkaufsliste</a>
+        <a href="${pageContext.request.contextPath}/jsp/recipes.jsp">Rezepte</a>
+        <a href="${pageContext.request.contextPath}/jsp/create_recipe.jsp">Rezept hinzufügen</a>
+        <a href="${pageContext.request.contextPath}/jsp/shopping_list.jsp">Einkaufsliste</a>
         <c:if test="${isLogged}">
             <a href="${pageContext.request.contextPath}/logout">Abmelden</a>
         </c:if>
