@@ -11,7 +11,7 @@ public class RegisterServlet extends AbstractServlet {
 
     @Override
     protected void handleDoGet(HttpServletRequest req, HttpServletResponse res) throws Exception {
-        req.getRequestDispatcher("/jsp/register.jsp").forward(req, res);
+        req.getRequestDispatcher(req.getContextPath().concat("/jsp/register.jsp")).forward(req, res);
     }
 
     @Override
@@ -25,19 +25,19 @@ public class RegisterServlet extends AbstractServlet {
                 .withParam(inputUsername).collectAs(Integer.class).get().isPresent();
 
         if(userExists) {
-            res.getWriter().print("User already exists. Please login."); //Todo
-            req.getRequestDispatcher("/jsp/register.jsp").include(req, res);
+            req.setAttribute("username_exists_error", true); //todo beans und so
+            req.getRequestDispatcher(req.getContextPath().concat("/jsp/register.jsp")).include(req, res);
             return;
         }
 
         if(!inputPassword.equals(inputPasswordRepeat)) {
-            res.getWriter().print("Passwords don't match."); //Todo
-            req.getRequestDispatcher("/jsp/register.jsp").include(req, res);
+            req.setAttribute("password_repeat_error", true); //todo beans und so
+            req.getRequestDispatcher(req.getContextPath().concat("/jsp/register.jsp")).include(req, res);
             return;
         }
 
         addUser(inputUsername, inputPassword);
-        res.sendRedirect("/login");
+        res.sendRedirect(req.getContextPath().concat("/login"));
     }
 
     private void addUser(String username, String password) throws SQLException {

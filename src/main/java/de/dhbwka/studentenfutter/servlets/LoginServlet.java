@@ -1,6 +1,5 @@
 package de.dhbwka.studentenfutter.servlets;
 
-import de.dhbwka.studentenfutter.model.afe.UserPasswordBean;
 import de.dhbwka.studentenfutter.model.bean.UserBean;
 
 import javax.servlet.annotation.WebServlet;
