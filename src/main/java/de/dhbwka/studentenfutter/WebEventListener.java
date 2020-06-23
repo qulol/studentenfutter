@@ -39,7 +39,7 @@ public class WebEventListener implements ServletContextListener,
 
         try {
             connection.onLoad();
-        } catch (IOException e) {
+        } catch (IOException | SQLException e) {
             e.printStackTrace();
         }
 
