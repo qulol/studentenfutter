@@ -23,13 +23,13 @@ public class LoginServlet extends AbstractServlet {
 
         res.setContentType("text/html");
 
-        var result = getDataAccess()
-                .query("select id_user, password from password where id_user in (select id_user from user where name=?)")
+        var password = getDataAccess()
+                .query("select password from user where name=?")
                 .withParam(inputUsername)
-                .collectAs(UserPasswordBean.class)
+                .collectAs(String.class)
                 .get();
 
-        if(result.isEmpty() || !result.get().getPassword().equals(inputPassword)) {
+        if(password.isEmpty() || !password.get().equals(inputPassword)) {
             req.setAttribute("login_error", true); //todo beans und so
             req.getRequestDispatcher(req.getContextPath().concat("/jsp/login.jsp")).forward(req, res);
             return;

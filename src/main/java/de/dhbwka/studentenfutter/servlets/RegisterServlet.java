@@ -1,7 +1,5 @@
 package de.dhbwka.studentenfutter.servlets;
 
-import de.dhbwka.studentenfutter.database.DatabaseAccess;
-
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -13,6 +11,7 @@ public class RegisterServlet extends AbstractServlet {
 
     @Override
     protected void handleDoGet(HttpServletRequest req, HttpServletResponse res) throws Exception {
+        req.getRequestDispatcher("/jsp/register.jsp").forward(req, res);
     }
 
     @Override
@@ -21,11 +20,9 @@ public class RegisterServlet extends AbstractServlet {
         String inputPassword = req.getParameter("password");
         String inputPasswordRepeat = req.getParameter("password_repeat");
 
-        res.setContentType("text/html");
-
         var userExists =
                 getDataAccess().query("select id_user from user where name=?")
-                .withParam(inputUsername).collectAs(String.class).get().isPresent();
+                .withParam(inputUsername).collectAs(Integer.class).get().isPresent();
 
         if(userExists) {
             res.getWriter().print("User already exists. Please login."); //Todo
@@ -39,27 +36,15 @@ public class RegisterServlet extends AbstractServlet {
             return;
         }
 
-        if (addUser(inputUsername, inputPassword)) {
-            res.sendRedirect("/login");
-        }
+        addUser(inputUsername, inputPassword);
+        res.sendRedirect("/login");
     }
 
-    private boolean addUser(String username, String password) throws SQLException {
-        DatabaseAccess access = getDataAccess();
-
-        access.query("insert into user (name, creation_date) values (?, ?)")
+    private void addUser(String username, String password) throws SQLException {
+        getDataAccess().query("insert into user (name, password, creation_date) values (?, ?, ?)")
                 .withParam(username)
+                .withParam(password)
                 .withParam(new Timestamp(System.currentTimeMillis()))
                 .run();
-
-        var userId = access.query("select id_user from user where name=?")
-                .withParam(username)
-                .collectAs(Integer.class).get().get();
-
-        access.query("insert into password (id_user, password) values (?, ?)")
-                .withParam(userId)
-                .withParam(password)
-                .run();
-        return true;
     }
 }

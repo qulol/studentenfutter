@@ -36,7 +36,7 @@
                         <br>
                     </c:if><br>
                     <input type="submit" value="Login"><br><br>
-                    <a href="register.jsp">Du bist noch nicht Registriert? Dann klicke Hier!</a><br>
+                    <a href="${pageContext.request.contextPath}/register">Du bist noch nicht Registriert? Dann klicke Hier!</a><br>
                 </form>
             </div>
         </div>
