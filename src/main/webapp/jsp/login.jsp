@@ -31,10 +31,14 @@
                     <input type="text" id="username" name="username" value=""><br>
                     <label for="password">Password:</label><br>
                     <input type="password" id="password" name="password" value=""><br>
-                    <c:if test="${requestScope.login_error != null}">
-                        Falscher Benutzername/Passwort
-                        <br>
-                    </c:if><br>
+                    <c:choose>
+                        <c:when test="${requestScope.login_error != null}">
+                            Falscher Benutzername/Passwort
+                        </c:when>
+                        <c:when test="${requestScope.register_success != null}">
+                            Registierung erfolgreich
+                        </c:when>
+                    </c:choose><br>
                     <input type="submit" value="Login"><br><br>
                     <a href="${pageContext.request.contextPath}/register">Du bist noch nicht Registriert? Dann klicke Hier!</a><br>
                 </form>

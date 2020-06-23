@@ -26,18 +26,19 @@ public class RegisterServlet extends AbstractServlet {
 
         if(userExists) {
             req.setAttribute("username_exists_error", true); //todo beans und so
-            req.getRequestDispatcher(req.getContextPath().concat("/jsp/register.jsp")).include(req, res);
+            req.getRequestDispatcher(req.getContextPath().concat("/jsp/register.jsp")).forward(req, res);
             return;
         }
 
         if(!inputPassword.equals(inputPasswordRepeat)) {
             req.setAttribute("password_repeat_error", true); //todo beans und so
-            req.getRequestDispatcher(req.getContextPath().concat("/jsp/register.jsp")).include(req, res);
+            req.getRequestDispatcher(req.getContextPath().concat("/jsp/register.jsp")).forward(req, res);
             return;
         }
 
         addUser(inputUsername, inputPassword);
-        res.sendRedirect(req.getContextPath().concat("/login"));
+        req.setAttribute("register_success", true);
+        req.getRequestDispatcher(req.getContextPath().concat("/jsp/login.jsp")).forward(req, res);
     }
 
     private void addUser(String username, String password) throws SQLException {
