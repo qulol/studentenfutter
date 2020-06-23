@@ -31,8 +31,8 @@ public class LoginServlet extends AbstractServlet {
 
         if(result.isEmpty() || !result.get().getPassword().equals(inputPassword)) {
             onNoSuccess();
-            req.getSession().setAttribute("login_error", true); //todo beans und so
-            res.sendRedirect("/login");
+            req.setAttribute("login_error", true); //todo beans und so
+            req.getRequestDispatcher("/jsp/login.jsp").forward(req, res);
             return;
         }
 

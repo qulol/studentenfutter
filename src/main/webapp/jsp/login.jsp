@@ -31,7 +31,7 @@
                     <input type="text" id="username" name="username" value=""><br>
                     <label for="password">Password:</label><br>
                     <input type="password" id="password" name="password" value=""><br>
-                    <c:if test="${sessionScope.login_error != null}">
+                    <c:if test="${requestScope.login_error != null}">
                         Falscher Benutzername/Passwort
                         <br>
                     </c:if><br>
