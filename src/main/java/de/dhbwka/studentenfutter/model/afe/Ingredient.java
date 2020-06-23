@@ -1,4 +1,4 @@
-package de.dhbwka.studentenfutter.bean;
+package de.dhbwka.studentenfutter.model.afe;
 
 public class Ingredient {
     private String value;

@@ -1,4 +1,4 @@
-package de.dhbwka.studentenfutter.bean;
+package de.dhbwka.studentenfutter.model.afe;
 
 import de.dhbwka.studentenfutter.database.query.QueryResult;
 
