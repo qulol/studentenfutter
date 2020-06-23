@@ -6,7 +6,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 
-@WebServlet(urlPatterns = {"/index"})
+@WebServlet(urlPatterns = "/index")
 @MultipartConfig //need for retrieving multipart/form-data
 public class IndexServlet extends AbstractServlet {
 
@@ -18,15 +18,6 @@ public class IndexServlet extends AbstractServlet {
 
     @Override
     protected void handleDoGet(HttpServletRequest req, HttpServletResponse res) throws Exception {
-        var session = req.getSession();
-        var userId = session.getAttribute("userId");
-
-        var name =
-                getDataAccess().query("select name from user where id_user=?")
-                        .withParam(userId).collectAs(String.class).get().get();
-
-        session.setAttribute("username", name);
-
         req.getRequestDispatcher("/jsp/index.jsp").forward(req, res);
     }
 }

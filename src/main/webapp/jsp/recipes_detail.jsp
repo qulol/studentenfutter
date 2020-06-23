@@ -5,41 +5,27 @@
   Time: 18:35
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <html lang="de">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="css/general_styling.css">
-    <link rel="stylesheet" href="fontawesome/css/all.css">
-    <script src="js/recipes_detail.js"></script>
-    <link rel="icon" href="images/icons_logo/icon.png" type="image/png">
+    <link rel="stylesheet" href="../css/general_styling.css">
+    <link rel="stylesheet" href="../fontawesome/css/all.css">
+    <script src="../js/recipes_detail.js"></script>
+    <link rel="icon" href="../images/icons_logo/icon.png" type="image/png">
     <title>Details - Trail-Mix</title>
 </head>
 
 <body>
 <div class="wrapper" id="wrapper">
-    <img class="bg-image" src="images/bg/wood-wallpaper.jpg" alt="bg-image">
-    <a href="index.html"><img class="logo" src="images/icons_logo/logo.png" alt="logo"></a>
-    <header>
-        <div class="navbar">
-            <a href="login.html">Login</a>
-            <a href="recipes.html">Kategorien</a>
-            <a href="create_recipe.html ">Rezept hinzufügen</a>
-            <a href="shopping_list.html">Einkaufsliste</a>
-            <input type="search" class="search" id="search" placeholder="Suchbegriff eingeben"><label for="search"><i
-                class="fas fa-search"></i></label>
-
-        </div>
-        <a href="http://lieferando.de" target="_blank" title="PANIC - Lieferando ist dein Freund :) ">"<img class="panicbutton"
-                                                                                                            src="images/icons_logo/panicbutton.png"
-                                                                                                            alt="PanicButtonImage"></a>
-    </header>
+    <img class="bg-image" src="../images/bg/wood-wallpaper.jpg" alt="bg-image">
+    <jsp:include page="include/dynamic/header.jsp"/>
 
     <div class="regular-top-content-wrapper">
         <div class="regular-top-content-block black-bg" id="top-text">
             <h1 class="centered" id="headline">Überschrift Rezept</h1>
             <div class="recipe-detail-image-wrapper">
-                <img id="recipe-image-detail" src="images/foodpictures/noodles.jpg" alt="recipe-image-detail">
+                <img id="recipe-image-detail" src="../images/foodpictures/noodles.jpg" alt="recipe-image-detail">
             </div>
             <div class="recipe-detail">
 
@@ -95,13 +81,7 @@
         </div>
     </div>
 
-    <div class="footer-content-wrapper">
-        <footer class="footer-content-block">
-            <a href="faq.html">FAQ</a>
-            <a href="legal_notice.html">Impressum</a>
-            <a href="dataprotection.html">Datenschutz</a>
-        </footer>
-    </div>
+    <%@include file="include/static/footer.jsp"%>
 </div>
 
 </body>

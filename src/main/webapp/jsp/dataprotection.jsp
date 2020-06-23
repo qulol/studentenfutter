@@ -5,30 +5,19 @@
   Time: 18:35
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="css/general_styling.css">
-    <link rel="stylesheet" href="fontawesome/css/all.css">
-    <link rel="icon" href="images/icons_logo/icon.png" type="image/png">
+    <link rel="stylesheet" href="../css/general_styling.css">
+    <link rel="stylesheet" href="../fontawesome/css/all.css">
+    <link rel="icon" href="../images/icons_logo/icon.png" type="image/png">
     <title>Datenschutz - Trail-Mix</title>
 </head>
 
 <body>
 <div class="wrapper" id="wrapper">
-    <img class="bg-image" src="images/bg/wood-wallpaper.jpg" alt="bg-image">
-    <a href="index.html"><img class="logo" src="images/icons_logo/logo.png" alt="logo"></a>
-    <header>
-        <div class="navbar">
-            <a href="login.html">Login</a>
-            <a href="recipes.html">Kategorien</a>
-            <a href="create_recipe.html ">Rezept hinzufügen</a>
-            <a href="shopping_list.html">Einkaufsliste</a>
-            <input type="search" class="search" id="search" placeholder="Suchbegriff eingeben"><label for="search"><i
-                class="fas fa-search"></i></label>
-        </div>
-    </header>
+    <img class="bg-image" src="../images/bg/wood-wallpaper.jpg" alt="bg-image">
+    <jsp:include page="include/dynamic/header.jsp"/>
 
     <div class="regular-top-content-wrapper">
 
@@ -39,7 +28,7 @@
                 <p>
                     Diese Datenschutzerklärung soll die Nutzer dieser Website über die Art, den Umfang und den Zweck der
                     Erhebung und Verwendung personenbezogener Daten durch den Websitebetreiber <a
-                        href="legal_notice.html">[
+                        href="legal_notice.jsp">[
                     Hier geht's zum Impressum ]</a>
                     informieren.
                 </p>
@@ -48,17 +37,11 @@
                     (ungesunden) Cookies oder ähnliche Datenbomben <i class="far fa-smile"></i>
                 </p>
             </div>
-            <img src="images/icons_logo/cookies.png" id="cookie-image" alt="cookie-image">
+            <img src="../images/icons_logo/cookies.png" id="cookie-image" alt="cookie-image">
         </div>
     </div>
 
-    <div class="footer-content-wrapper">
-        <footer class="footer-content-block">
-            <a href="faq.html">FAQ</a>
-            <a href="legal_notice.html">Impressum</a>
-            <a href="dataprotection.html">Datenschutz</a>
-        </footer>
-    </div>
+    <%@include file="include/static/footer.jsp"%>
 </div>
 </body>
 </html>
