@@ -305,7 +305,7 @@ header {
 }
 
 .firstStep, .secondStep {
-    padding-top: 1%;
+    padding-top: 1.4%;
     position: static;
     width: 30.5%;
     height: 100%;
@@ -423,12 +423,24 @@ header {
 .single-recipe-block {
     width: 100%;
     position: static;
+    height: 46%;
+    text-align: center;
+    float: left;
+}
+
+.single-recipe-block a:hover {
+    box-shadow: -100px -100px 25px rgba(255, 0, 0, 1);
+}
+
+.categories-block {
+    width: 100%;
+    position: static;
     height: 100%;
     text-align: center;
     float: left;
 }
 
-.single-recipe-block a {
+.categories-block a {
     width: 30%;
     margin: 2% 1% 3% 2%;
     background-color: white;
@@ -439,14 +451,11 @@ header {
     display: inline-block;
 }
 
-.single-recipe-block a:hover {
+.categories-block a:hover {
     box-shadow: 0 0 25px rgba(255, 0, 0, 1);
 }
 
-.filtered-list {
-    overflow-y: scroll;
-    margin: 1% 0 0 0;
-}
+
 
 .recipe-filtered-list {
     float: left;
@@ -490,7 +499,7 @@ header {
 }
 
 .recipe-list-headline {
-    height: 10%;
+    height: 4%;
     width: 96%;
     display: inline-flex;
     position: relative;

@@ -32,13 +32,14 @@ window.addEventListener('DOMContentLoaded', () => {
     secondStep.style.display = "none";
     document.body.style.setProperty('height', windowHeight + "px");
     document.body.style.setProperty('width', windowWidth + "px");
-});
 
-window.onscroll = function () {
-    currentYPosition = document.body.scrollTop;
-    hideTopText(currentYPosition);
-    highlightIcons(currentYPosition);
-}
+    window.onscroll = function () {
+        currentYPosition = document.body.scrollTop;
+        hideTopText(currentYPosition);
+        highlightIcons(currentYPosition);
+    }
+
+});
 
 hideTopText = function (currentPosition) {
     if (!topText) {

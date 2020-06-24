@@ -11,9 +11,9 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../css/general_styling.css">
     <link rel="stylesheet" href="../fontawesome/css/all.css">
-    <script src="../js/recipes.js"></script>
+    <script src="../js/categories.js"></script>
     <link rel="icon" href="../images/icons_logo/icon.png" type="image/png">
-    <title>Übersicht - Trail-Mix</title>
+    <title>Rezept-Kategorien - Trail-Mix</title>
 </head>
 
 <body>
@@ -23,10 +23,10 @@
 
     <div class="regular-top-content-wrapper">
         <div class="regular-top-content-block" id="top-text">
-            <h1 class="centered">Übersicht unserer studentenfreundlichen Rezepte</h1>
+            <h1 class="centered">Rezept-Kategorien</h1>
             <div class="recipes-overview-wrapper">
-                <div class="single-recipe-block">
-                    <div class="single-recipe-block" id="recipes">
+                <div class="categories-block">
+                    <div class="categories-block" id="recipes">
                     </div>
                 </div>
             </div>

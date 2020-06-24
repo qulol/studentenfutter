@@ -11,9 +11,9 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../css/general_styling.css">
     <link rel="stylesheet" href="../fontawesome/css/all.css">
-    <script rel="script" src="../js/recipes.js"></script>
+    <script rel="script" src="../js/recipes_list.js"></script>
     <link rel="icon" href="../images/icons_logo/icon.png" type="image/png">
-    <title>Übersicht - Trail-Mix</title>
+    <title>Mittagessen - Trail-Mix</title>
 </head>
 <body>
 <div class="wrapper" id="wrapper">
@@ -24,22 +24,17 @@
     <div class="regular-top-content-wrapper">
         <div class="regular-top-content-block" id="top-text">
             <h1 class="centered">Übersicht unserer studentenfreundlichen Rezepte</h1>
-            <div class="recipes-overview-wrapper">
-                <div class="single-recipe-block filtered-list">
+            <div class="recipes-overview-wrapper scrollbar">
 
-                    <div id="recipes-filtered-list">
-                    </div>
-
+                <div id="recipes-filtered-list">
                 </div>
+
             </div>
         </div>
     </div>
 
-    <div class="footer-content-wrapper">
+        <%@include file="include/static/footer.jsp" %>
 
-        <%@include file="include/static/footer.jsp"%>
-
-    </div>
 </div>
 
 </body>

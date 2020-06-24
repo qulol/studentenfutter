@@ -1,29 +1,39 @@
-var recipeOverviewObject = {
+var recipeListObject = {
     recipes: [
         {
             id: 1,
             headline: "Einfacher Pfannkuchen",
             image: "../images/foodpictures/pfannkuchen.jpg",
+            text: "blablablabla",
+            author: "Muh",
         },
         {
             id: 2,
             headline: "Kartoffel-Brokkoli-Auflauf",
             image: "../images/foodpictures/brokkoli-kartoffel-auflauf.jpg",
+            text: "blablablabla",
+            author: "Muh",
         },
         {
             id: 3,
             headline: "Pasta mit Frühlingszwiebeln",
             image: "../images/foodpictures/pasta-fruehlingszwiebeln.jpg",
+            text: "blablablabla",
+            author: "Muh",
         },
         {
             id: 4,
             headline: "Käsespätzle",
             image: "../images/foodpictures/kaesespaetzle.jpg",
+            text: "blablablabla",
+            author: "Muh",
         },
         {
             id: 5,
             headline: "Spinat mit Kartoffeln und Spiegelei",
             image: "../images/foodpictures/spinat-kartoffeln-ei.jpg",
+            text: "blablablabla",
+            author: "Muh",
         },
         {
             id: 6,
@@ -50,25 +60,34 @@ var recipeOverviewObject = {
 
 // ----------------------------------
 
-var recipeOverviewReference;
+var recipeListReference;
 
 window.addEventListener('DOMContentLoaded', () => {
-    recipeOverviewReference = document.getElementById("recipes");
-    recipeOverviewReference.innerHTML = buildRecipesOverview(recipeOverviewObject);
+    recipeListReference = document.getElementById("recipes-filtered-list");
+    recipeListReference.innerHTML = buildRecipesOverview(recipeListObject);
 });
 
-function buildRecipesOverview(recipeOverviewObject) {
-    var recipesOverview = "";
+function buildRecipesOverview(recipeListObject) {
+    var recipeList = "";
 
-    for (i = 0; i < recipeOverviewObject.recipes.length; i++) {
-        var currentRecipe = recipeOverviewObject.recipes[i];
+    for (i = 0; i < recipeListObject.recipes.length; i++) {
+        var currentRecipe = recipeListObject.recipes[i];
 
-        recipesOverview +=
+        recipeList +=
 
-            "<a href='../jsp/recipe_detail.jsp#ingredientsTab'>" +
-            "<div class='single-recipe-block'><img src='" + currentRecipe.image +"' id='recipe-image'>" +
-            "<h5>" + currentRecipe.headline + "</h5></div></a>"
+            "<div class='single-recipe-block filtered-list'>" +
+            "<img src='" + currentRecipe.image + "' class='recipe-list-image'>" +
+            "<div class='recipe-list-text'>" + currentRecipe.text + "</div>" +
+            "<div class='recipe-list-author'>" + currentRecipe.author + "</div>" +
+            "<a href='../jsp/recipe_detail.jsp#ingredientsTab" + [i] +"'>"  +
+            "<h5 class='recipe-list-headline'>" + currentRecipe.headline + "</h5></a></div>"
     }
 
-    return recipesOverview;
+    // recipesOverview +=  ----------> Reminder
+    //
+    //
+    //     "<div class='single-recipe-block'><img src='" + currentRecipe.image +"' id='recipe-image'>" +
+    //     "<h5>" + currentRecipe.headline + "</h5></div></a>"
+
+    return recipeList;
 }

@@ -10,7 +10,7 @@
 <head>
     <link rel="stylesheet" href="../css/general_styling.css">
     <link rel="stylesheet" href="../fontawesome/css/all.css">
-    <script src="../js/recipes.js"></script>
+    <script src="../js/categories.js"></script>
     <link rel="icon" href="../images/icons_logo/icon.png" type="image/png">
     <title>Übersicht - Trail-Mix</title>
 </head>
