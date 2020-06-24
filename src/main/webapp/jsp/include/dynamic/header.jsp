@@ -7,7 +7,9 @@
 --%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" %>
-<a href="${pageContext.request.contextPath}/index"><img class="logo" src="../../../images/icons_logo/logo.png" alt="logo"></a>
+<a href="${pageContext.request.contextPath}/index">
+    <img class="logo" src="<c:url value='../images/icons_logo/logo.png' />" alt="logo" />
+</a>
 <header>
     <div class="navbar">
         <c:set var="contextPath" value="${pageContext.request.contextPath}" scope="page"/>
@@ -31,6 +33,6 @@
     </div>
     <a href="http://lieferando.de" target="_blank" title="PANIC - Lieferando ist dein Freund :) ">"<img
             class="panicbutton"
-            src="../../../images/icons_logo/panicbutton.png"
+            src="<c:url value='../images/icons_logo/panicbutton.png' />"
             alt="PanicButtonImage"></a>
 </header>

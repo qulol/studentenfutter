@@ -1,68 +1,49 @@
-//
-// fetch('./categories.jsp',
-//     {
-//         method: 'get',
-//         headers: {
-//             'Accept': 'application/json',
-//             'Content-Type': 'application/json'
-//         },
-//     })
-//     .then(function (recipes) {
-//
-//         console.log(recipes);
-//
-//     })
-//     .catch(function (error) {
-//         console.error(error);
-//     });
-
-
 var recipeOverviewObject = {
     recipes: [
         {
             id: 1,
             headline: "Einfacher Pfannkuchen",
-            image: "images/foodpictures/pfannkuchen.jpg",
+            image: "../images/foodpictures/pfannkuchen.jpg",
         },
         {
             id: 2,
             headline: "Kartoffel-Brokkoli-Auflauf",
-            image: "images/foodpictures/brokkoli-kartoffel-auflauf.jpg",
+            image: "../images/foodpictures/brokkoli-kartoffel-auflauf.jpg",
         },
         {
             id: 3,
             headline: "Pasta mit Frühlingszwiebeln",
-            image: "images/foodpictures/pasta-fruehlingszwiebeln.jpg",
+            image: "../images/foodpictures/pasta-fruehlingszwiebeln.jpg",
         },
         {
             id: 4,
             headline: "Käsespätzle",
-            image: "images/foodpictures/kaesespaetzle.jpg",
+            image: "../images/foodpictures/kaesespaetzle.jpg",
         },
         {
             id: 5,
             headline: "Spinat mit Kartoffeln und Spiegelei",
-            image: "images/foodpictures/spinat-kartoffeln-ei.jpg",
+            image: "../images/foodpictures/spinat-kartoffeln-ei.jpg",
         },
         {
             id: 6,
             headline: "Pasta mit Spinat, Mozzarella und Kirschtomaten",
-            image: "images/foodpictures/pasta-spinat-tomaten.jpg",
+            image: "../images/foodpictures/pasta-spinat-tomaten.jpg",
         },
         {
             id: 7,
             headline: "Pesto-Nudeln",
-            image: "images/foodpictures/pestonudeln.jpg",
+            image: "../images/foodpictures/pestonudeln.jpg",
         },
         {
             id: 8,
             headline: "Tomate-Mozzarella-Salat",
-            image: "images/foodpictures/tomate-mozzarella-salat.jpg",
+            image: "../images/foodpictures/tomate-mozzarella-salat.jpg",
         },
         {
             id: 9,
             headline: "Unterschiedliche Soßen - beliebig zu Kombinieren",
-            image: "images/foodpictures/soße.jpg",
+            image: "../images/foodpictures/sosse.jpg",
         }
     ]
 }

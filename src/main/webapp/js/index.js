@@ -1,5 +1,3 @@
-let root = document.documentElement;
-
 var topText;
 var firstIcon;
 var secondIcon;
@@ -9,15 +7,15 @@ var middleContent;
 var currentYPosition;
 
 var windowHeight = window.screen.availHeight
-    || document.documentElement.clientHeight
+    || document.body.clientHeight
     || document.body.clientHeight;
 
 var windowWidth = window.screen.availWidth
-    || document.documentElement.clientWidth
+    || document.body.clientWidth
     || document.body.clientWidth;
 
 window.addEventListener('DOMContentLoaded', () => {
-    currentYPosition = document.documentElement.scrollTop;
+    currentYPosition = document.body.scrollTop;
 
     if (currentYPosition > 0) {
         window.scrollBy({top: -currentYPosition, left: 0, behavior: "smooth"});
@@ -37,7 +35,7 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 
 window.onscroll = function () {
-    currentYPosition = document.documentElement.scrollTop;
+    currentYPosition = document.body.scrollTop;
     hideTopText(currentYPosition);
     highlightIcons(currentYPosition);
 }

@@ -11,15 +11,13 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../css/general_styling.css">
     <link rel="stylesheet" href="../fontawesome/css/all.css">
-    <script src="../js/recipes_filtered_list.js"></script>
+    <script rel="script" src="../js/recipes.js"></script>
     <link rel="icon" href="../images/icons_logo/icon.png" type="image/png">
     <title>Übersicht - Trail-Mix</title>
 </head>
-
 <body>
 <div class="wrapper" id="wrapper">
     <img class="bg-image" src="../images/bg/wood-wallpaper.jpg" alt="bg-image">
-    <a href="index.jsp"><img class="logo" src="../images/icons_logo/logo.png" alt="logo"></a>
 
     <jsp:include page="include/dynamic/header.jsp"/>
 
@@ -38,7 +36,9 @@
     </div>
 
     <div class="footer-content-wrapper">
+
         <%@include file="include/static/footer.jsp"%>
+
     </div>
 </div>
 

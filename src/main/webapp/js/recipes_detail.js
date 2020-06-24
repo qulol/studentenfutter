@@ -2,7 +2,7 @@
 var mealObject = {
     id: 1,
     headline: "Spaghetti",
-    image: "images/foodpictures/noodles.png",
+    image: "../images/foodpictures/noodles.png",
     ingredients: [
         {
             name: "Nudeln",
@@ -101,28 +101,6 @@ function calculateAmount() {
 function addIngredientsToShoppingList() {
 
 }
-
-// --------------------------------------------
-/*
-fetch('',
-    {
-        method: 'post',
-        headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-            title: 'Beispielprojekt',
-            url: 'http://www.example.com',
-        })
-    })
-    .then(function (response) {
-        console.log(response);
-    })
-    .catch(function (error) {
-        console.error(error);
-    });
-    */
 
 function buildIngredientsTable(mealObject) {
     var ingredientsTable = "";
