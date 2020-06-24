@@ -8,7 +8,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" %>
 <a href="${pageContext.request.contextPath}/index">
-    <img class="logo" src="<c:url value='../images/icons_logo/logo.png' />" alt="logo" />
+    <img class="logo" src="<c:url value='../images/icons_logo/logo.png' />" alt="logo"/>
 </a>
 <header>
     <div class="navbar">
@@ -26,7 +26,7 @@
         <a href="${contextPath}/jsp/create_recipe.jsp">Rezept hinzufügen</a>
         <a href="${contextPath}/jsp/shopping_list.jsp">Einkaufsliste</a>
         <c:if test="${isLogged}">
-            <a href="${contextPath}/logout">Abmelden</a>
+            <a class="logout" href="${contextPath}/logout">Abmelden</a>
         </c:if>
         <input type="search" class="search" id="search" placeholder="Suchbegriff eingeben"><label for="search"><i
             class="fas fa-search"></i></label>
