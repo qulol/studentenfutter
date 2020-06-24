@@ -49,11 +49,6 @@ var recipeListObject = {
             id: 8,
             headline: "Tomate-Mozzarella-Salat",
             image: "../images/foodpictures/tomate-mozzarella-salat.jpg",
-        },
-        {
-            id: 9,
-            headline: "Unterschiedliche Soßen - beliebig zu Kombinieren",
-            image: "../images/foodpictures/sosse.jpg",
         }
     ]
 }
@@ -79,7 +74,7 @@ function buildRecipesOverview(recipeListObject) {
             "<img src='" + currentRecipe.image + "' class='recipe-list-image'>" +
             "<div class='recipe-list-text'>" + currentRecipe.text + "</div>" +
             "<div class='recipe-list-author'>" + currentRecipe.author + "</div>" +
-            "<a href='../jsp/recipe_detail.jsp#ingredientsTab" + [i] +"'>"  +
+            "<a href='../jsp/recipe_detail.jsp#ingredientsTab'>"  +
             "<h5 class='recipe-list-headline'>" + currentRecipe.headline + "</h5></a></div>"
     }
 
