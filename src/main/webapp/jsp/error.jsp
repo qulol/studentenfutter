@@ -23,7 +23,9 @@
     <div class="regular-top-content-wrapper error-content">
         <div class="regular-top-content-block white-bg" id="top-text">
             <h1 class="centered">Hoppla!</h1>
+            <div class="error-code">404</div>
             <img id="error-image" src="../images/error.png" alt="bg-image">
+
             <h1 class="error-message">Da ist wohl gerade etwas schief gelaufen... :(</h1>
         </div>
     </div>
