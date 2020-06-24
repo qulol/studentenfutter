@@ -864,7 +864,7 @@ li {
     font-size: 12px;
 }
 
-.login-error-message {
+.login-message, .login-error-message, .login-success-message {
     position: static;
     margin: 1% auto;
     z-index: 100;
@@ -872,8 +872,15 @@ li {
     text-align: center;
     font-size: 12.3px;
     font-weight: bold;
-    color: red;
     height: 2%;
+}
+
+.login-error-message {
+    color: red;
+}
+
+.login-success-message {
+    color: #4aa121;
 }
 
 .register {
