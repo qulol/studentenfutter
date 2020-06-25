@@ -28,10 +28,15 @@
         <c:if test="${isLogged}">
             <a class="logout" href="${contextPath}/logout">Abmelden</a>
         </c:if>
-        <input type="search" class="search" id="search" placeholder="Suchbegriff eingeben">
-        <label for="search">
-            <i class="fas fa-search"></i>
-        </label>
+
+        <form action="${pageContext.request.contextPath}/search" method="post">
+            <label for="searchbar"></label>
+        <input type="search" class="search" id="searchbar" placeholder="Suchbegriff eingeben">
+            <button type="submit" class="search-button">
+                <i class="fas fa-search"></i>
+            </button>
+        </form>
+
     </div>
     <a href="http://lieferando.de" target="_blank" title="PANIC - Lieferando ist dein Freund :) ">
         <img class="panicbutton" src="${contextPath}/images/icons_logo/panicbutton.png" alt="PanicButtonImage">
