@@ -12,7 +12,7 @@ public class LoginServlet extends AbstractServlet {
 
     @Override
     protected void handleDoGet(HttpServletRequest req, HttpServletResponse res) throws Exception {
-        res.sendRedirect(req.getContextPath().concat("/jsp/login.jsp"));
+        req.getRequestDispatcher(req.getContextPath().concat("/jsp/login.jsp")).forward(req, res);
     }
 
     @Override
