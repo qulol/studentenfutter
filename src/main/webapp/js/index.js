@@ -5,6 +5,7 @@ var firstStep;
 var secondStep;
 var middleContent;
 var currentYPosition;
+var counter;
 
 var windowHeight = window.screen.availHeight
     || document.body.clientHeight
@@ -41,29 +42,43 @@ window.addEventListener('DOMContentLoaded', () => {
 
 });
 
-hideTopText = function (currentPosition) {
+hideTopText = function (currentYPosition) {
     if (!topText) {
         return;
     }
-    if (currentPosition > windowHeight * 0.4) {
+    if (currentYPosition > windowHeight * 0.4) {
         topText.style.display = "none";
     } else {
         topText.style.display = "block";
     }
 }
 
-highlightIcons = function (currentPosition) {
+
+highlightIcons = function (currentYPosition) {
+
+    var secondStepHidden = secondStep.style.display === "none";
+    var secondStepVisible = secondStep.style.display === "block";
+    var pageStart = currentYPosition < windowHeight * 0.1;
+    var pageAfterStart = currentYPosition > windowHeight * 0.1;
+
     if (!firstIcon || !secondIcon) {
         return;
     }
-    if (currentPosition > windowHeight * 0.1) {
-        firstIcon.style.background = "transparent";
-        secondIcon.style.background = "radial-gradient(circle, forestgreen 50%, rgba(73, 133, 30, 0) 100%)";
-        secondStep.style.display = "block";
-    } else {
+
+    if (secondStepHidden && pageStart) {
         firstIcon.style.background = "radial-gradient(circle, forestgreen 50%, rgba(73, 133, 30, 0) 100%)";
         secondIcon.style.background = "transparent";
         secondStep.style.display = "none";
+    }
+    if (secondStepHidden && pageAfterStart) {
+        firstIcon.style.background = "transparent";
+        secondIcon.style.background = "radial-gradient(circle, forestgreen 50%, rgba(73, 133, 30, 0) 100%)";
+        secondStep.style.display = "block";
+    }
+    else if (secondStepVisible && pageStart) {
+        firstIcon.style.background = "transparent";
+        secondIcon.style.background = "transparent";
+        secondStep.style.display = "block";
     }
 }
 
