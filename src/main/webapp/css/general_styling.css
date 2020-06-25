@@ -214,7 +214,8 @@ header {
 }
 
 .logout {
-    background-color: red;
+    background-color: #dbe1e1;
+    color: black !important;
     font-weight: bold;
 }
 
