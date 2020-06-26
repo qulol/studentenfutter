@@ -776,6 +776,7 @@ li {
     text-align: center;
     float: right;
     right: 22.7%;
+    background-color: #84cc60;
 }
 
 .buttonAddToShoppingList {
@@ -786,6 +787,7 @@ li {
     width: 100%;
     height: 7%;
     text-align: center;
+    background-color: #84cc60;
 }
 
 .buttonLogin {
@@ -796,6 +798,7 @@ li {
     width: 73%;
     height: 4%;
     text-align: center;
+    background-color: #84cc60;
 }
 
 .buttonAddToShoppingList:hover, .buttonPrintShoppingList:hover, .buttonLogin:hover {
