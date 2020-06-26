@@ -19,7 +19,7 @@
 
 <body>
 <div class="wrapper" id="wrapper">
-    <img class="bg-image" src="../images/bg/wood-wallpaper.jpg" alt="bg-image">
+    <%@include file="include/static/background-default.jsp"%>
     <jsp:include page="include/dynamic/header.jsp"/>
 
     <div class="regular-top-content-wrapper">

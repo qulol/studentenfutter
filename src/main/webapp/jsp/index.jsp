@@ -11,7 +11,7 @@
 </head>
 <body class="index-body">
 <div class="wrapper" id="wrapper">
-    <img class="bg-image" src="../images/bg/index-top.jpg" alt="bg-image">
+    <img class="bg-image" src="${pageContext.request.contextPath}/images/bg/index-top.jpg" alt="bg-image">
 
     <jsp:include page="include/dynamic/header.jsp"/>
 
