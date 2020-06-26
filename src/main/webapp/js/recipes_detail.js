@@ -98,10 +98,6 @@ function calculateAmount() {
     }
 }
 
-function addIngredientsToShoppingList() {
-
-}
-
 function buildIngredientsTable(mealObject) {
     var ingredientsTable = "";
 

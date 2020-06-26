@@ -41,11 +41,8 @@
                                        oninput="calculateAmount()" placeholder="1"
                                        type="number" min="1" step="1">
                                 <input class="buttonAddToShoppingList" id="addIngredientsToShoppingList" type="submit"
-                                       value="Zutaten zur EInkaufsliste hinzufügen">
-                                <%--                                <button class="buttonAddToShoppingList" id="addIngredientsToShoppingList"--%>
-                                <%--                                        onClick=addIngredientsToShoppingList()>--%>
-                                <%--                                    Zutaten zur Einkaufsliste hinzufügen--%>
-                                <%--                                </button>--%>
+                                       value="Zutaten zur Einkaufsliste hinzufügen">
+
                             </form>
                         </div>
 
