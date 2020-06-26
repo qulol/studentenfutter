@@ -42,10 +42,9 @@ public class RegisterServlet extends AbstractServlet {
     }
 
     private void addUser(String username, String password) throws SQLException {
-        getDataAccess().query("insert into user (name, password, creation_date) values (?, ?, ?)")
+        getDataAccess().query("insert into user (name, password) values (?, ?)")
                 .withParam(username)
                 .withParam(password)
-                .withParam(new Timestamp(System.currentTimeMillis()))
                 .run();
     }
 }
