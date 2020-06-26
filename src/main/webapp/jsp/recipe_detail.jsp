@@ -33,16 +33,20 @@
                 <article class="infobox">
                     <div class="tab" id="ingredientsTab">
                         <h4><a href="#ingredientsTab">Zutaten</a></h4>
-
                         <div class="calculateIngredientsAmount">
-                            <label for="numberOfPersons">Portionen: </label>
-                            <input name="numberOfPersons" id="numberOfPersons"
-                                   oninput="calculateAmount()" placeholder="1"
-                                   type="number" min="1" step="1">
-                            <button class="buttonAddToShoppingList" id="addIngredientsToShoppingList"
-                                    onClick=addIngredientsToShoppingList()>
-                                Zutaten zur Einkaufsliste hinzufügen
-                            </button>
+
+                            <form action="${pageContext.request.contextPath}/addtoshoppingcard" method="post">
+                                <label for="numberOfPersons">Portionen: </label>
+                                <input name="numberOfPersons" id="numberOfPersons"
+                                       oninput="calculateAmount()" placeholder="1"
+                                       type="number" min="1" step="1">
+                                <input class="buttonAddToShoppingList" id="addIngredientsToShoppingList" type="submit"
+                                       value="Zutaten zur EInkaufsliste hinzufügen">
+                                <%--                                <button class="buttonAddToShoppingList" id="addIngredientsToShoppingList"--%>
+                                <%--                                        onClick=addIngredientsToShoppingList()>--%>
+                                <%--                                    Zutaten zur Einkaufsliste hinzufügen--%>
+                                <%--                                </button>--%>
+                            </form>
                         </div>
 
                         <div class="ingredientsTableWrapper">
@@ -81,7 +85,7 @@
         </div>
     </div>
 
-    <%@include file="include/static/footer.jsp"%>
+    <%@include file="include/static/footer.jsp" %>
 </div>
 
 </body>
