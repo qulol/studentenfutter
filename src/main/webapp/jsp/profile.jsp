@@ -11,7 +11,7 @@
     <title>profile</title>
 </head>
 <body>
-<img class="bg-image" src="../images/bg/wood-wallpaper.jpg" alt="bg-image">
+<%@include file="include/static/background-default.jsp"%>
 <jsp:include page="include/dynamic/header.jsp"/>
 
 <%@include file="include/static/footer.jsp"%>
