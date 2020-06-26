@@ -34,8 +34,8 @@
                     <div class="tab" id="ingredientsTab">
                         <h4><a href="#ingredientsTab">Zutaten</a></h4>
                         <div class="calculateIngredientsAmount">
-
                             <form action="${pageContext.request.contextPath}/addtoshoppingcard" method="post">
+                                <input type="hidden" name="redirect" value="${pageContext.request.requestURL}">
                                 <label for="numberOfPersons">Portionen: </label>
                                 <input name="numberOfPersons" id="numberOfPersons"
                                        oninput="calculateAmount()" placeholder="1"
@@ -64,7 +64,6 @@
                             <h6>Benötigte Gewürze:</h6>
                             <div id="seasonsList">
                             </div>
-
                         </div>
                     </div>
 
