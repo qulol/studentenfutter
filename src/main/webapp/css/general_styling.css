@@ -715,6 +715,7 @@ ol.instructions {
     flex-wrap: wrap;
     margin: 0;
     padding: 0.1%;
+    height: 85%;
 }
 
 ol.instructions li {

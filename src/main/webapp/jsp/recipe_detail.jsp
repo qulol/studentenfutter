@@ -71,7 +71,7 @@
                         <h4><a href="#instructionsTab">Anleitung</a></h4>
                         <div class="instructionsListWrapper">
                             <div class="instructionsList" id="instructionsList">
-                                <ol class="instructions" id="instructions">
+                                <ol class="instructions scrollbar" id="instructions">
                                 </ol>
                             </div>
                         </div>
