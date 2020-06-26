@@ -11,7 +11,7 @@ public class SessionListener implements HttpSessionListener {
 
     @Override
     public void sessionCreated(HttpSessionEvent se) {
-        se.getSession().setAttribute("user", UserBean.createDefault());
+        se.getSession().setAttribute("user", new UserBean());
     }
 
     @Override
