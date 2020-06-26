@@ -60,7 +60,6 @@
                 </form>
             </div>
         </div>
-
     </div>
 
     <%@include file="include/static/footer.jsp"%>
