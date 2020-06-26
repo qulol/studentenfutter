@@ -64,7 +64,6 @@ var mealObject = {
 
 
 var numberOfPersonsReference = 1;
-var ingredientReference;
 var ingredientsTableReference;
 var instructionsListReference;
 var seasonsListReference;
@@ -78,7 +77,6 @@ window.addEventListener('DOMContentLoaded', () => {
     headlineReference = document.getElementById("headline");
     imageReference = document.getElementById("recipe-image-detail")
 
-    ingredientReference = document.getElementsByClassName("ingredient");
     numberOfPersonsReference = document.getElementById("numberOfPersons");
     headlineReference.innerHTML = mealObject.headline;
     imageReference.src = mealObject.image;
