@@ -29,9 +29,9 @@
             <a class="logout" href="${contextPath}/logout">Abmelden</a>
         </c:if>
 
-        <form action="${pageContext.request.contextPath}/search" method="post">
+        <form action="${pageContext.request.contextPath}/recipes" method="get">
             <label for="searchbar"></label>
-        <input type="search" class="search" id="searchbar" placeholder="Suchbegriff eingeben">
+            <input type="search" class="search" id="searchbar" name="search" placeholder="Suchbegriff eingeben">
             <button type="submit" class="search-button">
                 <i class="fas fa-search"></i>
             </button>
