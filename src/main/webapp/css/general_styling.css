@@ -210,7 +210,7 @@ header {
 }
 
 .navbar a:hover, .dropdown:hover .dropbtn, .footer-content-block a:hover {
-    background-color: red;
+    background-color: #4aa121;
 }
 
 .logout {
@@ -219,6 +219,10 @@ header {
     font-weight: bold;
 }
 
+.logout:hover {
+    background-color: #e60005 !important;
+    color: white !important;
+}
 /*.dropdown {*/
 /*    position: relative;*/
 /*    display: block;*/
@@ -593,7 +597,7 @@ article.infobox .tab h4 {
     width: 13%;
     height: 6%;
     margin: 0;
-    background-color: red;
+    background-color: #e60005;
     border-radius: 10px 10px 0 0;
     z-index: 1;
 }
@@ -620,7 +624,7 @@ article.infobox .tab:target, article.infobox .tab:target h4 {
 
 /*nicht verändern*/
 article.infobox .tab:target h4 a {
-    color: red;
+    color: #e60005;
 }
 
 .calculateIngredientsAmount {
@@ -919,7 +923,7 @@ li {
 }
 
 .login-error-message {
-    color: red;
+    color: #e60005;
 }
 
 .login-success-message {
