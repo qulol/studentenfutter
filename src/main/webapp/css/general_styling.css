@@ -223,6 +223,7 @@ header {
     background-color: #e60005 !important;
     color: white !important;
 }
+
 /*.dropdown {*/
 /*    position: relative;*/
 /*    display: block;*/
@@ -799,6 +800,11 @@ li {
     height: 4%;
     text-align: center;
     background-color: #84cc60;
+}
+
+.buttonLogin:active {
+    box-shadow: 0 -2px 4px #666;
+    transform: translateY(2px);
 }
 
 .buttonAddToShoppingList:hover, .buttonPrintShoppingList:hover, .buttonLogin:hover {
