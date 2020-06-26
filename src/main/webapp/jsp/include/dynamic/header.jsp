@@ -13,10 +13,9 @@
 </a>
 <header>
     <div class="navbar">
-        <c:set var="isLogged" value="${sessionScope.user != null}" scope="page"/>
         <c:choose>
-            <c:when test="${isLogged}">
-                <span id="helloUser">Hallo XYZ!</span>
+            <c:when test="${sessionScope.user.loggedIn}">
+                <span id="helloUser">Hallo <c:out value="${sessionScope.user.username}"/>!</span>
             </c:when>
             <c:otherwise>
                 <a href="${contextPath}/login">Anmelden</a>
@@ -25,7 +24,7 @@
         <a href="${contextPath}/jsp/categories.jsp">Rezepte</a>
         <a href="${contextPath}/add">Rezept hinzufügen</a>
         <a href="${contextPath}/shoppingcart">Einkaufsliste</a>
-        <c:if test="${isLogged}">
+        <c:if test="${sessionScope.user.loggedIn}">
             <a class="logout" href="${contextPath}/logout">Abmelden</a>
         </c:if>
 
