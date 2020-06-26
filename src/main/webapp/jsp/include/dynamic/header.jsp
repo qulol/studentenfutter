@@ -23,7 +23,7 @@
             </c:otherwise>
         </c:choose>
         <a href="${contextPath}/jsp/categories.jsp">Rezepte</a>
-        <a href="${contextPath}/create">Rezept hinzufügen</a>
+        <a href="${contextPath}/add">Rezept hinzufügen</a>
         <a href="${contextPath}/jsp/shopping_list.jsp">Einkaufsliste</a>
         <c:if test="${isLogged}">
             <a class="logout" href="${contextPath}/logout">Abmelden</a>
