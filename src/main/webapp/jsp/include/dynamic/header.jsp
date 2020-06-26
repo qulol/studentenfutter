@@ -16,7 +16,7 @@
         <c:set var="isLogged" value="${sessionScope.user != null}" scope="page"/>
         <c:choose>
             <c:when test="${isLogged}">
-                <a href="${contextPath}/profile">Profil</a>
+                <span id="helloUser">Hallo XYZ!</span>
             </c:when>
             <c:otherwise>
                 <a href="${contextPath}/login">Anmelden</a>

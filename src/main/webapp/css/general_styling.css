@@ -172,7 +172,7 @@ body {
 }
 
 .wrapper * {
-    border: 0.5px solid !important;
+    /*border: 0.5px solid !important;*/
 }
 
 header {
@@ -200,7 +200,7 @@ header {
 }
 
 /* Links inside the navbar */
-.navbar a {
+.navbar a, #helloUser {
     float: left;
     font-size: 13px;
     color: white;
@@ -209,7 +209,7 @@ header {
     padding: 0.05%;
 }
 
-.navbar a:hover, .dropdown:hover .dropbtn, .footer-content-block a:hover {
+.navbar a:hover, .dropdown:hover .dropbtn, .footer-content-block a:hover, #helloUser {
     background-color: #4aa121;
 }
 
