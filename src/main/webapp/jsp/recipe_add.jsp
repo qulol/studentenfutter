@@ -17,7 +17,7 @@
 
 <body>
 <div class="wrapper" id="wrapper">
-    <%@include file="include/static/background-default.jsp"%>
+    <%@include file="include/static/background-default.jsp" %>
     <jsp:include page="include/dynamic/header.jsp"/>
 
     <div class="regular-top-content-wrapper">
@@ -57,6 +57,7 @@
                             </div>
                         </div>
                         <input type="button" onClick="addIngredientRow()" value="+">
+
                         <h3>Benötigte Gewürze (bitte mit Komma trennen)</h3>
                         <div class="SeasonRow">
                             <label for="seasonsList"></label><br>
@@ -64,8 +65,9 @@
 
                         </div>
                     </div>
-
-                    <div class="instructionWrapper scrollbar">
+                    <br>
+                    <br>
+                    <div class="instructionWrapper">
                         <h3>Anleitung</h3>
                         <div class="instructionContainer" id="instructionContainer">
                             <div class="instructionRow" id="instructionRow0">
