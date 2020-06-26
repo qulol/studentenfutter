@@ -40,12 +40,12 @@
             <artifactId>sqlite-jdbc</artifactId>
             <version>3.31.1</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/org.languagetool/language-de -->
-        <dependency>
-            <groupId>org.languagetool</groupId>
-            <artifactId>language-de</artifactId>
-            <version>4.9</version>
-        </dependency>
+<!--        &lt;!&ndash; https://mvnrepository.com/artifact/org.languagetool/language-de &ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>org.languagetool</groupId>-->
+<!--            <artifactId>language-de</artifactId>-->
+<!--            <version>4.9</version>-->
+<!--        </dependency>-->
 
     </dependencies>
 
