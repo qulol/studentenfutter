@@ -70,19 +70,14 @@ function buildRecipesOverview(recipeListObject) {
 
         recipeList +=
 
+            "<a href='../jsp/recipe_detail.jsp#ingredientsTab'>" +
             "<div class='single-recipe-block filtered-list'>" +
-            "<img src='" + currentRecipe.image + "' class='recipe-list-image'>" +
+
+            "<img src='" + currentRecipe.image + "' class='recipe-list-image' alt='Rezeptbild'>" +
             "<div class='recipe-list-text'>" + currentRecipe.text + "</div>" +
             "<div class='recipe-list-author'>" + currentRecipe.author + "</div>" +
-            "<a href='../jsp/recipe_detail.jsp#ingredientsTab'>"  +
-            "<h5 class='recipe-list-headline'>" + currentRecipe.headline + "</h5></a></div>"
+            "<h5 class='recipe-list-headline'>" + currentRecipe.headline + "</h5></div></a>"
     }
-
-    // recipesOverview +=  ----------> Reminder
-    //
-    //
-    //     "<div class='single-recipe-block'><img src='" + currentRecipe.image +"' id='recipe-image'>" +
-    //     "<h5>" + currentRecipe.headline + "</h5></div></a>"
 
     return recipeList;
 }
