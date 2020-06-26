@@ -27,7 +27,8 @@ function addIngredientRow() {
         '        <option value="kg">kg</option>' +
         '        </select>' +
         '        <label for="ingredient' + i + '"></label>' +
-        '        <input type="text" id="ingredient' + i + '" name="ingredient' + i + '" placeholder="Zutat">';
+        '        <input type="text" id="ingredient' + i + '" name="ingredient' + i + '" placeholder="Zutat">' +
+        '        <input type="button" onClick="removeIngredientRow(' + i + ')" value="-">';
 
     ingredientContainer.appendChild(ingredientRow);
     i++;
@@ -41,9 +42,20 @@ function addInstructionRow() {
 
     instructionRow.innerHTML =
         '        <label for="instructionStep' + j + '">' + k + '. Schritt</label><br>' +
-        '        <textarea id="instructionStep' + j + '" cols="40" rows="4"></textarea>';
+        '        <textarea id="instructionStep' + j + '" cols="40" rows="4"></textarea>' +
+        '        <input type="button" onClick="removeInstructionRow(' + j + ')" value="-">';
 
     instructionContainer.appendChild(instructionRow);
     j++;
     k++;
+}
+
+function removeIngredientRow(rowId) {
+    ingredientRow = document.getElementById("ingredientRow" + rowId);
+    ingredientRow.parentNode.removeChild(ingredientRow);
+}
+
+function removeInstructionRow(rowId) {
+    instructionRow = document.getElementById("instructionRow" + rowId);
+    instructionRow.parentNode.removeChild(instructionRow);
 }
