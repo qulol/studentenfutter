@@ -43,12 +43,13 @@
                         <div class="ingredientContainer" id="ingredientContainer">
                             <div class="ingredientRow" id="ingredientRow0">
                                 <label for="amount0"></label>
-                                <input type="text" id="amount0" name="amount0" placeholder="Menge">
+                                <input type="number" id="amount0" name="amount0" min="0.1" max="5000" step="0.1" placeholder="Menge">
 
                                 <label for="unit0"></label>
                                 <select id="unit0" name="unit0">
                                     <option value="g">g</option>
-                                    <option value="kg">kg</option>
+                                    <option value="ml">ml</option>
+                                    <option value="Stk.">Stk.</option>
                                 </select>
 
                                 <label for="ingredient0"></label>

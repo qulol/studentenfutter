@@ -34,11 +34,12 @@ function addIngredientRow() {
 
         ingredientRow.innerHTML =
             '        <label for="amount' + i + '"></label>' +
-            '        <input type="text" id="amount' + i + '" name="amount' + i + '" placeholder="Menge">' +
+            '        <input type="number" id="amount' + i + '" name="amount' + i + '" min="0.1" max="5000" step="0.1" placeholder="Menge">' +
             '        <label for="unit' + i + '"></label>' +
             '        <select id="unit' + i + '" name="unit' + i + '">' +
             '        <option value="g">g</option>' +
-            '        <option value="kg">kg</option>' +
+            '        <option value="ml">ml</option>' +
+            '        <option value="Stk.">Stk.</option>' +
             '        </select>' +
             '        <label for="ingredient' + i + '"></label>' +
             '        <input type="text" id="ingredient' + i + '" name="ingredient' + i + '" placeholder="Zutat">' +
