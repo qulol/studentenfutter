@@ -15,7 +15,7 @@
     <title>Rezept hinzufügen - Trail-Mix</title>
 </head>
 
-<body>
+<body class="scrollbar">
 <div class="wrapper" id="wrapper">
     <%@include file="include/static/background-default.jsp" %>
     <jsp:include page="include/dynamic/header.jsp"/>
@@ -36,7 +36,6 @@
                         <option value="Frühstück">Frühstück</option>
                         <option value="Mittagessen">Mittagessen</option>
                         <option value="Abendessen">Abendessen</option>
-                        <%--                        <option value="Snack">Snack</option>--%>
                     </select><br><br>
 
                     <div class="ingredientsWrapper">
@@ -77,7 +76,7 @@
                             </div>
                         </div>
                         <input type="button" id="instructionButton" onclick="addInstructionRow()" value="+">
-
+                        <input type="button" onClick="removeInstructionRow()" value="-">';
                     </div>
 
                     <input type="submit" value="Save">

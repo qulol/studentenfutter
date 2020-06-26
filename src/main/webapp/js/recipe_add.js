@@ -47,11 +47,11 @@ function addIngredientRow() {
         ingredientContainer.appendChild(ingredientRow);
         i++;
         displayedIngredientRows++;
-    } else {
-        ingredientButton.style.display = "none";
+
+        if (displayedIngredientRows === 10) {
+            ingredientButton.style.display = "none";
+        }
     }
-
-
 }
 
 function addInstructionRow() {
@@ -67,16 +67,16 @@ function addInstructionRow() {
 
         instructionRow.innerHTML =
             '        <label for="instructionStep' + j + '">' + k + '. Schritt</label><br>' +
-            '        <textarea id="instructionStep' + j + '" cols="40" rows="4"></textarea>' +
-            '        <input type="button" onClick="removeInstructionRow(' + j + ')" value="-">';
+            '        <textarea id="instructionStep' + j + '" cols="40" rows="4"></textarea>';
 
         instructionContainer.appendChild(instructionRow);
         j++;
         k++;
         displayedInstructionRows++;
 
-    } else {
-        instructionButton.style.display = "none";
+        if (displayedInstructionRows === 10) {
+            instructionButton.style.display = "none";
+        }
     }
 }
 
@@ -87,9 +87,11 @@ function removeIngredientRow(rowId) {
     displayedIngredientRows--;
 }
 
-function removeInstructionRow(rowId) {
-    instructionRow = document.getElementById("instructionRow" + rowId);
-    instructionRow.parentNode.removeChild(instructionRow);
+function removeInstructionRow() {
+    var instructionList = document.querySelectorAll('.instructionContainer .instructionRow');
+    var lastElement = instructionList[instructionList.length - 1];
+    lastElement.parentNode.removeChild(lastElement);
+
     instructionButton.style.display = "block";
     displayedInstructionRows--;
     k--;
