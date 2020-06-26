@@ -56,7 +56,7 @@
                                 <input type="text" id="ingredient0" name="ingredient0" placeholder="Zutat">
                             </div>
                         </div>
-                        <input type="button" onClick="addIngredientRow()" value="+">
+                        <input type="button" id="ingredientButton" onClick="addIngredientRow()" value="+">
 
                         <h3>Benötigte Gewürze (bitte mit Komma trennen)</h3>
                         <div class="SeasonRow">
@@ -76,7 +76,7 @@
                                 <textarea id="instructionStep0" cols="40" rows="4"></textarea>
                             </div>
                         </div>
-                        <input type="button" onclick="addInstructionRow()" value="+">
+                        <input type="button" id="instructionButton" onclick="addInstructionRow()" value="+">
 
                     </div>
 
