@@ -6,6 +6,6 @@
 
 
     <error-page>
-        <location>/jsp/error.jsp</location>
+        <location>/error</location>
     </error-page>
 </web-app>

@@ -24,7 +24,7 @@
         </c:choose>
         <a href="${contextPath}/jsp/categories.jsp">Rezepte</a>
         <a href="${contextPath}/add">Rezept hinzufügen</a>
-        <a href="${contextPath}/jsp/shoppingcart.jsp">Einkaufsliste</a>
+        <a href="${contextPath}/shoppingcart">Einkaufsliste</a>
         <c:if test="${isLogged}">
             <a class="logout" href="${contextPath}/logout">Abmelden</a>
         </c:if>
