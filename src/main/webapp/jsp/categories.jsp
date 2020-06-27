@@ -1,3 +1,4 @@
+<%--@elvariable id="contextPath" type=""--%>
 <%--
   Created by IntelliJ IDEA.
   User: Adrian
@@ -11,7 +12,6 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../css/general_styling.css">
     <link rel="stylesheet" href="../fontawesome/css/all.css">
-    <script src="../js/categories.js"></script>
     <link rel="icon" href="../images/icons_logo/icon.png" type="image/png">
     <title>Rezept-Kategorien - Trail-Mix</title>
 </head>
@@ -27,6 +27,24 @@
             <div class="recipes-overview-wrapper">
                 <div class="categories-block">
                     <div class="categories-block" id="recipes">
+                        <a href='${contextPath}/recipes?search=Frühstück'>
+                            <div class='categories-block'>
+                                <img src='${contextPath}/images/foodpictures/breakfast.jpg' id='breakfast-image' alt="">
+                                <h5>Frühstück</h5>
+                            </div>
+                        </a>
+                        <a href='${contextPath}/recipes?search=Mittagessen'>
+                            <div class='categories-block'>
+                                <img src='${contextPath}/images/foodpictures/lunch.jpeg' id='lunch-image' alt="">
+                                <h5>Mittagessen</h5>
+                            </div>
+                        </a>
+                        <a href='${contextPath}/recipes?search=Abendessen'>
+                            <div class='categories-block'>
+                                <img src='${contextPath}/images/foodpictures/dinner.jpg' id='dinner-image' alt="">
+                                <h5>Abendessen</h5>
+                            </div>
+                        </a>
                     </div>
                 </div>
             </div>

@@ -552,7 +552,7 @@ header {
     bottom: 0;
 }
 
-#recipe-image {
+#breakfast-image, #lunch-image, #dinner-image {
     width: inherit;
     height: inherit;
 }

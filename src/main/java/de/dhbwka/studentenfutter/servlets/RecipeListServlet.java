@@ -9,10 +9,11 @@ public class RecipeListServlet extends AbstractServlet {
 
     @Override
     protected void handleDoGet(HttpServletRequest req, HttpServletResponse res) throws Exception {
-        System.out.println(req.getParameter("search"));
+        var search = req.getParameter("search").stripLeading().stripTrailing();
 
-        //select from db with param
-        //set list bean to request scope
+        //if category match
+
+        //search recipe names & id's
 
         req.getRequestDispatcher("/jsp/recipes_list.jsp").forward(req, res);
     }
