@@ -1,6 +1,8 @@
 package de.dhbwka.studentenfutter.bean;
 
-public class UserBean {
+import java.io.Serializable;
+
+public class UserBean implements Serializable {
     private final boolean loggedIn;
     private final String username;
 

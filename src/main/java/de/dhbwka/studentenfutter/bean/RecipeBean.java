@@ -2,10 +2,11 @@ package de.dhbwka.studentenfutter.bean;
 
 import de.dhbwka.studentenfutter.database.query.QueryResult;
 
+import java.io.Serializable;
 import java.util.Comparator;
 import java.util.List;
 
-public class RecipeBean {
+public class RecipeBean implements Serializable {
     @QueryResult(column = "id_user")
     private int idUser;
     @QueryResult(column = "name")

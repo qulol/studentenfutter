@@ -2,7 +2,9 @@ package de.dhbwka.studentenfutter.bean;
 
 import de.dhbwka.studentenfutter.database.query.QueryResult;
 
-public class IngredientBean {
+import java.io.Serializable;
+
+public class IngredientBean implements Serializable {
     @QueryResult(column = "amount")
     private float amount;
     @QueryResult(column = "unit")
