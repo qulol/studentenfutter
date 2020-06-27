@@ -1,6 +1,6 @@
 package de.dhbwka.studentenfutter.servlets;
 
-import de.dhbwka.studentenfutter.model.bean.UserBean;
+import de.dhbwka.studentenfutter.bean.UserBean;
 
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
