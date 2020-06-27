@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * Abstract data access for the application.<br>
@@ -36,6 +37,7 @@ public class DatabaseAccess {
      */
     public static final String ATTRIBUTE_KEY = DatabaseAccess.class.getName();
 
+    private final ConcurrentHashMap<String, String> queryCache = new ConcurrentHashMap<>();
     private final DatabaseConnectionDescriptor descriptor;
 
     /**
@@ -89,6 +91,21 @@ public class DatabaseAccess {
      */
     public QueryBuilder query(String sql) {
         return new QueryBuilder(getConnectionSupplier(), sql);
+    }
+
+    /**
+     *
+     * @param path
+     * @return
+     * @throws IOException
+     */
+    public QueryBuilder cachedQuery(String path) throws IOException {
+        if (queryCache.contains(path)) {
+            return query(queryCache.get(path));
+        }
+        var sql = SQLLoader.load(path);
+        queryCache.put(path, sql);
+        return query(sql);
     }
 
     /**
