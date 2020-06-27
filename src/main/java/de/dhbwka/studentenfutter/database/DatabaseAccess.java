@@ -70,10 +70,10 @@ public class DatabaseAccess {
      * Gets called when tomcat finish context loading
      */
     public void onLoad() throws IOException, SQLException {
-        query(SQLLoader.load("sql/init/create_table_ingredient.sql")).run();
-        query(SQLLoader.load("sql/init/create_table_recipe.sql")).run();
-        query(SQLLoader.load("sql/init/create_table_recipe_entity.sql")).run();
-        query(SQLLoader.load("sql/init/create_table_user.sql")).run();
+        query(SQLLoader.load("sql/initialize/create_table_ingredient.sql")).run();
+        query(SQLLoader.load("sql/initialize/create_table_recipe.sql")).run();
+        query(SQLLoader.load("sql/initialize/create_table_recipe_entity.sql")).run();
+        query(SQLLoader.load("sql/initialize/create_table_user.sql")).run();
     }
 
     /**
