@@ -68,7 +68,7 @@ function addInstructionRow() {
 
         instructionRow.innerHTML =
             '        <label for="instructionStep' + j + '">' + k + '. Schritt</label><br>' +
-            '        <textarea id="instructionStep' + j + '" cols="40" rows="4"></textarea>';
+            '        <textarea id="instructionStep' + j + '" name="instructionStep' + j + '" cols="40" rows="4"></textarea>';
 
         instructionContainer.appendChild(instructionRow);
         j++;

@@ -26,7 +26,7 @@
 
             <div class="create-recipe">
 
-                <form method="post" action="index.jsp" enctype="multipart/form-data">
+                <form method="post" action="${pageContext.request.contextPath}/add" enctype="multipart/form-data">
                     <label for="name"></label>
                     <input type="text" id="name" name="name" placeholder="Name"><br><br>
                     <input type="file" name="img" accept="image/*"><br><br>
@@ -61,7 +61,7 @@
                         <h3>Benötigte Gewürze (bitte mit Komma trennen)</h3>
                         <div class="SeasonRow">
                             <label for="seasonsList"></label><br>
-                            <textarea id="seasonsList" cols="100" rows="1"></textarea>
+                            <textarea id="seasonsList" name="seasons" cols="100" rows="1"></textarea>
 
                         </div>
                     </div>
@@ -73,7 +73,7 @@
                             <div class="instructionRow" id="instructionRow0">
                                 <label for="instructionStep0">1. Schritt</label>
                                 <br>
-                                <textarea id="instructionStep0" cols="40" rows="4"></textarea>
+                                <textarea id="instructionStep0" name="instructionStep0" cols="40" rows="4"></textarea>
                             </div>
                         </div>
                         <input type="button" id="instructionButton" onclick="addInstructionRow()" value="+">
