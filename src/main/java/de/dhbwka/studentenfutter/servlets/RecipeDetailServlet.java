@@ -7,6 +7,7 @@ import de.dhbwka.studentenfutter.bean.RecipeBean;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.Comparator;
 
 @WebServlet(urlPatterns = "/recipedetail")
 public class RecipeDetailServlet extends AbstractServlet {
@@ -36,6 +37,8 @@ public class RecipeDetailServlet extends AbstractServlet {
                 .withParam(id)
                 .collectAs(DescriptionBean.class)
                 .getList();
+
+        descriptionBean.sort(Comparator.comparing(DescriptionBean::getId));
 
         var recipeBean = optionalRecipeBean.get();
         recipeBean.setIngredients(ingredientBean);

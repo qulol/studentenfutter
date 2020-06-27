@@ -3,7 +3,6 @@ package de.dhbwka.studentenfutter.bean;
 import de.dhbwka.studentenfutter.database.query.QueryResult;
 
 import java.io.Serializable;
-import java.util.Comparator;
 import java.util.List;
 
 public class RecipeBean implements Serializable {
@@ -31,7 +30,6 @@ public class RecipeBean implements Serializable {
     }
 
     public List<DescriptionBean> getDescriptions() {
-        descriptions.sort(Comparator.comparing(DescriptionBean::getId));
         return descriptions;
     }
 
