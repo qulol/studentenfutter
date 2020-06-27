@@ -5,6 +5,7 @@ import de.dhbwka.studentenfutter.database.query.QueryResult;
 import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.HashMap;
 import java.util.Map;
 
 public class QueryResultEncoder<T> implements IQueryResultEncoder<T> {
@@ -46,16 +47,24 @@ public class QueryResultEncoder<T> implements IQueryResultEncoder<T> {
             return encodeAsPrimitive(result);
         }
 
+        var meta = result.getMetaData();
+        var cols = meta.getColumnCount();
+        Map<String, Integer> mapper = new HashMap<>();
+        for (int i = 0; i < cols; i++) {
+            mapper.put(meta.getColumnName(i), i);
+        }
+
         T instance;
         try {
             instance = clazz.getDeclaredConstructor().newInstance();
+
             for (var field : clazz.getDeclaredFields()) {
                 var desc = field.getDeclaredAnnotation(QueryResult.class);
-                var index = desc.index();
+                var column = desc.column();
                 var type = field.getType();
 
                 field.setAccessible(true); //reflection only
-                field.set(instance, encodePrimitiveUntyped(result, type, index));
+                field.set(instance, encodePrimitiveUntyped(result, type, mapper.get(column)));
             }
         } catch (Exception e) {
             e.printStackTrace();
