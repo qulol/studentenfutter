@@ -50,7 +50,7 @@ public class QueryResultEncoder<T> implements IQueryResultEncoder<T> {
         var meta = result.getMetaData();
         var cols = meta.getColumnCount();
         Map<String, Integer> mapper = new HashMap<>();
-        for (int i = 0; i < cols; i++) {
+        for (int i = 1; i < cols + 1; i++) {
             mapper.put(meta.getColumnName(i), i);
         }
 
