@@ -3,6 +3,7 @@ package de.dhbwka.studentenfutter.database.query;
 import de.dhbwka.studentenfutter.database.query.encoder.IQueryResultEncoder;
 import de.dhbwka.studentenfutter.util.CheckedFunction;
 
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -12,9 +13,12 @@ import java.util.Optional;
 public class QueryExecutor<T> {
     private final Query query;
     private final IQueryResultEncoder<T> encoder;
+    private final CheckedFunction<PreparedStatement, ResultSet, SQLException> extractor;
 
-    public QueryExecutor(Query query, IQueryResultEncoder<T> encoder) {
+    public QueryExecutor(Query query, CheckedFunction<PreparedStatement, ResultSet, SQLException> extractor,
+                         IQueryResultEncoder<T> encoder) {
         this.query = query;
+        this.extractor = extractor;
         this.encoder = encoder;
     }
 
@@ -30,15 +34,15 @@ public class QueryExecutor<T> {
 
     public Optional<T> get() throws SQLException {
         return run(result -> {
-            if(result.next()) {
+            if (result.next()) {
                 return Optional.of(encode(result));
             }
             return Optional.empty();
         });
     }
 
-    private <R> R run(CheckedFunction<ResultSet, R, SQLException> function) throws SQLException {
-        return query.execute(function);
+    private <R> R run(CheckedFunction<ResultSet, R, SQLException> encodingFunction) throws SQLException {
+        return query.execute(extractor, encodingFunction);
     }
 
     private T encode(ResultSet result) throws SQLException {
