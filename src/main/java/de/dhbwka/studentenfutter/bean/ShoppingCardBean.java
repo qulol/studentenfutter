@@ -1,4 +1,4 @@
-package de.dhbwka.studentenfutter.model.bean;
+package de.dhbwka.studentenfutter.bean;
 
 import java.util.List;
 
