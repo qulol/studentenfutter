@@ -3,10 +3,10 @@ package de.dhbwka.studentenfutter.bean;
 import de.dhbwka.studentenfutter.database.query.QueryResult;
 
 public class RecipeCardBean {
+    @QueryResult(column = "id_recipe")
+    private int id;
     @QueryResult(column = "name")
     private String name;
-    @QueryResult(column = "id_recipe")
-    private int imgId;
     @QueryResult(column = "author")
     private String author;
 
@@ -14,12 +14,12 @@ public class RecipeCardBean {
     private String previewText = "Hier könnte eine leckere Kurzbeschreibung stehen :)";
 
 
-    public String getName() {
-        return name;
+    public int getId() {
+        return id;
     }
 
-    public int getImgId() {
-        return imgId;
+    public String getName() {
+        return name;
     }
 
     public String getPreviewText() {
