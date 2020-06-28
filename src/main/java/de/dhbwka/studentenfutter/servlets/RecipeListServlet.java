@@ -1,5 +1,7 @@
 package de.dhbwka.studentenfutter.servlets;
 
+import de.dhbwka.studentenfutter.bean.RecipeCardBean;
+
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -11,10 +13,14 @@ public class RecipeListServlet extends AbstractServlet {
     protected void handleDoGet(HttpServletRequest req, HttpServletResponse res) throws Exception {
         var search = req.getParameter("search").stripLeading().stripTrailing();
 
-        //if category match
+        //only search for category atm
+        var recipes = getDataAccess()
+                .cachedQuery("sql/selectRecipeCard.sql")
+                .withParam(search)
+                .collectAs(RecipeCardBean.class)
+                .getList();
 
-        //search recipe names & id's
-
+        req.setAttribute("recipes", recipes);
         req.getRequestDispatcher("/jsp/recipes_list.jsp").forward(req, res);
     }
 }
