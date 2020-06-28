@@ -18,13 +18,13 @@ public class RecipeDetailServlet extends AbstractServlet {
 
         var db = getDataAccess();
         var optionalRecipeBean = db
-                .cachedQuery("sql/selectRecipeModel.sql")
+                .cachedQuery("sql/selectRecipe.sql")
                 .withParam(id)
                 .collectAs(RecipeBean.class)
                 .get();
 
         if (optionalRecipeBean.isEmpty()) {
-           throw new Exception();
+           throw new Exception("No recipe with id=" + id);
         }
 
         var ingredientBean = db
@@ -33,7 +33,7 @@ public class RecipeDetailServlet extends AbstractServlet {
                 .collectAs(IngredientBean.class)
                 .getList();
         var descriptionBean = db
-                .cachedQuery("")
+                .cachedQuery("sql/selectRecipeDescription.sql")
                 .withParam(id)
                 .collectAs(DescriptionBean.class)
                 .getList();
