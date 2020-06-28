@@ -1,10 +1,4 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Adrian
-  Date: 22.06.2020
-  Time: 18:35
-  To change this template use File | Settings | File Templates.
---%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" %>
 <html lang="de">
 <head>
@@ -37,8 +31,38 @@
                         <td class="singleIngredient header" id="singleIngredient"><b>Zutat</b></td>
                     </tr>
                     </thead>
-
                     <tbody class="with-margin-top" id="shoppingList">
+                        <c:forEach var="ingredient" items="${sessionScope.user.shoppingCard}">
+                            <tr>
+                                <td class='amount'>${ingredient.amount}</td>
+                                <td class='unit'>${ingredient.unit}</td>
+                                <td class='singleIngredient'>${ingredient.name}</td>
+                            </tr>
+                        </c:forEach>
+                        <tr>
+                            <td colspan="2"></td>
+                            <td>Salz</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"></td>
+                            <td>Pfeffer</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"></td>
+                            <td>Oregano</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"></td>
+                            <td>Thymian</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"></td>
+                            <td>Knoblauchpulver</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"></td>
+                            <td>Tabak</td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
