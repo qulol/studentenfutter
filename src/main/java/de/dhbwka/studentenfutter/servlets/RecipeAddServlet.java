@@ -37,11 +37,12 @@ public class RecipeAddServlet extends AbstractServlet {
             var ingredient = req.getParameter("ingredient" + i);
 
             //check
-            amounts.add(10f);
+            amounts.add(Float.parseFloat(amount));
             units.add(unit);
             ingredients.add(ingredient);
         }
 
+        //todo
         var seasons = Arrays.stream(req.getParameter("seasons")
                 .split(","))
                 .map(String::stripLeading)
