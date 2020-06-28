@@ -77,7 +77,7 @@
                             </div>
                         </div>
                         <input type="button" id="instructionButton" onclick="addInstructionRow()" value="+">
-                        <input type="button" onClick="removeInstructionRow()" value="-">';
+                        <input type="button" onClick="removeInstructionRow()" value="-">
                     </div>
 
                     <input type="submit" value="Save">

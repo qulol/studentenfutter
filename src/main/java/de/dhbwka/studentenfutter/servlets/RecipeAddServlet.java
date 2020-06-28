@@ -36,7 +36,9 @@ public class RecipeAddServlet extends AbstractServlet {
             var unit   = req.getParameter("unit" + i);
             var ingredient = req.getParameter("ingredient" + i);
 
-            //check
+            if (amount == null) {
+                continue;
+            }
             amounts.add(Float.parseFloat(amount));
             units.add(unit);
             ingredients.add(ingredient);
