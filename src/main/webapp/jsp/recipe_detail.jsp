@@ -1,10 +1,4 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Adrian
-  Date: 22.06.2020
-  Time: 18:35
-  To change this template use File | Settings | File Templates.
---%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" %>
 <html lang="de">
 <head>
@@ -25,11 +19,9 @@
         <div class="regular-top-content-block black-bg" id="top-text">
             <h1 class="centered" id="headline">Überschrift Rezept</h1>
             <div class="recipe-detail-image-wrapper">
-                <img id="recipe-image-detail" src="../images/foodpictures/noodles.jpg" alt="recipe-image-detail">
+                <img id="recipe-image-detail" src="${pageContext.request.contextPath}/images/default_recipe_image.jpg" alt="recipe-image-detail">
             </div>
             <div class="recipe-detail">
-
-
                 <article class="infobox">
                     <div class="tab" id="ingredientsTab">
                         <h4><a href="#ingredientsTab">Zutaten</a></h4>
@@ -42,7 +34,6 @@
                                        type="number" min="1" step="1">
                                 <input class="buttonAddToShoppingList" id="addIngredientsToShoppingList" type="submit"
                                        value="Zutaten zur Einkaufsliste hinzufügen">
-
                             </form>
                         </div>
 
@@ -55,14 +46,21 @@
                                     <td class="singleIngredient header" id="singleIngredient"><b>Zutat</b></td>
                                 </tr>
                                 </thead>
-
                                 <tbody id="ingredientsTable">
+                                    <c:forEach var="ingredient" items="${requestScope.recipe.ingredients}">
+                                        <tr>
+                                            <td class="amount">${ingredient.amount}</td>
+                                            <td class="unit">${ingredient.unit}</td>
+                                            <td class="singleIngredient">${ingredient.name}</td>
+                                        </tr>
+                                    </c:forEach>
                                 </tbody>
                             </table>
                         </div>
                         <div class="seasonsListWrapper">
                             <h6>Benötigte Gewürze:</h6>
                             <div id="seasonsList">
+                                "Salz, Pfeffer, Oregano, Thymian, Knoblauchpulver"
                             </div>
                         </div>
                     </div>
@@ -72,6 +70,9 @@
                         <div class="instructionsListWrapper">
                             <div class="instructionsList" id="instructionsList">
                                 <ol class="instructions scrollbar" id="instructions">
+                                    <c:forEach var="description" items="${requestScope.recipe.descriptions}">
+                                        <li>${description.description}</li>
+                                    </c:forEach>
                                 </ol>
                             </div>
                         </div>
