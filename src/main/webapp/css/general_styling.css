@@ -209,6 +209,10 @@ header {
     padding: 0.05%;
 }
 
+#helloUser {
+    text-transform: none;
+}
+
 .navbar a:hover, .dropdown:hover .dropbtn, .footer-content-block a:hover, #helloUser {
     background-color: #4aa121;
 }
