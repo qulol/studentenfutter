@@ -60,6 +60,9 @@ public class QueryResultEncoder<T> implements IQueryResultEncoder<T> {
 
             for (var field : clazz.getDeclaredFields()) {
                 var desc = field.getDeclaredAnnotation(QueryResult.class);
+                if(desc == null) {
+                    continue;
+                }
                 var column = desc.column();
                 var type = field.getType();
 
