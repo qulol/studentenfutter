@@ -1,16 +1,18 @@
-
-var numberOfPersonsReference = 1;
+let numberOfPersonsReference;
+let singleAmountsArray;
+let amountHTMLReferenceArray;
 
 window.addEventListener('DOMContentLoaded', () => {
     numberOfPersonsReference = document.getElementById("numberOfPersons");
+    amountHTMLReferenceArray = Array.from(document.getElementById("ingredientsTable")
+        .getElementsByClassName("amount"));
+    singleAmountsArray = amountHTMLReferenceArray.map(amount => parseFloat(amount.innerHTML));
 });
 
-function calculateAmount() {
-    for (var i = 0; i < mealObject.ingredients.length; i++) {
-        var numberOfPersonsValue = numberOfPersonsReference.value;
-        var amountReference = document.getElementById("amount" + i);
-        var ingredientObject = mealObject.ingredients[i];
+function calculateIngredientsAmount() {
+    amountHTMLReferenceArray.forEach(calculateAndUpdateSingleIngredient)
+}
 
-        amountReference.innerHTML = (ingredientObject.amount * numberOfPersonsValue).toString();
-    }
+function calculateAndUpdateSingleIngredient(amount, index) {
+    amount.innerHTML = (singleAmountsArray[index] * numberOfPersonsReference.value).toFixed(1);
 }

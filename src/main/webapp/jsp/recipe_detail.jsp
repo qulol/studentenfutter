@@ -30,13 +30,12 @@
                                 <input type="hidden" name="id" value="${requestScope.recipe.id}">
                                 <label for="numberOfPersons">Portionen: </label>
                                 <input name="numberOfPersons" id="numberOfPersons"
-                                       oninput="calculateAmount()" placeholder="1"
+                                       oninput="calculateIngredientsAmount()" value="1"
                                        type="number" min="1" step="1">
                                 <input class="buttonAddToShoppingList" id="addIngredientsToShoppingList" type="submit"
                                        value="Zutaten zur Einkaufsliste hinzufügen">
                             </form>
                         </div>
-
                         <div class="ingredientsTableWrapper">
                             <table class="ingredientsTable">
                                 <thead>
