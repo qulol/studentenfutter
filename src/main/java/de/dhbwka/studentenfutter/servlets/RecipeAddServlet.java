@@ -75,6 +75,6 @@ public class RecipeAddServlet extends AbstractServlet {
                 .withBatchSupplier(ingredients::get)
                 .runBatch(ingredients.size()); //check actual count all 3 param != null !
 
-        res.sendRedirect(req.getContextPath().concat("/recipedetail?id=" + id));
+        res.sendRedirect(req.getContextPath().concat("/recipedetail?id=" + id + "#ingredientsTab"));
     }
 }
