@@ -10,6 +10,9 @@ public class DescriptionBean implements Serializable {
     @QueryResult(column = "description")
     private String description;
 
+    public DescriptionBean() {
+    }
+
     public DescriptionBean(int id, String description) {
         this.id = id;
         this.description = description;
