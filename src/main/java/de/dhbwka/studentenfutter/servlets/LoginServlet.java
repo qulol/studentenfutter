@@ -12,7 +12,7 @@ public class LoginServlet extends AbstractServlet {
 
     @Override
     protected void handleDoGet(HttpServletRequest req, HttpServletResponse res) throws Exception {
-        req.getRequestDispatcher(req.getContextPath().concat("/jsp/login.jsp")).forward(req, res);
+        req.getRequestDispatcher(req.getContextPath().concat("/jsp/template/catalog.jsp")).forward(req, res);
     }
 
     @Override
@@ -30,7 +30,7 @@ public class LoginServlet extends AbstractServlet {
 
         if(password.isEmpty() || !password.get().equals(inputPassword)) {
             req.setAttribute("login_error", true); //todo beans und so
-            req.getRequestDispatcher(req.getContextPath().concat("/jsp/login.jsp")).forward(req, res);
+            req.getRequestDispatcher(req.getContextPath().concat("/jsp/template/catalog.jsp")).forward(req, res);
             return;
         }
 

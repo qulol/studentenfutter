@@ -17,8 +17,8 @@
 
 <body class="scrollbar">
 <div class="wrapper" id="wrapper">
-    <%@include file="include/static/background-default.jsp" %>
-    <jsp:include page="include/dynamic/header.jsp"/>
+    <%@include file="include/background-default.jsp" %>
+    <jsp:include page="include/header.jsp"/>
 
     <div class="regular-top-content-wrapper">
         <div class="regular-top-content-block-text" id="top-text">
@@ -88,7 +88,7 @@
         </div>
     </div>
 
-    <%@include file="include/static/footer.jsp" %>
+    <%@include file="include/footer.jsp" %>
 </div>
 
 </body>

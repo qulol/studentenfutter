@@ -13,7 +13,7 @@
 <div class="wrapper" id="wrapper">
     <img class="bg-image" src="${pageContext.request.contextPath}/images/bg/index-top.jpg" alt="bg-image">
 
-    <jsp:include page="include/dynamic/header.jsp"/>
+    <jsp:include page="include/header.jsp"/>
 
     <div class="index-top-content-wrapper">
         <div class="index-top-content-block" id="topContentBlock">
@@ -55,7 +55,7 @@
         </div>
     </div>
 
-    <%@include file="include/static/footer.jsp" %>
+    <%@include file="include/footer.jsp" %>
 
 </div>
 
