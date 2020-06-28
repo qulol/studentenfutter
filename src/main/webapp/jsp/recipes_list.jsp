@@ -27,8 +27,8 @@
                 <div id="recipes-filtered-list">
                     <c:forEach var="recipe" items="${requestScope.recipes}">
                         <jsp:include page="/jsp/include/recipe_card.jsp">
+                            <jsp:param name="id" value="${recipe.id}"/>
                             <jsp:param name="name" value="${recipe.name}"/>
-                            <jsp:param name="imgId" value="${recipe.id}"/>
                             <jsp:param name="previewText" value="${recipe.previewText}"/>
                             <jsp:param name="author" value="${recipe.author}"/>
                         </jsp:include>
