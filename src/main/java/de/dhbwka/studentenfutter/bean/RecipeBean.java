@@ -6,8 +6,8 @@ import java.io.Serializable;
 import java.util.List;
 
 public class RecipeBean implements Serializable {
-    @QueryResult(column = "id_user")
-    private int idUser;
+    @QueryResult(column = "author")
+    private String author;
     @QueryResult(column = "name")
     private String name;
     @QueryResult(column = "category")
@@ -16,9 +16,8 @@ public class RecipeBean implements Serializable {
     private List<DescriptionBean> descriptions;
     private List<IngredientBean> ingredients;
 
-
-    public int getIdUser() {
-        return idUser;
+    public String getAuthor() {
+        return author;
     }
 
     public String getName() {
