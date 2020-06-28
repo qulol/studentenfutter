@@ -1,4 +1,4 @@
-select id_user,
+select author,
        name,
        category
 from recipe

@@ -1,2 +1,2 @@
-insert into recipe (id_user, name, category)
+insert into recipe (author, name, category)
 values (?, ?, ?)
