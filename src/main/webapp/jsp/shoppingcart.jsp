@@ -34,37 +34,19 @@
                     </tr>
                     </thead>
                     <tbody class="with-margin-top" id="shoppingList">
-                        <c:forEach var="ingredient" items="${sessionScope.user.shoppingCard}">
+                        <c:forEach var="ingredient" items="${sessionScope.user.shoppingCard.ingredients}">
                             <tr>
                                 <td class='amount'>${ingredient.amount}</td>
                                 <td class='unit'>${ingredient.unit}</td>
                                 <td class='singleIngredient'>${ingredient.name}</td>
                             </tr>
                         </c:forEach>
-<%--                        <tr>--%>
-<%--                            <td colspan="2"></td>--%>
-<%--                            <td>Salz</td>--%>
-<%--                        </tr>--%>
-<%--                        <tr>--%>
-<%--                            <td colspan="2"></td>--%>
-<%--                            <td>Pfeffer</td>--%>
-<%--                        </tr>--%>
-<%--                        <tr>--%>
-<%--                            <td colspan="2"></td>--%>
-<%--                            <td>Oregano</td>--%>
-<%--                        </tr>--%>
-<%--                        <tr>--%>
-<%--                            <td colspan="2"></td>--%>
-<%--                            <td>Thymian</td>--%>
-<%--                        </tr>--%>
-<%--                        <tr>--%>
-<%--                            <td colspan="2"></td>--%>
-<%--                            <td>Knoblauchpulver</td>--%>
-<%--                        </tr>--%>
-<%--                        <tr>--%>
-<%--                            <td colspan="2"></td>--%>
-<%--                            <td>Tabak</td>--%>
-<%--                        </tr>--%>
+                        <c:forEach var="season" items="${sessionScope.user.shoppingCard.seasons}">
+                            <tr>
+                                <td colspan="2"></td>
+                                <td>${season}</td>
+                            </tr>
+                        </c:forEach>
                     </tbody>
                 </table>
             </div>

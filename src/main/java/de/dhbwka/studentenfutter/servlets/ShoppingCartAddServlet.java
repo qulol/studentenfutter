@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.util.ArrayList;
 import java.util.function.Function;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 @WebServlet(urlPatterns = "/addtoshoppingcard")
 public class ShoppingCartAddServlet extends AbstractServlet {
@@ -20,8 +21,9 @@ public class ShoppingCartAddServlet extends AbstractServlet {
         var count = Float.parseFloat(req.getParameter("numberOfPersons"));
         var user = (UserBean) req.getSession().getAttribute("user");
         var shoppingCart = user.getShoppingCard();
+        var dataAccess = getDataAccess();
 
-        var multipliedIngredients = getDataAccess()
+        var multipliedIngredients = dataAccess
                 .cachedQuery("sql/select/selectRecipeIngredient.sql")
                 .withParam(id)
                 .collectAs(IngredientBean.class)
@@ -30,15 +32,26 @@ public class ShoppingCartAddServlet extends AbstractServlet {
                 .map(ingredient -> ingredient.multiply(count))
                 .collect(Collectors.toList());
 
-        shoppingCart.addAll(multipliedIngredients);
-        shoppingCart = new ArrayList<>(shoppingCart
-                .stream()
+        var seasons = dataAccess
+                .cachedQuery("sql/select/selectRecipeSeason.sql")
+                .withParam(id)
+                .collectAs(String.class)
+                .getList();
+
+        var updatedIngredients =
+                new ArrayList<>(Stream
+                .concat(shoppingCart.getIngredients().stream(), multipliedIngredients.stream())
                 .collect(Collectors.toMap(
                         ing -> new Pair<>(ing.getName(), ing.getUnit()),
                         Function.identity(),
                         IngredientBean::add)).values());
 
-        user.setShoppingCard(shoppingCart);
+        var updatedSeasons = Stream
+                .concat(shoppingCart.getSeasons().stream(), seasons.stream())
+                .distinct().collect(Collectors.toList());
+
+        shoppingCart.setIngredients(updatedIngredients);
+        shoppingCart.setSeasons(updatedSeasons);
         res.sendRedirect("/recipedetail?id=".concat(id).concat("#ingredientsTab"));
     }
 }

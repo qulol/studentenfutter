@@ -1,13 +1,11 @@
 package de.dhbwka.studentenfutter.bean;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 
 public class UserBean implements Serializable {
     private boolean loggedIn;
     private String username;
-    private List<IngredientBean> shoppingCard;
+    private ShoppingCardBean shoppingCard;
 
     public UserBean() {
     }
@@ -21,15 +19,11 @@ public class UserBean implements Serializable {
         this.username = username;
     }
 
-    public List<IngredientBean> getShoppingCard() {
+    public ShoppingCardBean getShoppingCard() {
         if (shoppingCard == null) {
-            shoppingCard = new ArrayList<>();
+            shoppingCard = new ShoppingCardBean();
         }
         return shoppingCard;
-    }
-
-    public void setShoppingCard(List<IngredientBean> shoppingCard) {
-        this.shoppingCard = shoppingCard;
     }
 
     public void setLoggedIn(boolean loggedIn) {
