@@ -22,18 +22,28 @@
 
     <div class="regular-top-content-wrapper">
         <div class="regular-top-content-block" id="top-text">
-            <h1 class="centered">Übersicht unserer studentenfreundlichen Rezepte</h1>
+            <h1 class="centered">Suchergebnisse für: ${requestScope.search}</h1>
             <div class="recipes-overview-wrapper scrollbar">
-                <div id="recipes-filtered-list">
-                    <c:forEach var="recipe" items="${requestScope.recipes}">
-                        <jsp:include page="/jsp/include/recipe_card.jsp">
-                            <jsp:param name="id" value="${recipe.id}"/>
-                            <jsp:param name="name" value="${recipe.name}"/>
-                            <jsp:param name="previewText" value="${recipe.previewText}"/>
-                            <jsp:param name="author" value="${recipe.author}"/>
-                        </jsp:include>
+                <c:if test="${empty requestScope.recipeSearchResult}">
+                    <h2 class="search-result-header">
+                        Wir haben wirklich überall gesucht und leider keine Rezepte gefunden :(
+                    </h2>
+                </c:if>
+                    <c:forEach var="recipeSearchResult" items="${requestScope.recipeSearchResult}">
+                        <h2 class="search-result-header">
+                            Gefunden in <c:out value="${recipeSearchResult.prettyColumnName}"/> :
+                        </h2>
+                        <div id="recipes-filtered-list">
+                            <c:forEach var="recipe" items="${recipeSearchResult.recipeCards}">
+                                <jsp:include page="/jsp/include/recipe_card.jsp">
+                                    <jsp:param name="id" value="${recipe.id}"/>
+                                    <jsp:param name="name" value="${recipe.name}"/>
+                                    <jsp:param name="previewText" value="${recipe.previewText}"/>
+                                    <jsp:param name="author" value="${recipe.author}"/>
+                                </jsp:include>
+                            </c:forEach>
+                        </div>
                     </c:forEach>
-                </div>
             </div>
         </div>
     </div>
