@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.Comparator;
+import java.util.stream.Collectors;
 
 @WebServlet(urlPatterns = "/recipedetail")
 public class RecipeDetailServlet extends AbstractServlet {
@@ -32,13 +33,15 @@ public class RecipeDetailServlet extends AbstractServlet {
                 .withParam(id)
                 .collectAs(IngredientBean.class)
                 .getList();
+
         var descriptionBean = db
                 .cachedQuery("sql/select/selectRecipeDescription.sql")
                 .withParam(id)
                 .collectAs(DescriptionBean.class)
-                .getList();
-
-        descriptionBean.sort(Comparator.comparing(DescriptionBean::getId));
+                .getList()
+                .stream()
+                .sorted(Comparator.comparing(DescriptionBean::getId))
+                .collect(Collectors.toList());
 
         var recipeBean = optionalRecipeBean.get();
         recipeBean.setIngredients(ingredientBean);
