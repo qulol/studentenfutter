@@ -497,7 +497,7 @@ header {
 }
 
 .categories-block a:hover {
-    box-shadow: 0 0 25px rgba(230, 0, 5, 1);
+    box-shadow: 0 8px 35px 0 rgba(230, 0, 5, 1)
 }
 
 
@@ -775,7 +775,7 @@ li {
     width: 100%;
 }
 
-.buttonPrintShoppingList {
+.buttonPrintShoppingList, .buttonDeleteShoppingList {
     position: fixed;
     margin-top: 0.5%;
     z-index: 100;
@@ -784,6 +784,11 @@ li {
     text-align: center;
     float: right;
     right: 22.7%;
+}
+
+.buttonDeleteShoppingList {
+    margin-right: 8%;
+    background-color: #e60005;
 }
 
 .buttonAddToShoppingList {
@@ -805,10 +810,9 @@ li {
     width: 73%;
     height: 8%;
     text-align: center;
-    /*background-color: #84cc60;*/
 }
 
-.buttonLogin:active, .buttonAddToShoppingList:active, .buttonPrintShoppingList:active {
+.buttonLogin:active, .buttonAddToShoppingList:active, .buttonPrintShoppingList:active, .buttonDeleteShoppingList:active{
     box-shadow: -1px -1px 4px #666;
     transform: translateY(2px);
 }

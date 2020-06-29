@@ -18,9 +18,11 @@
     <div class="regular-top-content-wrapper">
         <div class="regular-top-content-block white-bg scrollbar" id="top-text">
             <h1 class="centered">Einkaufsliste</h1>
-            <button class="buttonPrintShoppingList" id="printShoppingList"
-                    onClick=printShoppingList()>
+            <button class="buttonPrintShoppingList" id="printShoppingList">
                 Einkaufsliste drucken
+            </button>
+            <button class="buttonDeleteShoppingList" id="deleteShoppingList">
+                Einkaufsliste löschen
             </button>
             <div class="shoppingListTableWrapper" id="toPrint">
                 <table class="ingredientsTable">
@@ -39,30 +41,30 @@
                                 <td class='singleIngredient'>${ingredient.name}</td>
                             </tr>
                         </c:forEach>
-                        <tr>
-                            <td colspan="2"></td>
-                            <td>Salz</td>
-                        </tr>
-                        <tr>
-                            <td colspan="2"></td>
-                            <td>Pfeffer</td>
-                        </tr>
-                        <tr>
-                            <td colspan="2"></td>
-                            <td>Oregano</td>
-                        </tr>
-                        <tr>
-                            <td colspan="2"></td>
-                            <td>Thymian</td>
-                        </tr>
-                        <tr>
-                            <td colspan="2"></td>
-                            <td>Knoblauchpulver</td>
-                        </tr>
-                        <tr>
-                            <td colspan="2"></td>
-                            <td>Tabak</td>
-                        </tr>
+<%--                        <tr>--%>
+<%--                            <td colspan="2"></td>--%>
+<%--                            <td>Salz</td>--%>
+<%--                        </tr>--%>
+<%--                        <tr>--%>
+<%--                            <td colspan="2"></td>--%>
+<%--                            <td>Pfeffer</td>--%>
+<%--                        </tr>--%>
+<%--                        <tr>--%>
+<%--                            <td colspan="2"></td>--%>
+<%--                            <td>Oregano</td>--%>
+<%--                        </tr>--%>
+<%--                        <tr>--%>
+<%--                            <td colspan="2"></td>--%>
+<%--                            <td>Thymian</td>--%>
+<%--                        </tr>--%>
+<%--                        <tr>--%>
+<%--                            <td colspan="2"></td>--%>
+<%--                            <td>Knoblauchpulver</td>--%>
+<%--                        </tr>--%>
+<%--                        <tr>--%>
+<%--                            <td colspan="2"></td>--%>
+<%--                            <td>Tabak</td>--%>
+<%--                        </tr>--%>
                     </tbody>
                 </table>
             </div>
