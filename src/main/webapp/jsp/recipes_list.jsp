@@ -26,7 +26,7 @@
             <div class="recipes-overview-wrapper scrollbar">
                 <c:if test="${empty requestScope.recipeSearchResult}">
                     <h2 class="search-result-header">
-                        Wir haben wirklich überall gesucht und leider keine Rezepte gefunden :(
+                        <img class="nothing-found" src="${pageContext.request.contextPath}/images/no_recipe_found.png" alt="Kein Rezept gefunden">
                     </h2>
                 </c:if>
                     <c:forEach var="recipeSearchResult" items="${requestScope.recipeSearchResult}">
