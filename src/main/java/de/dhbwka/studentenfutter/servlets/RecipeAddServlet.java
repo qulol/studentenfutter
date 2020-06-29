@@ -6,6 +6,7 @@ import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -59,7 +60,8 @@ public class RecipeAddServlet extends AbstractServlet {
                 .withParam(null) //user
                 .withParam(name)
                 .withParam(category)
-                .collectGeneratedKey().get();
+                .collectGeneratedKey()
+                .orElseThrow(SQLException::new);
 
         db.cachedQuery("sql/insert/insertRecipeDescription.sql")
                 .withParam(id)
