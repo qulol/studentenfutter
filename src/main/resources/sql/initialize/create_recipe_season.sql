@@ -1,5 +1,5 @@
 -- auto-generated definition
-create table recipe_season
+create table if not exists recipe_season
 (
     id_recipe_season integer
         constraint recipe_season_pk
