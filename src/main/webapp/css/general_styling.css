@@ -321,6 +321,11 @@ header {
     position: relative;
 }
 
+.nothing-found {
+    margin-top: 5%;
+    width: 40%;
+}
+
 .error-code {
     font-size: 120px;
     color: white;
