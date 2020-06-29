@@ -34,7 +34,7 @@
                     <c:forEach var="recipeSearchResult" items="${requestScope.recipeSearchResult}">
                 <div class="recipes-overview-wrapper scrollbar">
                         <h2 class="search-result-header">
-                            Gefunden in <c:out value="${recipeSearchResult.prettyColumnName}"/> :
+                            Gefunden unter <c:out value="${recipeSearchResult.prettyColumnName}"/> :
                         </h2>
                         <div id="recipes-filtered-list">
                             <c:forEach var="recipe" items="${recipeSearchResult.recipeCards}">
