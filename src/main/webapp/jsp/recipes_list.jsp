@@ -23,18 +23,15 @@
     <div class="regular-top-content-wrapper">
         <div class="regular-top-content-block" id="top-text">
             <h1 class="centered">Suchergebnisse für: ${requestScope.search}</h1>
-
+            <div class="recipes-overview-wrapper scrollbar">
                 <c:if test="${empty requestScope.recipeSearchResult}">
-            <div class="recipes-overview-wrapper">
                     <h2 class="search-result-header">
-                        <img class="nothing-found" src="${pageContext.request.contextPath}/images/no_recipe_found.png" alt="Kein Rezept gefunden">
+                        Wir haben wirklich überall gesucht und leider keine Rezepte gefunden :(
                     </h2>
                 </c:if>
-
                     <c:forEach var="recipeSearchResult" items="${requestScope.recipeSearchResult}">
-                <div class="recipes-overview-wrapper scrollbar">
                         <h2 class="search-result-header">
-                            Gefunden in <c:out value="${recipeSearchResult.prettyColumnName}"/> :
+                            Gefunden unter <c:out value="${recipeSearchResult.prettyColumnName}"/> :
                         </h2>
                         <div id="recipes-filtered-list">
                             <c:forEach var="recipe" items="${recipeSearchResult.recipeCards}">
