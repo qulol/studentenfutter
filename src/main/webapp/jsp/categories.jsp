@@ -29,19 +29,19 @@
                     <div class="categories-block" id="recipes">
                         <a href='${contextPath}/recipes?search=Frühstück'>
                             <div class='categories-block'>
-                                <img src='${contextPath}/images/foodpictures/breakfast.jpg' id='breakfast-image' alt="">
+                                <img src='${contextPath}/images/category/breakfast.jpg' id='breakfast-image' alt="">
                                 <h5>Frühstück</h5>
                             </div>
                         </a>
                         <a href='${contextPath}/recipes?search=Mittagessen'>
                             <div class='categories-block'>
-                                <img src='${contextPath}/images/foodpictures/lunch.jpeg' id='lunch-image' alt="">
+                                <img src='${contextPath}/images/category/lunch.jpeg' id='lunch-image' alt="">
                                 <h5>Mittagessen</h5>
                             </div>
                         </a>
                         <a href='${contextPath}/recipes?search=Abendessen'>
                             <div class='categories-block'>
-                                <img src='${contextPath}/images/foodpictures/dinner.jpg' id='dinner-image' alt="">
+                                <img src='${contextPath}/images/category/dinner.jpg' id='dinner-image' alt="">
                                 <h5>Abendessen</h5>
                             </div>
                         </a>
