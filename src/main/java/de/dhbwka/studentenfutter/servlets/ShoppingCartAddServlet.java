@@ -12,7 +12,7 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 
 @WebServlet(urlPatterns = "/addtoshoppingcard")
-public class ShoppingCartAddToServlet extends AbstractServlet {
+public class ShoppingCartAddServlet extends AbstractServlet {
 
     @Override
     protected void handleDoPost(HttpServletRequest req, HttpServletResponse res) throws Exception {
