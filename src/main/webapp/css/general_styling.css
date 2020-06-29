@@ -794,11 +794,11 @@ li {
 
 .buttonLogin {
     position: static;
-    margin: 4% auto 12% auto;
+    margin: 10% auto 12% auto;
     z-index: 100;
     display: block;
     width: 73%;
-    height: 4%;
+    height: 8%;
     text-align: center;
     /*background-color: #84cc60;*/
 }
@@ -893,6 +893,7 @@ li {
     height: auto;
 }
 
+
 .login-form {
     position: static;
     margin: 0 auto;
@@ -906,17 +907,16 @@ li {
     display: block;
 }
 
-.login {
+.login-wrapper {
     z-index: 100;
-    display: flex;
+    display: block;
     margin: 0 auto;
     width: 22%;
-    height: 100%;
+    height: 45%;
     text-align: center;
 }
 
-
-.login a {
+.login-wrapper a {
     text-decoration: underline;
     font-size: 12px;
 }
@@ -927,7 +927,7 @@ li {
     z-index: 100;
     display: inline-block;
     text-align: center;
-    font-size: 12.3px;
+    font-size: 10px;
     font-weight: bold;
     height: 2%;
 }
@@ -940,17 +940,17 @@ li {
     color: #4aa121;
 }
 
-.register {
-    z-index: 100;
-    float: left;
-    display: block;
-    margin: 15% 42.5% 40% 42.5%;
-    width: auto;
-    height: auto;
-    color: black;
-    background-color: white;
-    text-align: center;
-}
+/*.register {*/
+/*    z-index: 100;*/
+/*    float: left;*/
+/*    display: block;*/
+/*    margin: 15% 42.5% 40% 42.5%;*/
+/*    width: auto;*/
+/*    height: auto;*/
+/*    color: black;*/
+/*    background-color: white;*/
+/*    text-align: center;*/
+/*}*/
 
 .regular-top-content-block-text {
     text-align: justify;
