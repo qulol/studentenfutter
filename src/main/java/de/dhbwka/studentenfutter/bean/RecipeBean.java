@@ -48,6 +48,10 @@ public class RecipeBean implements Serializable {
         return seasons;
     }
 
+    public String getSeasonsString() {
+        return String.join(", ", seasons);
+    }
+
     public void setSeasons(List<String> seasons) {
         this.seasons = seasons;
     }

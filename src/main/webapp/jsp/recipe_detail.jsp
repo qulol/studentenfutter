@@ -59,7 +59,7 @@
                         <div class="seasonsListWrapper">
                             <h6>Benötigte Gewürze:</h6>
                             <div id="seasonsList">
-                                "Salz, Pfeffer, Oregano, Thymian, Knoblauchpulver"
+                                <c:out value="${requestScope.recipe.seasonsString}"/>
                             </div>
                         </div>
                     </div>
