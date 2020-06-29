@@ -1,5 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" %>
+
 <div class="login-wrapper">
     <form class="login" action="${pageContext.request.contextPath}/register" method="post">
 

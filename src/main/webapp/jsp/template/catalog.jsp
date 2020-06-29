@@ -23,7 +23,16 @@
     <jsp:include page="../include/header.jsp"/>
     <div class="regular-top-content-wrapper">
         <div class="regular-top-content-block-text" id="top-text">
-            <h1 class="centered">Login</h1>
+            <h1 class="centered">
+                <c:choose>
+                    <c:when test="${requestScope.onRegister}">
+                        Registrieren
+                    </c:when>
+                    <c:otherwise>
+                        Login
+                    </c:otherwise>
+                </c:choose>
+             </h1>
             <img class="user-image" src="${contextPath}/images/other_pictures/user_image.png" alt="Benutzerbild">
             <c:choose>
                 <c:when test="${requestScope.onRegister}">
