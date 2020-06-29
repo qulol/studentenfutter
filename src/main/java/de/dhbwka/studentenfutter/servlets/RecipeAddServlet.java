@@ -44,7 +44,7 @@ public class RecipeAddServlet extends AbstractServlet {
         }
 
         var seasons = Arrays.stream(seasonParam.split(","))
-                .filter(String::isBlank)
+                .filter(s -> !s.isBlank())
                 .map(String::stripLeading)
                 .map(String::stripTrailing)
                 .collect(Collectors.toList());
