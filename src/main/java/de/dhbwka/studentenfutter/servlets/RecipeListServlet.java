@@ -15,7 +15,7 @@ public class RecipeListServlet extends AbstractServlet {
 
         //only search for category atm
         var recipes = getDataAccess()
-                .cachedQuery("sql/selectRecipeCard.sql")
+                .cachedQuery("sql/select/selectRecipeCard.sql")
                 .withParam(search)
                 .collectAs(RecipeCardBean.class)
                 .getList();

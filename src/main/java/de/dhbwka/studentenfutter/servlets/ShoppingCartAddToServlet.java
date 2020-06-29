@@ -22,7 +22,7 @@ public class ShoppingCartAddToServlet extends AbstractServlet {
         var shoppingCart = user.getShoppingCard();
 
         var multipliedIngredients = getDataAccess()
-                .cachedQuery("sql/selectRecipeIngredient.sql")
+                .cachedQuery("sql/select/selectRecipeIngredient.sql")
                 .withParam(id)
                 .collectAs(IngredientBean.class)
                 .getList()

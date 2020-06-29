@@ -59,19 +59,19 @@ public class RecipeAddServlet extends AbstractServlet {
         //checks
 
         var db = getDataAccess();
-        var id = db.cachedQuery("sql/insertRecipe.sql")
+        var id = db.cachedQuery("sql/insert/insertRecipe.sql")
                 .withParam(null) //user
                 .withParam(name)
                 .withParam(category)
                 .collectGeneratedKey().get();
 
-        db.query("insert into recipe_description (id_recipe, id, description) values (?, ?, ?)")
+        db.cachedQuery("sql/insert/insertRecipeDescription.sql")
                 .withParam(id)
                 .withBatchSupplier(index -> descriptions.get(index).getId())
                 .withBatchSupplier(index -> descriptions.get(index).getDescription())
                 .runBatch(descriptions.size());
 
-        db.query("insert into recipe_ingredient (id_recipe, amount, unit, ingredient) VALUES (?, ?, ?, ?)")
+        db.cachedQuery("sql/insert/insertRecipeIngredient.sql")
                 .withParam(id)
                 .withBatchSupplier(amounts::get)
                 .withBatchSupplier(units::get)

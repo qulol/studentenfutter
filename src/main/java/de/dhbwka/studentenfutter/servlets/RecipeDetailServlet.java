@@ -18,7 +18,7 @@ public class RecipeDetailServlet extends AbstractServlet {
 
         var db = getDataAccess();
         var optionalRecipeBean = db
-                .cachedQuery("sql/selectRecipe.sql")
+                .cachedQuery("sql/select/selectRecipe.sql")
                 .withParam(id)
                 .collectAs(RecipeBean.class)
                 .get();
@@ -28,12 +28,12 @@ public class RecipeDetailServlet extends AbstractServlet {
         }
 
         var ingredientBean = db
-                .cachedQuery("sql/selectRecipeIngredient.sql")
+                .cachedQuery("sql/select/selectRecipeIngredient.sql")
                 .withParam(id)
                 .collectAs(IngredientBean.class)
                 .getList();
         var descriptionBean = db
-                .cachedQuery("sql/selectRecipeDescription.sql")
+                .cachedQuery("sql/select/selectRecipeDescription.sql")
                 .withParam(id)
                 .collectAs(DescriptionBean.class)
                 .getList();
