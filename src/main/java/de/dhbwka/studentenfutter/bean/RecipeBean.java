@@ -15,8 +15,10 @@ public class RecipeBean implements Serializable {
     @QueryResult(column = "category")
     private String category;
 
-    private List<DescriptionBean> descriptions;
     private List<IngredientBean> ingredients;
+    private List<String> seasons;
+    private List<DescriptionBean> descriptions;
+
 
     public int getId() {
         return id;
@@ -34,19 +36,27 @@ public class RecipeBean implements Serializable {
         return category;
     }
 
-    public List<DescriptionBean> getDescriptions() {
-        return descriptions;
-    }
-
-    public void setDescriptions(List<DescriptionBean> descriptions) {
-        this.descriptions = descriptions;
-    }
-
     public List<IngredientBean> getIngredients() {
         return ingredients;
     }
 
     public void setIngredients(List<IngredientBean> ingredients) {
         this.ingredients = ingredients;
+    }
+
+    public List<String> getSeasons() {
+        return seasons;
+    }
+
+    public void setSeasons(List<String> seasons) {
+        this.seasons = seasons;
+    }
+
+    public List<DescriptionBean> getDescriptions() {
+        return descriptions;
+    }
+
+    public void setDescriptions(List<DescriptionBean> descriptions) {
+        this.descriptions = descriptions;
     }
 }
