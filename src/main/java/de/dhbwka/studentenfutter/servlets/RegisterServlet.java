@@ -24,8 +24,10 @@ public class RegisterServlet extends AbstractServlet {
                 getDataAccess().query("select id_user from user where name=?")
                 .withParam(inputUsername).collectAs(Integer.class).get().isPresent();
 
+        //todo outsource to error handler method
+
         if(userExists) {
-            req.setAttribute("username_exists_error", true); //todo beans und so
+            req.setAttribute("username_exists_error", true);
             req.setAttribute("onRegister", true);
             req.getRequestDispatcher(req.getContextPath().concat("/jsp/template/catalog.jsp")).forward(req, res);
             return;
@@ -33,13 +35,12 @@ public class RegisterServlet extends AbstractServlet {
 
         if(!inputPassword.equals(inputPasswordRepeat)) {
             req.setAttribute("onRegister", true);
-            req.setAttribute("password_repeat_error", true); //todo beans und so
+            req.setAttribute("password_repeat_error", true);
             req.getRequestDispatcher(req.getContextPath().concat("/jsp/template/catalog.jsp")).forward(req, res);
             return;
         }
 
         addUser(inputUsername, inputPassword);
-        req.setAttribute("onRegister", true);
         req.setAttribute("register_success", true);
         req.getRequestDispatcher(req.getContextPath().concat("/jsp/template/catalog.jsp")).forward(req, res);
     }
