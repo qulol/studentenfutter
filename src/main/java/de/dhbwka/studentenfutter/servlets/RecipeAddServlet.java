@@ -27,6 +27,7 @@ public class RecipeAddServlet extends AbstractServlet {
     protected void handleDoPost(HttpServletRequest req, HttpServletResponse res) throws Exception {
         var name = req.getParameter("name");
         var img = req.getPart("img");
+        //todo save img under recipe id
         var category = req.getParameter("category");
         var seasonParam = req.getParameter("seasons");
 
@@ -37,6 +38,11 @@ public class RecipeAddServlet extends AbstractServlet {
             var amount = req.getParameter("amount" + i);
             var unit   = req.getParameter("unit" + i);
             var ingredient = req.getParameter("ingredient" + i);
+
+            //todo
+            //get ingredient amount from user.
+            //set max count for malicious data
+            //check for invalid data (empty string, high numbers)
 
             amounts.add(Float.parseFloat(amount));
             units.add(unit);
@@ -54,8 +60,6 @@ public class RecipeAddServlet extends AbstractServlet {
             descriptions.add( new DescriptionBean(i, req.getParameter("instructionStep" + i)));
         }
 
-        //checks
-
         var db = getDataAccess();
         var id = db.cachedQuery("sql/insert/insertRecipe.sql")
                 .withParam(null) //user
@@ -64,16 +68,20 @@ public class RecipeAddServlet extends AbstractServlet {
                 .collectGeneratedKey()
                 .orElseThrow(SQLException::new);
 
+        //todo description into separate table..
+
         db.cachedQuery("sql/insert/insertRecipeDescription.sql")
                 .withParam(id)
                 .withBatchSupplier(index -> descriptions.get(index).getId())
                 .withBatchSupplier(index -> descriptions.get(index).getDescription())
                 .runBatch(descriptions.size());
 
-        db.cachedQuery("sql/insert/insertRecipeSeason.sql")
-                .withParam(id)
-                .withBatchSupplier(seasons::get)
-                .runBatch(seasons.size());
+        if (!seasons.isEmpty()) {
+            db.cachedQuery("sql/insert/insertRecipeSeason.sql")
+                    .withParam(id)
+                    .withBatchSupplier(seasons::get)
+                    .runBatch(seasons.size());
+        }
 
         db.cachedQuery("sql/insert/insertRecipeIngredient.sql")
                 .withParam(id)
