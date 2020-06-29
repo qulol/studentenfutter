@@ -60,7 +60,4 @@
 </div>
 
 </body>
-<div class="wrong-window-size">
-    <h2>Leider wird diese Seite erst ab einer Auflösung von 1900 x 900 unterstützt :( </h2>
-</div>
 </html>
