@@ -17,7 +17,7 @@
 
     <div class="regular-top-content-wrapper">
         <div class="regular-top-content-block black-bg" id="top-text">
-            <h1 class="centered" id="headline">Überschrift Rezept</h1>
+            <h1 class="centered" id="headline">${requestScope.recipe.name}</h1>
             <div class="recipe-detail-image-wrapper">
                 <img id="recipe-image-detail" src="${pageContext.request.contextPath}/images/default_recipe_image.jpg" alt="recipe-image-detail">
             </div>
