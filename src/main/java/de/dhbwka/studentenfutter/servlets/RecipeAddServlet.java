@@ -28,6 +28,7 @@ public class RecipeAddServlet extends AbstractServlet {
         var name = req.getParameter("name");
         var img = req.getPart("img");
         var category = req.getParameter("category");
+        var seasonParam = req.getParameter("seasons");
 
         List<Float> amounts = new ArrayList<>();
         List<String> units = new ArrayList<>();
@@ -42,8 +43,7 @@ public class RecipeAddServlet extends AbstractServlet {
             ingredients.add(ingredient);
         }
 
-        var seasons = Arrays.stream(req.getParameter("seasons")
-                .split(","))
+        var seasons = Arrays.stream(seasonParam.split(","))
                 .filter(String::isBlank)
                 .map(String::stripLeading)
                 .map(String::stripTrailing)

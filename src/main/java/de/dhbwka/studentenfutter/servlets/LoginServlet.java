@@ -29,7 +29,7 @@ public class LoginServlet extends AbstractServlet {
                 .get();
 
         if(password.isEmpty() || !password.get().equals(inputPassword)) {
-            req.setAttribute("login_error", true); //todo beans und so
+            req.setAttribute("login_error", true);
             req.getRequestDispatcher(req.getContextPath().concat("/jsp/template/catalog.jsp")).forward(req, res);
             return;
         }
