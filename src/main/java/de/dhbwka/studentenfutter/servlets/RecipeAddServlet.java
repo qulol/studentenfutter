@@ -44,7 +44,6 @@ public class RecipeAddServlet extends AbstractServlet {
             ingredients.add(ingredient);
         }
 
-        //todo
         var seasons = Arrays.stream(req.getParameter("seasons")
                 .split(","))
                 .map(String::stripLeading)
@@ -70,6 +69,11 @@ public class RecipeAddServlet extends AbstractServlet {
                 .withBatchSupplier(index -> descriptions.get(index).getId())
                 .withBatchSupplier(index -> descriptions.get(index).getDescription())
                 .runBatch(descriptions.size());
+
+        db.cachedQuery("sql/insert/insertRecipeSeason.sql")
+                .withParam(id)
+                .withBatchSupplier(seasons::get)
+                .runBatch(seasons.size());
 
         db.cachedQuery("sql/insert/insertRecipeIngredient.sql")
                 .withParam(id)
