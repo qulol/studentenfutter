@@ -11,6 +11,6 @@ public class LogoutServlet extends AbstractServlet {
     @Override
     protected void handleDoGet(HttpServletRequest req, HttpServletResponse res) throws Exception {
         ((UserBean)req.getSession().getAttribute("user")).logout();
-        req.getRequestDispatcher("/jsp/index.jsp").forward(req, res);
+        res.sendRedirect("/jsp/index.jsp");
     }
 }
