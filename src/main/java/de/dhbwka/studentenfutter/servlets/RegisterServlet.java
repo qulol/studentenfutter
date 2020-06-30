@@ -10,8 +10,7 @@ public class RegisterServlet extends AbstractServlet {
 
     @Override
     protected void handleDoGet(HttpServletRequest req, HttpServletResponse res) throws Exception {
-        req.setAttribute("onRegister", true);
-        req.getRequestDispatcher(req.getContextPath().concat("/jsp/template/catalog.jsp")).forward(req, res);
+        req.getRequestDispatcher(req.getContextPath().concat("/jsp/register.jsp")).forward(req, res);
     }
 
     @Override
@@ -28,21 +27,19 @@ public class RegisterServlet extends AbstractServlet {
 
         if(userExists) {
             req.setAttribute("username_exists_error", true);
-            req.setAttribute("onRegister", true);
-            req.getRequestDispatcher(req.getContextPath().concat("/jsp/template/catalog.jsp")).forward(req, res);
+            req.getRequestDispatcher(req.getContextPath().concat("/jsp/register.jsp")).forward(req, res);
             return;
         }
 
         if(!inputPassword.equals(inputPasswordRepeat)) {
-            req.setAttribute("onRegister", true);
             req.setAttribute("password_repeat_error", true);
-            req.getRequestDispatcher(req.getContextPath().concat("/jsp/template/catalog.jsp")).forward(req, res);
+            req.getRequestDispatcher(req.getContextPath().concat("/jsp/register.jsp")).forward(req, res);
             return;
         }
 
         addUser(inputUsername, inputPassword);
         req.setAttribute("register_success", true);
-        req.getRequestDispatcher(req.getContextPath().concat("/jsp/template/catalog.jsp")).forward(req, res);
+        req.getRequestDispatcher(req.getContextPath().concat("/jsp/login.jsp")).forward(req, res);
     }
 
     private void addUser(String username, String password) throws SQLException {
