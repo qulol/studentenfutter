@@ -17,9 +17,10 @@ public class ShoppingCartAddServlet extends AbstractServlet {
 
     @Override
     protected void handleDoPost(HttpServletRequest req, HttpServletResponse res) throws Exception {
-        var id = req.getParameter("id");
-        var count = Float.parseFloat(req.getParameter("numberOfPersons"));
         var user = (UserBean) req.getSession().getAttribute("user");
+        var id = req.getParameter("id");
+
+        var count = Float.parseFloat(req.getParameter("numberOfPersons"));
         var shoppingCart = user.getShoppingCard();
         var dataAccess = getDataAccess();
 
@@ -52,6 +53,6 @@ public class ShoppingCartAddServlet extends AbstractServlet {
 
         shoppingCart.setIngredients(updatedIngredients);
         shoppingCart.setSeasons(updatedSeasons);
-        res.sendRedirect("/recipedetail?id=".concat(id).concat("#ingredientsTab"));
+        res.sendRedirect("/shoppingcart");
     }
 }
