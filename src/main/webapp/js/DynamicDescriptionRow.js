@@ -38,6 +38,7 @@ function addDescription() {
 
 function removeDescription() {
     let toRemove = descriptions.pop();
+    currentDescriptionCount.value = descriptions.length;
     toRemove.parentNode.removeChild(toRemove);
 
     if (descriptions.length === maxDescriptionCount - 1) { //we can add new

@@ -57,6 +57,7 @@ function addIngredient() {
 
 function removeIngredient() {
     let toRemove = ingredients.pop();
+    currentIngredientCount.value = ingredients.length;
     toRemove.parentNode.removeChild(toRemove);
 
     if (ingredients.length === maxIngredientCount - 1) { //we can add new
