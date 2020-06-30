@@ -14,7 +14,16 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/general_styling.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/fontawesome/css/all.css">
     <link rel="icon" href="${pageContext.request.contextPath}/images/icons_logo/icon.png" type="image/png">
-    <title>Übersicht - Trail-Mix</title>
+    <title>
+        <c:choose>
+            <c:when test="${requestScope.onRegister}">
+                Registrieren - Trail-Mix
+            </c:when>
+            <c:otherwise>
+                Login - Trail-Mix
+            </c:otherwise>
+        </c:choose>
+    </title>
 </head>
 
 <body>
