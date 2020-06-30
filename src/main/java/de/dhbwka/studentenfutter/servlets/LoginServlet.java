@@ -34,9 +34,7 @@ public class LoginServlet extends AbstractServlet {
             return;
         }
 
-        HttpSession session = req.getSession();
-        session.setAttribute("user", new UserBean(inputUsername));
-        session.setMaxInactiveInterval(60 * 60); // Session expires after 60 minutes
+        ((UserBean)req.getSession().getAttribute("user")).login(inputUsername);
         res.sendRedirect(req.getContextPath().concat("/index"));
     }
 }

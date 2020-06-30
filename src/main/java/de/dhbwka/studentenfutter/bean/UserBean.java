@@ -3,20 +3,10 @@ package de.dhbwka.studentenfutter.bean;
 import java.io.Serializable;
 
 public class UserBean implements Serializable {
-    private boolean loggedIn;
     private String username;
     private ShoppingCardBean shoppingCard;
 
     public UserBean() {
-    }
-
-    public UserBean(String username) {
-        this(true, username);
-    }
-
-    private UserBean(boolean loggedIn, String username) {
-        this.loggedIn = loggedIn;
-        this.username = username;
     }
 
     public ShoppingCardBean getShoppingCard() {
@@ -26,16 +16,16 @@ public class UserBean implements Serializable {
         return shoppingCard;
     }
 
-    public void setLoggedIn(boolean loggedIn) {
-        this.loggedIn = loggedIn;
-    }
-
-    public void setUsername(String username) {
+    public void login(String username) {
         this.username = username;
     }
 
+    public void logout() {
+        this.username = null;
+    }
+
     public boolean isLoggedIn() {
-        return loggedIn;
+        return username != null;
     }
 
     public String getUsername() {

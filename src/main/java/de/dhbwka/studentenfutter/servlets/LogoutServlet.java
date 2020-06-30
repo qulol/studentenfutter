@@ -1,5 +1,7 @@
 package de.dhbwka.studentenfutter.servlets;
 
+import de.dhbwka.studentenfutter.bean.UserBean;
+
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -8,12 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 public class LogoutServlet extends AbstractServlet {
     @Override
     protected void handleDoGet(HttpServletRequest req, HttpServletResponse res) throws Exception {
-        req.getSession().removeAttribute("user");
+        ((UserBean)req.getSession().getAttribute("user")).logout();
         req.getRequestDispatcher("/jsp/index.jsp").forward(req, res);
-    }
-
-    @Override
-    protected void handleDoPost(HttpServletRequest req, HttpServletResponse res) throws Exception {
-        super.handleDoPost(req, res);
     }
 }
