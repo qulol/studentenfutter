@@ -23,7 +23,6 @@
     <div class="regular-top-content-wrapper">
         <div class="regular-top-content-block-text" id="top-text">
             <h1 class="centered">Rezept Hinzufügen</h1>
-
             <div class="create-recipe">
 
                 <form method="post" action="${pageContext.request.contextPath}/add" enctype="multipart/form-data">
@@ -41,7 +40,7 @@
                     <div class="ingredientsWrapper">
                         <input type="hidden" name="ingredientCount" value="1">
                         <h3>Zutaten</h3>
-                        <div class="ingredientContainer" id="ingredientContainer">
+                        <div class="ingredientContainer" id="ingredientContainer" data-maxCount="${requestScope.maxIngredientCount}">
                             <div class="ingredientRow" id="ingredientRow0">
                                 <label for="amount0"></label>
                                 <input type="number" id="amount0" name="amount0" min="0.1" max="5000" step="0.1" placeholder="Menge">
@@ -70,7 +69,7 @@
                     <div class="instructionWrapper">
                         <input type="hidden" name="descriptionCount" value="1">
                         <h3>Anleitung</h3>
-                        <div class="instructionContainer" id="instructionContainer">
+                        <div class="instructionContainer" id="instructionContainer" data-maxCount="${requestScope.maxDescriptionCount}">
                             <div class="instructionRow" id="instructionRow0">
                                 <label for="instructionStep0">1. Schritt</label>
                                 <br>

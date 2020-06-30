@@ -16,10 +16,12 @@ import java.util.stream.Collectors;
 @MultipartConfig
 public class RecipeAddServlet extends AbstractServlet {
     private static final int maxIngredientCount =   10;
-    private static final int maxInstructionCount =  10;
+    private static final int maxDescriptionCount =  10;
 
     @Override
     protected void handleDoGet(HttpServletRequest req, HttpServletResponse res) throws Exception {
+        req.setAttribute("maxIngredientCount", maxIngredientCount);
+        req.setAttribute("maxDescriptionCount", maxDescriptionCount);
         req.getRequestDispatcher(req.getContextPath().concat("/jsp/recipe_add.jsp")).forward(req, res);
     }
 
@@ -56,7 +58,7 @@ public class RecipeAddServlet extends AbstractServlet {
                 .collect(Collectors.toList());
 
         List<DescriptionBean> descriptions = new ArrayList<>();
-        for (int i = 0; i < maxInstructionCount; i++) {
+        for (int i = 0; i < maxDescriptionCount; i++) {
             descriptions.add( new DescriptionBean(i, req.getParameter("instructionStep" + i)));
         }
 

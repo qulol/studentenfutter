@@ -7,9 +7,16 @@ var descriptionButton;
 var ingredientCount;
 var descriptionCount;
 
+let maxIngredientCount;
+let maxDescriptionCount;
+
 window.addEventListener('DOMContentLoaded', () => {
     ingredientButton = document.getElementById("ingredientButton");
     descriptionButton = document.getElementById("instructionButton");
+    maxIngredientCount = document.getElementById("ingredientContainer")
+        .getAttribute("data-maxCount");
+    maxDescriptionCount = document.getElementById("instructionContainer")
+        .getAttribute("data-maxCount");
     ingredientCount = 1;
     descriptionCount = 1;
 });
@@ -36,7 +43,7 @@ function addIngredientRow() {
     ingredientContainer.appendChild(ingredientRow);
     ingredientCount++;
 
-    if (ingredientCount >= 10) {
+    if (ingredientCount >= maxIngredientCount) {
         ingredientButton.style.display = "none";
     }
 }
@@ -54,7 +61,7 @@ function addDescriptionRow() {
     instructionContainer.appendChild(instructionRow);
     descriptionCount++;
 
-    if (descriptionCount >= 10) {
+    if (descriptionCount >= maxDescriptionCount) {
         descriptionButton.style.display = "none";
     }
 }
