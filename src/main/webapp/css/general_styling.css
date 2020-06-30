@@ -792,7 +792,7 @@ li {
     transform: translateY(2px);
 }
 
-.buttonAddToShoppingList:hover, .buttonPrintShoppingList:hover, .buttonLogin:hover {
+.buttonAddToShoppingList:hover:not([disabled]), .buttonPrintShoppingList:hover, .buttonLogin:hover {
     background-color: #4aa121;
 }
 

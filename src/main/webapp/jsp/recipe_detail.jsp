@@ -32,9 +32,17 @@
                                 <input name="numberOfPersons" id="numberOfPersons"
                                        oninput="calculateIngredientsAmount()" value="1"
                                        type="number" min="1" step="1">
-                                <input class="buttonAddToShoppingList" id="addIngredientsToShoppingList" type="submit"
-                                       value="Zutaten zur Einkaufsliste hinzufügen">
-                            </form>
+                                <c:choose>
+                                    <c:when test="${sessionScope.user.loggedIn}">
+                                        <input class="buttonAddToShoppingList" id="addIngredientsToShoppingList" type="submit"
+                                               value="Zutaten zur Einkaufsliste hinzufügen">
+                                    </c:when>
+                                    <c:otherwise>
+                                        <input class="buttonAddToShoppingList" id="addIngredientsToShoppingList" type="submit"
+                                               value="Zutaten zur Einkaufsliste hinzufügen" title="Hierfür musst du dich anmelden." disabled>
+                                    </c:otherwise>
+                                </c:choose>
+                                </form>
                         </div>
                         <div class="ingredientsTableWrapper">
                             <table class="ingredientsTable">

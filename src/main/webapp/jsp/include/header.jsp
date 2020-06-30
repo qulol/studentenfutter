@@ -23,8 +23,8 @@
         </c:choose>
         <a href="${contextPath}/jsp/categories.jsp">Rezepte</a>
         <a href="${contextPath}/add">Rezept hinzufügen</a>
-        <a href="${contextPath}/shoppingcart">Einkaufsliste</a>
         <c:if test="${sessionScope.user.loggedIn}">
+            <a href="${contextPath}/shoppingcart">Einkaufsliste</a>
             <a class="logout" href="${contextPath}/logout">Abmelden</a>
         </c:if>
 
