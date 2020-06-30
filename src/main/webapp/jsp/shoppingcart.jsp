@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../css/general_styling.css">
     <link rel="stylesheet" href="../fontawesome/css/all.css">
-    <script src="../js/shopping_list.js"></script>
+    <script src="../js/PrintShoppingCart.js"></script>
     <link rel="icon" href="../images/icons_logo/icon.png" type="image/png">
     <title>Einkaufsliste - Trail-Mix</title>
 </head>
@@ -18,7 +18,7 @@
     <div class="regular-top-content-wrapper">
         <div class="regular-top-content-block white-bg scrollbar" id="top-text">
             <h1 class="centered">Einkaufsliste</h1>
-            <button class="buttonPrintShoppingList" id="printShoppingList">
+            <button class="buttonPrintShoppingList" id="printShoppingList" onclick="printShoppingList()">
                 Einkaufsliste drucken
             </button>
             <button class="buttonDeleteShoppingList" id="deleteShoppingList">
