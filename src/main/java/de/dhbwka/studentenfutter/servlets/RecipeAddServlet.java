@@ -27,6 +27,9 @@ public class RecipeAddServlet extends AbstractServlet {
 
     @Override
     protected void handleDoPost(HttpServletRequest req, HttpServletResponse res) throws Exception {
+        var ingredientCount = Integer.parseInt(req.getParameter("ingredientCount"));
+        var descriptionCount = Integer.parseInt(req.getParameter("descriptionCount"));
+
         var name = req.getParameter("name");
         var img = req.getPart("img");
         //todo save img under recipe id
@@ -36,13 +39,11 @@ public class RecipeAddServlet extends AbstractServlet {
         List<Float> amounts = new ArrayList<>();
         List<String> units = new ArrayList<>();
         List<String> ingredients = new ArrayList<>();
-        for (int i = 0; i < maxIngredientCount; i++) {
+        for (int i = 1; i <= ingredientCount; i++) {
             var amount = req.getParameter("amount" + i);
             var unit   = req.getParameter("unit" + i);
             var ingredient = req.getParameter("ingredient" + i);
 
-            //todo
-            //get ingredient amount from user.
             //set max count for malicious data
             //check for invalid data (empty string, high numbers)
 
@@ -58,7 +59,7 @@ public class RecipeAddServlet extends AbstractServlet {
                 .collect(Collectors.toList());
 
         List<DescriptionBean> descriptions = new ArrayList<>();
-        for (int i = 0; i < maxDescriptionCount; i++) {
+        for (int i = 0; i < descriptionCount; i++) {
             descriptions.add( new DescriptionBean(i, req.getParameter("instructionStep" + i)));
         }
 

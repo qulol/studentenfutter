@@ -10,7 +10,8 @@
 <head>
     <link rel="stylesheet" href="../css/general_styling.css">
     <link rel="stylesheet" href="../fontawesome/css/all.css">
-    <script src="../js/recipe_add.js"></script>
+    <script src="../js/DynamicIngredientRow.js"></script>
+    <script src="../js/DynamicDescriptionRow.js"></script>
     <link rel="icon" href="../images/icons_logo/icon.png" type="image/png">
     <title>Rezept hinzufügen - Trail-Mix</title>
 </head>
@@ -38,26 +39,13 @@
                     </select><br><br>
 
                     <div class="ingredientsWrapper">
-                        <input type="hidden" name="ingredientCount" value="1">
+                        <input type="hidden" id="ingredientCount" name="ingredientCount">
                         <h3>Zutaten</h3>
                         <div class="ingredientContainer" id="ingredientContainer" data-maxCount="${requestScope.maxIngredientCount}">
-                            <div class="ingredientRow" id="ingredientRow0">
-                                <label for="amount0"></label>
-                                <input type="number" id="amount0" name="amount0" min="0.1" max="5000" step="0.1" placeholder="Menge">
-
-                                <label for="unit0"></label>
-                                <select id="unit0" name="unit0">
-                                    <option value="g">g</option>
-                                    <option value="ml">ml</option>
-                                    <option value="Stk.">Stk.</option>
-                                </select>
-
-                                <label for="ingredient0"></label>
-                                <input type="text" id="ingredient0" name="ingredient0" placeholder="Zutat">
-                            </div>
+<%--                            filled dynmic from script--%>
                         </div>
-                        <input type="button" class="add-recipe-quantify-button-block" id="ingredientButton" onClick="addIngredientRow()" value="+">
-
+                        <input type="button" class="add-recipe-quantify-button-block" id="addIngredientButton" onClick="addIngredient()" value="+">
+                        <input type="button" class="add-recipe-quantify-button-block" id="removeIngredientButton" onClick="removeIngredient()" value="-">
                         <h3>Benötigte Gewürze (bitte mit Komma trennen)</h3>
                         <div class="SeasonRow">
                             <label for="seasonsList"></label><br>
@@ -66,18 +54,14 @@
                     </div>
                     <br>
                     <br>
-                    <div class="instructionWrapper">
-                        <input type="hidden" name="descriptionCount" value="1">
+                    <div class="descriptionWrapper">
+                        <input type="hidden" id="descriptionCount" name="descriptionCount">
                         <h3>Anleitung</h3>
-                        <div class="instructionContainer" id="instructionContainer" data-maxCount="${requestScope.maxDescriptionCount}">
-                            <div class="instructionRow" id="instructionRow0">
-                                <label for="instructionStep0">1. Schritt</label>
-                                <br>
-                                <textarea id="instructionStep0" name="instructionStep0" cols="40" rows="4"></textarea>
-                            </div>
+                        <div class="descriptionContainer" id="descriptionContainer" data-maxCount="${requestScope.maxDescriptionCount}">
+<%--                            filled dynamic from script--%>
                         </div>
-                        <input type="button" class="add-recipe-quantify-button-block" id="instructionButton" onclick="addDescriptionRow()" value="+">
-                        <input type="button" class="add-recipe-quantify-button-block" onClick="removeDescriptionRow()" value="-">
+                        <input type="button" class="add-recipe-quantify-button-block" id="addDescriptionButton" onclick="addDescription()" value="+">
+                        <input type="button" class="add-recipe-quantify-button-block" id="removeDescriptionButton" onClick="removeDescription()" value="-">
                     </div>
 
                     <input type="submit" value="Save">
