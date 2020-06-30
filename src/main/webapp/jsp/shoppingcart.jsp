@@ -21,9 +21,11 @@
             <button class="buttonPrintShoppingList" id="printShoppingList" onclick="printShoppingList()">
                 Einkaufsliste drucken
             </button>
-            <button class="buttonDeleteShoppingList" id="deleteShoppingList">
-                Einkaufsliste löschen
-            </button>
+            <form action="${pageContext.request.contextPath}/deleteshoppingcart" method="get">
+                <button type="submit" class="buttonDeleteShoppingList" id="deleteShoppingList">
+                    Einkaufsliste löschen
+                </button>
+            </form>
             <div class="shoppingListTableWrapper" id="toPrint">
                 <table class="ingredientsTable">
                     <thead class="th-fixed">

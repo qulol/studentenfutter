@@ -13,5 +13,6 @@ public class ShoppingCartDeleteServlet extends AbstractServlet {
     protected void handleDoGet(HttpServletRequest req, HttpServletResponse res) throws Exception {
         var shoppingCart = ((UserBean)req.getSession().getAttribute("user"));
         shoppingCart.getShoppingCard().clear();
+        res.sendRedirect("/shoppingcart");
     }
 }

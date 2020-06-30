@@ -26,7 +26,7 @@
                     <div class="tab" id="ingredientsTab">
                         <h4><a href="#ingredientsTab">Zutaten</a></h4>
                         <div class="calculateIngredientsAmount">
-                            <form action="${pageContext.request.contextPath}/addtoshoppingcard" method="post">
+                            <form action="${pageContext.request.contextPath}/addtoshoppingcard" method="post" target="shoppingcart">
                                 <input type="hidden" name="id" value="${requestScope.recipe.id}">
                                 <label for="numberOfPersons">Portionen: </label>
                                 <input name="numberOfPersons" id="numberOfPersons"
