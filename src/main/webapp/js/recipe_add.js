@@ -3,97 +3,71 @@ var ingredientRow;
 var instructionContainer;
 var instructionRow;
 var ingredientButton;
-var instructionButton;
-var displayedIngredientRows;
-var displayedInstructionRows;
-var i;
-var j;
-var k;
+var descriptionButton;
+var ingredientCount;
+var descriptionCount;
 
 window.addEventListener('DOMContentLoaded', () => {
-
     ingredientButton = document.getElementById("ingredientButton");
-    instructionButton = document.getElementById("instructionButton");
-    i = 1;
-    j = 1;
-    k = 2;
-    displayedIngredientRows = 1;
-    displayedInstructionRows = 1;
+    descriptionButton = document.getElementById("instructionButton");
+    ingredientCount = 1;
+    descriptionCount = 1;
 });
 
 function addIngredientRow() {
+    ingredientContainer = document.getElementById("ingredientContainer");
+    ingredientRow = document.createElement("div");
+    ingredientRow.setAttribute("class", "ingredientRow");
+    ingredientRow.setAttribute("id", "ingredientRow" + ingredientCount);
 
-    if (displayedIngredientRows < 10) {
+    ingredientRow.innerHTML =
+        '        <label for="amount' + ingredientCount + '"></label>' +
+        '        <input type="number" id="amount' + ingredientCount + '" name="amount' + ingredientCount + '" min="0.1" max="5000" step="0.1" placeholder="Menge">' +
+        '        <label for="unit' + ingredientCount + '"></label>' +
+        '        <select id="unit' + ingredientCount + '" name="unit' + ingredientCount + '">' +
+        '        <option value="g">g</option>' +
+        '        <option value="ml">ml</option>' +
+        '        <option value="Stk.">Stk.</option>' +
+        '        </select>' +
+        '        <label for="ingredient' + ingredientCount + '"></label>' +
+        '        <input type="text" id="ingredient' + ingredientCount + '" name="ingredient' + ingredientCount + '" placeholder="Zutat">' +
+        '        <input type="button" onClick="removeIngredientRow(' + ingredientCount + ')" value="-">';
 
-        ingredientButton.style.display = "block";
+    ingredientContainer.appendChild(ingredientRow);
+    ingredientCount++;
 
-        ingredientContainer = document.getElementById("ingredientContainer");
-        ingredientRow = document.createElement("div");
-        ingredientRow.setAttribute("class", "ingredientRow");
-        ingredientRow.setAttribute("id", "ingredientRow" + i);
-
-        ingredientRow.innerHTML =
-            '        <label for="amount' + i + '"></label>' +
-            '        <input type="number" id="amount' + i + '" name="amount' + i + '" min="0.1" max="5000" step="0.1" placeholder="Menge">' +
-            '        <label for="unit' + i + '"></label>' +
-            '        <select id="unit' + i + '" name="unit' + i + '">' +
-            '        <option value="g">g</option>' +
-            '        <option value="ml">ml</option>' +
-            '        <option value="Stk.">Stk.</option>' +
-            '        </select>' +
-            '        <label for="ingredient' + i + '"></label>' +
-            '        <input type="text" id="ingredient' + i + '" name="ingredient' + i + '" placeholder="Zutat">' +
-            '        <input type="button" onClick="removeIngredientRow(' + i + ')" value="-">';
-
-        ingredientContainer.appendChild(ingredientRow);
-        i++;
-        displayedIngredientRows++;
-
-        if (displayedIngredientRows === 10) {
-            ingredientButton.style.display = "none";
-        }
+    if (ingredientCount >= 10) {
+        ingredientButton.style.display = "none";
     }
 }
 
-function addInstructionRow() {
+function addDescriptionRow() {
+    instructionContainer = document.getElementById("instructionContainer");
+    instructionRow = document.createElement("div");
+    instructionRow.setAttribute("class", "instructionRow");
+    instructionRow.setAttribute("id", "instructionRow" + descriptionCount);
 
-    if (displayedInstructionRows < 10) {
+    instructionRow.innerHTML =
+        '        <label for="instructionStep' + descriptionCount + '">' + (descriptionCount + 1) + '. Schritt</label><br>' +
+        '        <textarea id="instructionStep' + descriptionCount + '" name="instructionStep' + descriptionCount + '" cols="40" rows="4"></textarea>';
 
-        instructionButton.style.display = "block";
+    instructionContainer.appendChild(instructionRow);
+    descriptionCount++;
 
-        instructionContainer = document.getElementById("instructionContainer");
-        instructionRow = document.createElement("div");
-        instructionRow.setAttribute("class", "instructionRow");
-        instructionRow.setAttribute("id", "instructionRow" + j);
-
-        instructionRow.innerHTML =
-            '        <label for="instructionStep' + j + '">' + k + '. Schritt</label><br>' +
-            '        <textarea id="instructionStep' + j + '" name="instructionStep' + j + '" cols="40" rows="4"></textarea>';
-
-        instructionContainer.appendChild(instructionRow);
-        j++;
-        k++;
-        displayedInstructionRows++;
-
-        if (displayedInstructionRows === 10) {
-            instructionButton.style.display = "none";
-        }
+    if (descriptionCount >= 10) {
+        descriptionButton.style.display = "none";
     }
 }
 
 function removeIngredientRow(rowId) {
     ingredientRow = document.getElementById("ingredientRow" + rowId);
     ingredientRow.parentNode.removeChild(ingredientRow);
-    ingredientButton.style.display = "block";
-    displayedIngredientRows--;
+    ingredientCount--;
 }
 
-function removeInstructionRow() {
+function removeDescriptionRow() {
     var instructionList = document.querySelectorAll('.instructionContainer .instructionRow');
     var lastElement = instructionList[instructionList.length - 1];
     lastElement.parentNode.removeChild(lastElement);
-
-    instructionButton.style.display = "block";
-    displayedInstructionRows--;
-    k--;
+    descriptionCount--;
 }

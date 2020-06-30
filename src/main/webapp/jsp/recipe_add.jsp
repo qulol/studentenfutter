@@ -39,6 +39,7 @@
                     </select><br><br>
 
                     <div class="ingredientsWrapper">
+                        <input type="hidden" name="ingredientCount" value="1">
                         <h3>Zutaten</h3>
                         <div class="ingredientContainer" id="ingredientContainer">
                             <div class="ingredientRow" id="ingredientRow0">
@@ -56,18 +57,18 @@
                                 <input type="text" id="ingredient0" name="ingredient0" placeholder="Zutat">
                             </div>
                         </div>
-                        <input type="button" id="ingredientButton" onClick="addIngredientRow()" value="+">
+                        <input type="button" class="add-recipe-quantify-button-block" id="ingredientButton" onClick="addIngredientRow()" value="+">
 
                         <h3>Benötigte Gewürze (bitte mit Komma trennen)</h3>
                         <div class="SeasonRow">
                             <label for="seasonsList"></label><br>
                             <textarea id="seasonsList" name="seasons" cols="100" rows="1"></textarea>
-
                         </div>
                     </div>
                     <br>
                     <br>
                     <div class="instructionWrapper">
+                        <input type="hidden" name="descriptionCount" value="1">
                         <h3>Anleitung</h3>
                         <div class="instructionContainer" id="instructionContainer">
                             <div class="instructionRow" id="instructionRow0">
@@ -76,8 +77,8 @@
                                 <textarea id="instructionStep0" name="instructionStep0" cols="40" rows="4"></textarea>
                             </div>
                         </div>
-                        <input type="button" id="instructionButton" onclick="addInstructionRow()" value="+">
-                        <input type="button" onClick="removeInstructionRow()" value="-">
+                        <input type="button" class="add-recipe-quantify-button-block" id="instructionButton" onclick="addDescriptionRow()" value="+">
+                        <input type="button" class="add-recipe-quantify-button-block" onClick="removeDescriptionRow()" value="-">
                     </div>
 
                     <input type="submit" value="Save">

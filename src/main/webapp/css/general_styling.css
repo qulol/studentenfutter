@@ -959,4 +959,6 @@ li {
 }
 
 
-
+.add-recipe-quantify-button-block {
+    display: block;
+}
