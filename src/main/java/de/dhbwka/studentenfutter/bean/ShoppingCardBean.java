@@ -4,13 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ShoppingCardBean {
-    private List<IngredientBean> ingredients;
-    private List<String> seasons;
+    private List<IngredientBean> ingredients = new ArrayList<>();
+    private List<String> seasons = new ArrayList<>();
 
     public List<IngredientBean> getIngredients() {
-        if (ingredients == null) {
-            ingredients = new ArrayList<>();
-        }
         return ingredients;
     }
 
@@ -19,13 +16,15 @@ public class ShoppingCardBean {
     }
 
     public List<String> getSeasons() {
-        if (seasons == null) {
-            seasons = new ArrayList<>();
-        }
         return seasons;
     }
 
     public void setSeasons(List<String> seasons) {
         this.seasons = seasons;
+    }
+
+    public void clear() {
+        ingredients.clear();
+        seasons.clear();
     }
 }
