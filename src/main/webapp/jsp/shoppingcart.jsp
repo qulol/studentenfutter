@@ -18,7 +18,7 @@
     <div class="regular-top-content-wrapper">
         <div class="regular-top-content-block white-bg scrollbar" id="top-text">
             <h1 class="centered">Einkaufsliste</h1>
-            <button class="buttonPrintShoppingList" id="printShoppingList" onclick="printShoppingList()">
+            <button class="buttonPrintShoppingList" id="printShoppingList" data-content="content" onclick="printShoppingList()">
                 Einkaufsliste drucken
             </button>
             <form action="${pageContext.request.contextPath}/clearshoppingcart" method="get">
