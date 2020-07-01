@@ -43,12 +43,6 @@
                                 <td class='singleIngredient'>${ingredient.name}</td>
                             </tr>
                         </c:forEach>
-                        <c:forEach var="season" items="${sessionScope.user.shoppingCard.seasons}">
-                            <tr>
-                                <td colspan="2"></td>
-                                <td>${season}</td>
-                            </tr>
-                        </c:forEach>
                     </tbody>
                 </table>
             </div>
