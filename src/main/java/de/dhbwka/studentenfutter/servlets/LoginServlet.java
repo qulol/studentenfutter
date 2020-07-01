@@ -1,5 +1,6 @@
 package de.dhbwka.studentenfutter.servlets;
 
+import de.dhbwka.studentenfutter.bean.IngredientBean;
 import de.dhbwka.studentenfutter.bean.UserBean;
 
 import javax.servlet.annotation.WebServlet;
@@ -20,24 +21,28 @@ public class LoginServlet extends AbstractServlet {
         String inputUsername = req.getParameter("username");
         String inputPassword = req.getParameter("password");
 
-        res.setContentType("text/html");
-
-        var password = getDataAccess()
-                .query("select password from user where name=?")
+        var optionalUserBean = getDataAccess()
+                .query("select id_user, name, password from user where name=?")
                 .withParam(inputUsername)
-                .collectAs(String.class)
+                .collectAs(UserBean.class)
                 .get();
 
-        if(password.isEmpty() || !password.get().equals(inputPassword)) {
+        if(optionalUserBean.isEmpty() || !optionalUserBean.get().getPassword().equals(inputPassword)) {
             req.setAttribute("login_error", true);
             req.getRequestDispatcher(req.getContextPath().concat("/jsp/login.jsp")).forward(req, res);
             return;
         }
 
-        //load shoppingcart
+        var user = optionalUserBean.get();
 
+        var shoppingcart = getDataAccess()
+                .query("select ingredient, unit, amount from shoppingcart where id_user=?")
+                .withParam(user.getId())
+                .collectAs(IngredientBean.class)
+                .getList();
 
-        ((UserBean)req.getSession().getAttribute("user")).login(inputUsername);
+        user.setShoppingCard(shoppingcart);
+        req.getSession().setAttribute("user", user);
         res.sendRedirect(req.getContextPath().concat("/index"));
     }
 }
