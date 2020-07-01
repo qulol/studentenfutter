@@ -15,20 +15,9 @@ import java.sql.SQLException;
 @WebListener()
 public class AppInitializer implements ServletContextListener {
 
-    // Public constructor is required by servlet spec
-    public AppInitializer() {
+    public AppInitializer() { }
 
-    }
-
-    // -------------------------------------------------------
-    // ServletContextListener implementation
-    // -------------------------------------------------------
     public void contextInitialized(ServletContextEvent sce) {
-      /* This method is called when the servlet context is
-         initialized(when the Web application is deployed). 
-         You can initialize servlet context related data here.
-      */
-
         var url = "jdbc:sqlite:studentenfutter.db"; //read from config
         var connection = new DatabaseAccess(new DatabaseConnectionDescriptor(url));
 
@@ -42,6 +31,12 @@ public class AppInitializer implements ServletContextListener {
 
     @Override
     public void contextDestroyed(ServletContextEvent sce) {
-        //write temps in db and stuff
+        //On application shutdown, listeners are notified in reverse order to their declarations
+        // with notifications to session listeners preceding notifications to context listeners.
+        // Session listeners must be notified of session invalidations prior to context listeners
+        // being notified of application shutdown.
+
+        //Java Servlet 3.0 specification --> Tomcat 7+
+        //sessions get gracefully destroyed by container
     }
 }
