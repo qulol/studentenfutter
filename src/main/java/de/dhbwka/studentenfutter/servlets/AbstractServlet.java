@@ -1,7 +1,7 @@
 package de.dhbwka.studentenfutter.servlets;
 
 import de.dhbwka.studentenfutter.database.DatabaseAccess;
-import de.dhbwka.studentenfutter.util.MethodNotImplementedException;
+import de.dhbwka.studentenfutter.util.ServletMethodNotImplementedException;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -26,7 +26,7 @@ public abstract class AbstractServlet extends HttpServlet {
 
     protected void handleDoGet(HttpServletRequest req, HttpServletResponse res) throws Exception {
         //logging
-        throw new MethodNotImplementedException(req);
+        throw new ServletMethodNotImplementedException(req);
     }
 
     @Override
@@ -44,7 +44,7 @@ public abstract class AbstractServlet extends HttpServlet {
 
     protected void handleDoPost(HttpServletRequest req, HttpServletResponse res) throws Exception {
         //logging
-        throw new MethodNotImplementedException(req);
+        throw new ServletMethodNotImplementedException(req);
     }
 
     protected DatabaseAccess getDataAccess() {
