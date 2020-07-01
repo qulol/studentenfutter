@@ -54,32 +54,49 @@
 
                     <h1>Zutaten</h1>
                     <div class="addIngredientsWrapper">
+
+                        <div class="button-wrapper">
+                            <button class="addOrRemoveRecipeIngredientRowButton" id="addIngredientButton"
+                                    onClick="addIngredient()">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                            <button class="addOrRemoveRecipeIngredientRowButton" id="removeIngredientButton"
+                                    onClick="removeIngredient()">
+                                <i class="fas fa-minus"></i>
+                            </button>
+                        </div>
+
                         <input type="hidden" id="ingredientCount" name="ingredientCount">
-                        <input type="button" class="addOrRemoveRecipeIngredientRowButton" id="addIngredientButton"
-                               onClick="addIngredient()" value="+">
-                        <div class="ingredientContainer scrollbar" id="ingredientContainer"
+                        <div class="ingredientsContainer scrollbar" id="ingredientContainer"
                              data-maxCount="${requestScope.maxIngredientCount}">
                             <%--                            filled dynmic from script--%>
                         </div>
 
-                        <input type="button" class="addOrRemoveRecipeIngredientRowButton" id="removeIngredientButton"
-                               onClick="removeIngredient()" value="-">
+
                     </div>
 
 
                     <h1>Anleitung</h1>
                     <div class="addDescriptionWrapper">
+
+                        <div class="button-wrapper">
+                            <button class="addOrRemoveRecipeIngredientRowButton" id="addDescriptionButton"
+                                    onclick="addDescription()">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                            <button class="addOrRemoveRecipeIngredientRowButton" id="removeDescriptionButton"
+                                    onClick="removeDescription()"><i class="fas fa-minus"></i>
+                            </button>
+                        </div>
+
                         <input type="hidden" id="descriptionCount" name="descriptionCount">
-                        <input type="button" class="addOrRemoveRecipeIngredientRowButton" id="addDescriptionButton"
-                               onclick="addDescription()" value="+">
                         <div class="descriptionContainer scrollbar" id="descriptionContainer"
                              data-maxCount="${requestScope.maxDescriptionCount}">
                             <%--                            filled dynamic from script--%>
                         </div>
-                        <input type="button" class="addOrRemoveRecipeIngredientRowButton" id="removeDescriptionButton"
-                               onClick="removeDescription()" value="-">
+
                     </div>
-                    <input type="submit" value="Save">
+                    <input class="saveRecipe" type="submit" value="Rezept speichern">
 
                 </form>
 
