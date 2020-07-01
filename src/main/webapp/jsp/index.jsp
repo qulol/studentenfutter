@@ -26,10 +26,9 @@
         <div class="firstStep fadeIn">
             <h1>1. Schritt</h1>
             <p>
-                Kochen, so einfach wie nie! Einfach aus unserer Datenbank die gewünschten
-                (students-and-dummy-proofed <i class="far fa-smile"></i> ) Rezepte heraussuchen, die Menge pro Rezept
-                online berechnen und die
-                Zutaten der Einkaufsliste hinzufügen
+                Kochen, so einfach wie nie! Registrieren, danach aus unserer Datenbank die gewünschten
+                (students-and-dummy-proofed <i class="far fa-smile"></i> ) Rezepte heraussuchen oder eigene Rezepte hinzufügen
+                und die benötigten Zutaten pro Rezept zur Einkaufsliste hinzufügen
             </p>
         </div>
         <div class="index-middle-content-block" id="middle-icons">

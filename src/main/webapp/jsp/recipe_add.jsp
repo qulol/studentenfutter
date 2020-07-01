@@ -28,7 +28,7 @@
 
                 <form method="post" action="${pageContext.request.contextPath}/add" enctype="multipart/form-data">
                     <label for="name"></label>
-                    <input type="text" id="name" name="name" placeholder="Name"><br><br>
+                    <input type="text" id="name" name="name" placeholder="Rezepttitel"><br><br>
                     <input type="file" name="img" accept="image/*"><br><br>
                     <h3>Kategorie</h3>
                     <label for="category"></label><br>
@@ -38,26 +38,40 @@
                         <option value="Abendessen">Abendessen</option>
                     </select><br><br>
 
+                    <div class="shortDescription">
+                        <label>
+                            <textarea name="shortDescription" cols="40" rows="4"
+                                                                 placeholder="Kurze Beschreibung des Rezepts"
+                                                                 required="true"></textarea>
+                        </label>
+                    </div>
+
                     <div class="ingredientsWrapper">
                         <input type="hidden" id="ingredientCount" name="ingredientCount">
                         <h3>Zutaten</h3>
-                        <input type="button" class="add-recipe-quantify-button-block" id="addIngredientButton" onClick="addIngredient()" value="+">
-                        <div class="ingredientContainer" id="ingredientContainer" data-maxCount="${requestScope.maxIngredientCount}">
-<%--                            filled dynmic from script--%>
+                        <input type="button" class="add-recipe-quantify-button-block" id="addIngredientButton"
+                               onClick="addIngredient()" value="+">
+                        <div class="ingredientContainer" id="ingredientContainer"
+                             data-maxCount="${requestScope.maxIngredientCount}">
+                            <%--                            filled dynmic from script--%>
                         </div>
 
-                        <input type="button" class="add-recipe-quantify-button-block" id="removeIngredientButton" onClick="removeIngredient()" value="-">
+                        <input type="button" class="add-recipe-quantify-button-block" id="removeIngredientButton"
+                               onClick="removeIngredient()" value="-">
                     </div>
                     <br>
                     <br>
                     <div class="descriptionWrapper">
                         <input type="hidden" id="descriptionCount" name="descriptionCount">
                         <h3>Anleitung</h3>
-                        <input type="button" class="add-recipe-quantify-button-block" id="addDescriptionButton" onclick="addDescription()" value="+">
-                        <div class="descriptionContainer" id="descriptionContainer" data-maxCount="${requestScope.maxDescriptionCount}">
-<%--                            filled dynamic from script--%>
+                        <input type="button" class="add-recipe-quantify-button-block" id="addDescriptionButton"
+                               onclick="addDescription()" value="+">
+                        <div class="descriptionContainer" id="descriptionContainer"
+                             data-maxCount="${requestScope.maxDescriptionCount}">
+                            <%--                            filled dynamic from script--%>
                         </div>
-                        <input type="button" class="add-recipe-quantify-button-block" id="removeDescriptionButton" onClick="removeDescription()" value="-">
+                        <input type="button" class="add-recipe-quantify-button-block" id="removeDescriptionButton"
+                               onClick="removeDescription()" value="-">
                     </div>
 
                     <input type="submit" value="Save">
