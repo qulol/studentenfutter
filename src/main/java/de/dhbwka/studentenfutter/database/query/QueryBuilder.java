@@ -58,6 +58,9 @@ public class QueryBuilder {
     }
 
     public int[] runBatch(int batchCount) throws SQLException {
+        if(batchCount == 0) {
+            return new int[0];
+        }
         return createQuery().executeBatch(counter, batchCount);
     }
 }
