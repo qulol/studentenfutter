@@ -26,7 +26,7 @@
                     Einkaufsliste löschen
                 </button>
             </form>
-            <div class="shoppingListTableWrapper" id="toPrint">
+            <div class="shoppingListTableWrapper" id="shoppingcart">
                 <table class="ingredientsTable">
                     <thead class="th-fixed">
                     <tr class="shopping-list">
