@@ -56,11 +56,11 @@
                     <div class="addIngredientsWrapper">
 
                         <div class="button-wrapper">
-                            <button class="addOrRemoveRecipeIngredientRowButton" id="addIngredientButton"
+                            <button type="button" class="addOrRemoveRecipeIngredientRowButton" id="addIngredientButton"
                                     onClick="addIngredient()">
                                 <i class="fas fa-plus"></i>
                             </button>
-                            <button class="addOrRemoveRecipeIngredientRowButton" id="removeIngredientButton"
+                            <button type="button" class="addOrRemoveRecipeIngredientRowButton" id="removeIngredientButton"
                                     onClick="removeIngredient()">
                                 <i class="fas fa-minus"></i>
                             </button>
@@ -80,11 +80,11 @@
                     <div class="addDescriptionWrapper">
 
                         <div class="button-wrapper">
-                            <button class="addOrRemoveRecipeIngredientRowButton" id="addDescriptionButton"
+                            <button type="button" class="addOrRemoveRecipeIngredientRowButton" id="addDescriptionButton"
                                     onclick="addDescription()">
                                 <i class="fas fa-plus"></i>
                             </button>
-                            <button class="addOrRemoveRecipeIngredientRowButton" id="removeDescriptionButton"
+                            <button type="button" class="addOrRemoveRecipeIngredientRowButton" id="removeDescriptionButton"
                                     onClick="removeDescription()"><i class="fas fa-minus"></i>
                             </button>
                         </div>
