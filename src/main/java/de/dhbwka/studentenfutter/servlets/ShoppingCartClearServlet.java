@@ -6,8 +6,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet(urlPatterns = "/deleteshoppingcart")
-public class ShoppingCartDeleteServlet extends AbstractServlet {
+@WebServlet(urlPatterns = "/clearshoppingcart")
+public class ShoppingCartClearServlet extends AbstractServlet {
 
     @Override
     protected void handleDoGet(HttpServletRequest req, HttpServletResponse res) throws Exception {

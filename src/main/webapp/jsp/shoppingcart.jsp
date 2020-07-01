@@ -21,7 +21,7 @@
             <button class="buttonPrintShoppingList" id="printShoppingList" onclick="printShoppingList()">
                 Einkaufsliste drucken
             </button>
-            <form action="${pageContext.request.contextPath}/deleteshoppingcart" method="get">
+            <form action="${pageContext.request.contextPath}/clearshoppingcart" method="get">
                 <button type="submit" class="buttonDeleteShoppingList" id="deleteShoppingList">
                     Einkaufsliste löschen
                 </button>
