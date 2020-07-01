@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @WebServlet(urlPatterns = "/recipes")
-public class RecipeSearchResultServlet extends AbstractServlet {
+public class RecipeSearchServlet extends AbstractServlet {
     List<RecipeSearchSelector> selectors;
 
     @Override
