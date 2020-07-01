@@ -1,6 +1,7 @@
 package de.dhbwka.studentenfutter.servlets;
 
 import de.dhbwka.studentenfutter.bean.DescriptionBean;
+import de.dhbwka.studentenfutter.bean.IngredientBean;
 
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
@@ -36,20 +37,15 @@ public class RecipeAddServlet extends AbstractServlet {
         var category = req.getParameter("category");
         var seasonParam = req.getParameter("seasons");
 
-        List<Float> amounts = new ArrayList<>();
-        List<String> units = new ArrayList<>();
-        List<String> ingredients = new ArrayList<>();
+        List<IngredientBean> ingredients = new ArrayList<>();
         for (int i = 1; i <= ingredientCount; i++) {
-            var amount = req.getParameter("amount" + i);
-            var unit   = req.getParameter("unit" + i);
-            var ingredient = req.getParameter("ingredient" + i);
+            var ingredientAmount = req.getParameter("amount" + i);
+            var ingredientUnit   = req.getParameter("unit" + i);
+            var ingredientName = req.getParameter("ingredient" + i);
 
             //set max count for malicious data
             //check for invalid data (empty string, high numbers)
-
-            amounts.add(Float.parseFloat(amount));
-            units.add(unit);
-            ingredients.add(ingredient);
+            ingredients.add(new IngredientBean(ingredientName, ingredientUnit, Float.parseFloat(ingredientAmount)));
         }
 
         var seasons = Arrays.stream(seasonParam.split(","))
@@ -88,9 +84,9 @@ public class RecipeAddServlet extends AbstractServlet {
 
         db.cachedQuery("sql/insert/insertRecipeIngredient.sql")
                 .withParam(id)
-                .withBatchSupplier(amounts::get)
-                .withBatchSupplier(units::get)
-                .withBatchSupplier(ingredients::get)
+                .withBatchSupplier(index -> ingredients.get(index).getAmount())
+                .withBatchSupplier(index -> ingredients.get(index).getUnit())
+                .withBatchSupplier(index -> ingredients.get(index).getName())
                 .runBatch(ingredients.size()); //check actual count all 3 param != null !
 
         res.sendRedirect(req.getContextPath().concat("/recipedetail?id=" + id + "#ingredientsTab"));
