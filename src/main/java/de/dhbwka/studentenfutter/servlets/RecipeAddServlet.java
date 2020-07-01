@@ -35,7 +35,6 @@ public class RecipeAddServlet extends AbstractServlet {
         var img = req.getPart("img");
         //todo save img under recipe id
         var category = req.getParameter("category");
-        var seasonParam = req.getParameter("seasons");
 
         List<IngredientBean> ingredients = new ArrayList<>();
         for (int i = 1; i <= ingredientCount; i++) {
@@ -47,12 +46,6 @@ public class RecipeAddServlet extends AbstractServlet {
             //check for invalid data (empty string, high numbers)
             ingredients.add(new IngredientBean(ingredientName, ingredientUnit, Float.parseFloat(ingredientAmount)));
         }
-
-        var seasons = Arrays.stream(seasonParam.split(","))
-                .filter(s -> !s.isBlank())
-                .map(String::stripLeading)
-                .map(String::stripTrailing)
-                .collect(Collectors.toList());
 
         List<DescriptionBean> descriptions = new ArrayList<>();
         for (int i = 1; i <= descriptionCount; i++) {
@@ -74,13 +67,6 @@ public class RecipeAddServlet extends AbstractServlet {
                 .withBatchSupplier(index -> descriptions.get(index).getId())
                 .withBatchSupplier(index -> descriptions.get(index).getDescription())
                 .runBatch(descriptions.size());
-
-        if (!seasons.isEmpty()) {
-            db.cachedQuery("sql/insert/insertRecipeSeason.sql")
-                    .withParam(id)
-                    .withBatchSupplier(seasons::get)
-                    .runBatch(seasons.size());
-        }
 
         db.cachedQuery("sql/insert/insertRecipeIngredient.sql")
                 .withParam(id)

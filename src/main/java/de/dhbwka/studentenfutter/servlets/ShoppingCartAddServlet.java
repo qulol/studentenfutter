@@ -33,12 +33,6 @@ public class ShoppingCartAddServlet extends AbstractServlet {
                 .map(ingredient -> ingredient.multiply(count))
                 .collect(Collectors.toList());
 
-        var seasons = dataAccess
-                .cachedQuery("sql/select/selectRecipeSeason.sql")
-                .withParam(id)
-                .collectAs(String.class)
-                .getList();
-
         var updatedIngredients =
                 new ArrayList<>(Stream
                 .concat(shoppingCart.getIngredients().stream(), multipliedIngredients.stream())
@@ -47,12 +41,7 @@ public class ShoppingCartAddServlet extends AbstractServlet {
                         Function.identity(),
                         IngredientBean::add)).values());
 
-        var updatedSeasons = Stream
-                .concat(shoppingCart.getSeasons().stream(), seasons.stream())
-                .distinct().collect(Collectors.toList());
-
         shoppingCart.setIngredients(updatedIngredients);
-        shoppingCart.setSeasons(updatedSeasons);
         res.sendRedirect("/shoppingcart");
     }
 }

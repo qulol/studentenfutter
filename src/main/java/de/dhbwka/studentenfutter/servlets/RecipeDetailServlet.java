@@ -34,12 +34,6 @@ public class RecipeDetailServlet extends AbstractServlet {
                 .collectAs(IngredientBean.class)
                 .getList();
 
-        var seasonBean = db
-                .cachedQuery("sql/select/selectRecipeSeason.sql")
-                .withParam(id)
-                .collectAs(String.class)
-                .getList();
-
         var descriptionBean = db
                 .cachedQuery("sql/select/selectRecipeDescription.sql")
                 .withParam(id)
@@ -52,7 +46,6 @@ public class RecipeDetailServlet extends AbstractServlet {
         var recipeBean = optionalRecipeBean.get();
         recipeBean.setIngredients(ingredientBean);
         recipeBean.setDescriptions(descriptionBean);
-        recipeBean.setSeasons(seasonBean);
 
         req.setAttribute("recipe", recipeBean);
         req.getRequestDispatcher(req.getContextPath().concat("/jsp/recipe_detail.jsp")).forward(req, res);

@@ -64,12 +64,6 @@
                                 </tbody>
                             </table>
                         </div>
-                        <div class="seasonsListWrapper">
-                            <h6>Benötigte Gewürze:</h6>
-                            <div id="seasonsList">
-                                <c:out value="${requestScope.recipe.seasonsString}"/>
-                            </div>
-                        </div>
                     </div>
 
                     <div class="tab" id="instructionsTab">

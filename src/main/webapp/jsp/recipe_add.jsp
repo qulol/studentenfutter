@@ -46,11 +46,6 @@
                         </div>
                         <input type="button" class="add-recipe-quantify-button-block" id="addIngredientButton" onClick="addIngredient()" value="+">
                         <input type="button" class="add-recipe-quantify-button-block" id="removeIngredientButton" onClick="removeIngredient()" value="-">
-                        <h3>Benötigte Gewürze (bitte mit Komma trennen)</h3>
-                        <div class="SeasonRow">
-                            <label for="seasonsList"></label><br>
-                            <textarea id="seasonsList" name="seasons" cols="100" rows="1"></textarea>
-                        </div>
                     </div>
                     <br>
                     <br>

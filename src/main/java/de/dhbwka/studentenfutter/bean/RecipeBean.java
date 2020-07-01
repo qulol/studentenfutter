@@ -16,7 +16,6 @@ public class RecipeBean implements Serializable {
     private String category;
 
     private List<IngredientBean> ingredients;
-    private List<String> seasons;
     private List<DescriptionBean> descriptions;
 
 
@@ -42,18 +41,6 @@ public class RecipeBean implements Serializable {
 
     public void setIngredients(List<IngredientBean> ingredients) {
         this.ingredients = ingredients;
-    }
-
-    public List<String> getSeasons() {
-        return seasons;
-    }
-
-    public String getSeasonsString() {
-        return String.join(", ", seasons);
-    }
-
-    public void setSeasons(List<String> seasons) {
-        this.seasons = seasons;
     }
 
     public List<DescriptionBean> getDescriptions() {

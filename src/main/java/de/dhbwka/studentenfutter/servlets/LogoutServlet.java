@@ -10,7 +10,12 @@ import javax.servlet.http.HttpServletResponse;
 public class LogoutServlet extends AbstractServlet {
     @Override
     protected void handleDoGet(HttpServletRequest req, HttpServletResponse res) throws Exception {
-        ((UserBean)req.getSession().getAttribute("user")).logout();
+        var user = ((UserBean)req.getSession().getAttribute("user"));
+        var shoppingcart = user.getShoppingCard();
+
+        //todo
+
+        user.logout();
         res.sendRedirect("/jsp/index.jsp");
     }
 }
