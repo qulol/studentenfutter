@@ -59,8 +59,8 @@ public class RecipeAddServlet extends AbstractServlet {
                 .collect(Collectors.toList());
 
         List<DescriptionBean> descriptions = new ArrayList<>();
-        for (int i = 0; i < descriptionCount; i++) {
-            descriptions.add( new DescriptionBean(i, req.getParameter("instructionStep" + i)));
+        for (int i = 1; i <= descriptionCount; i++) {
+            descriptions.add( new DescriptionBean(i, req.getParameter("description" + i)));
         }
 
         var db = getDataAccess();
