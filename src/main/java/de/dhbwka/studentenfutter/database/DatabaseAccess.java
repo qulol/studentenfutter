@@ -72,7 +72,6 @@ public class DatabaseAccess {
     public void onLoad() throws IOException, SQLException {
         query(SQLLoader.load("sql/initialize/create_recipe.sql")).run();
         query(SQLLoader.load("sql/initialize/create_recipe_ingredient.sql")).run();
-        query(SQLLoader.load("sql/initialize/create_recipe_season.sql")).run();
         query(SQLLoader.load("sql/initialize/create_recipe_description.sql")).run();
         query(SQLLoader.load("sql/initialize/create_user.sql")).run();
     }
