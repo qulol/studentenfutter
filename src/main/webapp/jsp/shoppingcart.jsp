@@ -36,7 +36,7 @@
                     </tr>
                     </thead>
                     <tbody class="with-margin-top" id="shoppingList">
-                        <c:forEach var="ingredient" items="${sessionScope.user.shoppingCard.ingredients}">
+                        <c:forEach var="ingredient" items="${sessionScope.user.shoppingCard}">
                             <tr>
                                 <td class='amount'>${ingredient.amount}</td>
                                 <td class='unit'>${ingredient.unit}</td>

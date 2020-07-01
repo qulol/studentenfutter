@@ -1,22 +1,18 @@
 package de.dhbwka.studentenfutter.bean;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 public class UserBean implements Serializable {
     private String username;
-    private ShoppingCardBean shoppingCard;
+    private List<IngredientBean> shoppingCard;
 
     public UserBean() {
     }
 
-    public ShoppingCardBean getShoppingCard() {
-        if (shoppingCard == null) {
-            shoppingCard = new ShoppingCardBean();
-        }
-        return shoppingCard;
-    }
-
     public void login(String username) {
+        shoppingCard = new ArrayList<>();
         this.username = username;
     }
 
@@ -30,5 +26,13 @@ public class UserBean implements Serializable {
 
     public String getUsername() {
         return username == null ? "anonym" : username;
+    }
+
+    public List<IngredientBean> getShoppingCard() {
+        return shoppingCard;
+    }
+
+    public void setShoppingCard(List<IngredientBean> shoppingCard) {
+        this.shoppingCard = shoppingCard;
     }
 }

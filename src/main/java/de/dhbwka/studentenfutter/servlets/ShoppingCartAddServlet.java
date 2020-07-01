@@ -35,13 +35,13 @@ public class ShoppingCartAddServlet extends AbstractServlet {
 
         var updatedIngredients =
                 new ArrayList<>(Stream
-                .concat(shoppingCart.getIngredients().stream(), multipliedIngredients.stream())
+                .concat(shoppingCart.stream(), multipliedIngredients.stream())
                 .collect(Collectors.toMap(
                         ing -> new Pair<>(ing.getName(), ing.getUnit()),
                         Function.identity(),
                         IngredientBean::add)).values());
 
-        shoppingCart.setIngredients(updatedIngredients);
+        user.setShoppingCard(updatedIngredients);
         res.sendRedirect("/shoppingcart");
     }
 }
