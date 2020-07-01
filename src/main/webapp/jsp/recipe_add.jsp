@@ -41,10 +41,11 @@
                     <div class="ingredientsWrapper">
                         <input type="hidden" id="ingredientCount" name="ingredientCount">
                         <h3>Zutaten</h3>
+                        <input type="button" class="add-recipe-quantify-button-block" id="addIngredientButton" onClick="addIngredient()" value="+">
                         <div class="ingredientContainer" id="ingredientContainer" data-maxCount="${requestScope.maxIngredientCount}">
 <%--                            filled dynmic from script--%>
                         </div>
-                        <input type="button" class="add-recipe-quantify-button-block" id="addIngredientButton" onClick="addIngredient()" value="+">
+
                         <input type="button" class="add-recipe-quantify-button-block" id="removeIngredientButton" onClick="removeIngredient()" value="-">
                     </div>
                     <br>
@@ -52,10 +53,10 @@
                     <div class="descriptionWrapper">
                         <input type="hidden" id="descriptionCount" name="descriptionCount">
                         <h3>Anleitung</h3>
+                        <input type="button" class="add-recipe-quantify-button-block" id="addDescriptionButton" onclick="addDescription()" value="+">
                         <div class="descriptionContainer" id="descriptionContainer" data-maxCount="${requestScope.maxDescriptionCount}">
 <%--                            filled dynamic from script--%>
                         </div>
-                        <input type="button" class="add-recipe-quantify-button-block" id="addDescriptionButton" onclick="addDescription()" value="+">
                         <input type="button" class="add-recipe-quantify-button-block" id="removeDescriptionButton" onClick="removeDescription()" value="-">
                     </div>
 

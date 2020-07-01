@@ -25,7 +25,7 @@ function addDescription() {
     descriptionField.setAttribute("name", "description" + index)
     descriptionField.setAttribute("cols", "40");
     descriptionField.setAttribute("rows", "4");
-    descriptionField.setAttribute("placeholder", "Schritt 1");
+    descriptionField.setAttribute("placeholder", "Schritt " + index);
     descriptionField.setAttribute("required", "true");
 
     if (index === 1) { //just added the first one, so we can delete
