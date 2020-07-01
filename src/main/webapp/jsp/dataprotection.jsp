@@ -16,13 +16,12 @@
 
 <body>
 <div class="wrapper" id="wrapper">
-    <%@include file="include/background-default.jsp"%>
+    <%@include file="include/background-default.jsp" %>
     <jsp:include page="include/header.jsp"/>
 
     <div class="regular-top-content-wrapper">
-
+        <h1 class="centered">Datenschutz</h1>
         <div class="regular-top-content-block white-bg">
-            <h1 class="centered">Datenschutz</h1>
             <div class="text-paragraph">
                 <h4>Grundlegendes</h4>
                 <p>
@@ -41,7 +40,7 @@
         </div>
     </div>
 
-    <%@include file="include/footer.jsp"%>
+    <%@include file="include/footer.jsp" %>
 </div>
 </body>
 </html>

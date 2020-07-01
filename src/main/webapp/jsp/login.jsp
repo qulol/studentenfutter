@@ -19,11 +19,11 @@
 
 <body>
 <div class="wrapper" id="wrapper">
-    <%@include file="include/background-default.jsp"%>
+    <%@include file="include/background-default.jsp" %>
     <jsp:include page="include/header.jsp"/>
     <div class="regular-top-content-wrapper">
-        <div class="regular-top-content-block-text" id="top-text">
-            <h1 class="centered">Login</h1>
+        <h1 class="centered">Login</h1>
+        <div class="regular-top-content-block white-bg" id="top-text">
             <img class="user-image" src="${contextPath}/images/other_pictures/user_image.png" alt="Benutzerbild">
             <div class="login-wrapper">
                 <form action="${pageContext.request.contextPath}/login" method="post">

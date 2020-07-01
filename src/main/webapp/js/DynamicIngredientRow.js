@@ -9,6 +9,7 @@ window.addEventListener('DOMContentLoaded', () => {
     currentIngredientCount = document.getElementById("ingredientCount");
     currentIngredientCount.value = 0;
     maxIngredientCount = Number.parseInt(ingredientContainer.getAttribute("data-maxCount"));
+    addIngredient();
 });
 
 function addIngredient() {

@@ -16,64 +16,69 @@
     <title>Rezept hinzufügen - Trail-Mix</title>
 </head>
 
-<body class="scrollbar">
+<body>
 <div class="wrapper" id="wrapper">
     <%@include file="include/background-default.jsp" %>
     <jsp:include page="include/header.jsp"/>
 
     <div class="regular-top-content-wrapper">
-        <div class="regular-top-content-block-text" id="top-text">
-            <h1 class="centered">Rezept Hinzufügen</h1>
+        <h1 class="centered">Rezept Hinzufügen</h1>
+        <div class="regular-top-content-block white-bg">
+
             <div class="create-recipe">
-
                 <form method="post" action="${pageContext.request.contextPath}/add" enctype="multipart/form-data">
-                    <label for="name"></label>
-                    <input type="text" id="name" name="name" placeholder="Rezepttitel"><br><br>
-                    <input type="file" name="img" accept="image/*"><br><br>
-                    <h3>Kategorie</h3>
-                    <label for="category"></label><br>
-                    <select id="category" name="category">
-                        <option value="Frühstück">Frühstück</option>
-                        <option value="Mittagessen">Mittagessen</option>
-                        <option value="Abendessen">Abendessen</option>
-                    </select><br><br>
 
-                    <div class="shortDescription">
+                    <h1>Rezeptinfos</h1>
+                    <div class="addRecipeHead">
+                        <label for="name"></label>
+                        <input class="addRecipeTitle" type="text" id="name" name="name" placeholder="Rezepttitel">
+                        <input class="addRecipeImage" type="file" name="img" accept="image/*">
+
+
+                        <label for="category"></label>
+                        <select id="category" name="category" class="addRecipeCategory">
+                            <option value="Fruehstueck">Frühstück</option>
+                            <option value="Mittagessen">Mittagessen</option>
+                            <option value="Abendessen">Abendessen</option>
+                        </select>
+                    </div>
+
+                    <div class="addShortDescription">
                         <label>
-                            <textarea name="shortDescription" cols="40" rows="4"
-                                                                 placeholder="Kurze Beschreibung des Rezepts"
-                                                                 required="true"></textarea>
+                            <textarea class="addShortDescription" name="shortDescription"
+                                      placeholder="Kurze Beschreibung des Rezepts"
+                                      required></textarea>
                         </label>
                     </div>
 
-                    <div class="ingredientsWrapper">
+
+                    <h1>Zutaten</h1>
+                    <div class="addIngredientsWrapper">
                         <input type="hidden" id="ingredientCount" name="ingredientCount">
-                        <h3>Zutaten</h3>
-                        <input type="button" class="add-recipe-quantify-button-block" id="addIngredientButton"
+                        <input type="button" class="addOrRemoveRecipeIngredientRowButton" id="addIngredientButton"
                                onClick="addIngredient()" value="+">
-                        <div class="ingredientContainer" id="ingredientContainer"
+                        <div class="ingredientContainer scrollbar" id="ingredientContainer"
                              data-maxCount="${requestScope.maxIngredientCount}">
                             <%--                            filled dynmic from script--%>
                         </div>
 
-                        <input type="button" class="add-recipe-quantify-button-block" id="removeIngredientButton"
+                        <input type="button" class="addOrRemoveRecipeIngredientRowButton" id="removeIngredientButton"
                                onClick="removeIngredient()" value="-">
                     </div>
-                    <br>
-                    <br>
-                    <div class="descriptionWrapper">
+
+
+                    <h1>Anleitung</h1>
+                    <div class="addDescriptionWrapper">
                         <input type="hidden" id="descriptionCount" name="descriptionCount">
-                        <h3>Anleitung</h3>
-                        <input type="button" class="add-recipe-quantify-button-block" id="addDescriptionButton"
+                        <input type="button" class="addOrRemoveRecipeIngredientRowButton" id="addDescriptionButton"
                                onclick="addDescription()" value="+">
-                        <div class="descriptionContainer" id="descriptionContainer"
+                        <div class="descriptionContainer scrollbar" id="descriptionContainer"
                              data-maxCount="${requestScope.maxDescriptionCount}">
                             <%--                            filled dynamic from script--%>
                         </div>
-                        <input type="button" class="add-recipe-quantify-button-block" id="removeDescriptionButton"
+                        <input type="button" class="addOrRemoveRecipeIngredientRowButton" id="removeDescriptionButton"
                                onClick="removeDescription()" value="-">
                     </div>
-
                     <input type="submit" value="Save">
 
                 </form>

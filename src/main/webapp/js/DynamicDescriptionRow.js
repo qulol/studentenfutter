@@ -10,7 +10,8 @@ window.addEventListener('DOMContentLoaded', () => {
     currentDescriptionCount = document.getElementById("descriptionCount")
     currentDescriptionCount.value = 0;
     maxDescriptionCount = Number.parseInt(descriptionContainer.getAttribute("data-maxCount"));
-});
+    addDescription();
+    });
 
 function addDescription() {
     descriptionRow = descriptionContainer.appendChild(document.createElement("div"));
@@ -22,9 +23,8 @@ function addDescription() {
     const descriptionField = descriptionRow
         .appendChild(document.createElement("label"))
         .appendChild(document.createElement("textarea"));
+    descriptionField.setAttribute("class", "descriptionRow");
     descriptionField.setAttribute("name", "description" + index)
-    descriptionField.setAttribute("cols", "40");
-    descriptionField.setAttribute("rows", "4");
     descriptionField.setAttribute("placeholder", "Schritt " + index);
     descriptionField.setAttribute("required", "true");
 

@@ -23,10 +23,9 @@
         <%@include file="include/background-default.jsp"%>
         <jsp:include page="include/header.jsp"/>
         <div class="regular-top-content-wrapper">
-            <div class="regular-top-content-block-text" id="top-text">
-                <h1 class="centered">
-                    Registrieren
-                </h1>
+            <h1 class="centered">Registrieren</h1>
+            <div class="regular-top-content-block white-bg" id="top-text">
+
                 <img class="user-image" src="${contextPath}/images/other_pictures/user_image.png" alt="Benutzerbild">
                 <div class="login-wrapper">
                     <form class="login" action="${pageContext.request.contextPath}/register" method="post">
@@ -60,8 +59,7 @@
                     </form>
                 </div>
             </div>
-        </div>
-        <%@include file="include/footer.jsp" %>
+           <%@include file="include/footer.jsp" %>
     </div>
 </body>
 </html>

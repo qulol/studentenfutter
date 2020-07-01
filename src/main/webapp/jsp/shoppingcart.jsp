@@ -12,13 +12,14 @@
 
 <body>
 <div class="wrapper" id="wrapper">
-    <%@include file="include/background-default.jsp"%>
+    <%@include file="include/background-default.jsp" %>
     <jsp:include page="include/header.jsp"/>
 
     <div class="regular-top-content-wrapper">
+        <h1 class="centered">Einkaufsliste</h1>
         <div class="regular-top-content-block white-bg scrollbar" id="top-text">
-            <h1 class="centered">Einkaufsliste</h1>
-            <button class="buttonPrintShoppingList" id="printShoppingList" data-content="content" onclick="printShoppingList()">
+            <button class="buttonPrintShoppingList" id="printShoppingList" data-content="content"
+                    onclick="printShoppingList()">
                 Einkaufsliste drucken
             </button>
             <form action="${pageContext.request.contextPath}/clearshoppingcart" method="get">
@@ -36,20 +37,20 @@
                     </tr>
                     </thead>
                     <tbody class="with-margin-top" id="shoppingList">
-                        <c:forEach var="ingredient" items="${requestScope.shoppingcart}">
-                            <tr>
-                                <td class='amount'>${ingredient.amount}</td>
-                                <td class='unit'>${ingredient.unit}</td>
-                                <td class='singleIngredient'>${ingredient.name}</td>
-                            </tr>
-                        </c:forEach>
+                    <c:forEach var="ingredient" items="${requestScope.shoppingcart}">
+                        <tr>
+                            <td class='amount'>${ingredient.amount}</td>
+                            <td class='unit'>${ingredient.unit}</td>
+                            <td class='singleIngredient'>${ingredient.name}</td>
+                        </tr>
+                    </c:forEach>
                     </tbody>
                 </table>
             </div>
         </div>
     </div>
 
-    <%@include file="include/footer.jsp"%>
+    <%@include file="include/footer.jsp" %>
 </div>
 
 </body>

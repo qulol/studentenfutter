@@ -18,16 +18,16 @@
 
 <body>
 <div class="wrapper" id="wrapper">
-    <%@include file="include/background-default.jsp"%>
+    <%@include file="include/background-default.jsp" %>
     <jsp:include page="include/header.jsp"/>
 
     <div class="regular-top-content-wrapper">
+        <h1 class="centered">Rezept-Kategorien</h1>
         <div class="regular-top-content-block" id="top-text">
-            <h1 class="centered">Rezept-Kategorien</h1>
             <div class="recipes-overview-wrapper">
                 <div class="categories-block">
                     <div class="categories-block" id="recipes">
-                        <a href='${contextPath}/recipes?search=Frühstück'>
+                        <a href='${contextPath}/recipes?search=Fruehstueck'>
                             <div class='categories-block'>
                                 <img src='${contextPath}/images/category/breakfast.jpg' id='breakfast-image' alt="">
                                 <h5>Frühstück</h5>
@@ -51,7 +51,7 @@
         </div>
     </div>
 
-    <%@include file="include/footer.jsp"%>
+    <%@include file="include/footer.jsp" %>
 </div>
 
 </body>

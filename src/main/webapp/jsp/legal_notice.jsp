@@ -21,8 +21,9 @@
     <jsp:include page="include/header.jsp"/>
 
     <div class="regular-top-content-wrapper">
+        <h1 class="centered">Impressum</h1>
         <div class="regular-top-content-block scrollbar white-bg" id="top-text">
-            <h1 class="centered">Impressum</h1>
+
             <div class="text-paragraph">
                 <h4>Angaben gem. § 5 TMG:</h4>
                 <table class="formated-table">
