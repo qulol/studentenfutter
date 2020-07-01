@@ -33,16 +33,7 @@ public class LoginServlet extends AbstractServlet {
             return;
         }
 
-        var user = optionalUserBean.get();
-
-        var shoppingcart = getDataAccess()
-                .query("select ingredient, unit, amount from shoppingcart where id_user=?")
-                .withParam(user.getId())
-                .collectAs(IngredientBean.class)
-                .getList();
-
-        user.setShoppingCard(shoppingcart);
-        req.getSession().setAttribute("user", user);
+        req.getSession().setAttribute("user", optionalUserBean.get());
         res.sendRedirect(req.getContextPath().concat("/index"));
     }
 }

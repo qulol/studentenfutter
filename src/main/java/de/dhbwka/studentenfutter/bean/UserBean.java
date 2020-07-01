@@ -3,8 +3,6 @@ package de.dhbwka.studentenfutter.bean;
 import de.dhbwka.studentenfutter.database.query.QueryResult;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 
 public class UserBean implements Serializable {
     @QueryResult(column = "id_user")
@@ -14,11 +12,7 @@ public class UserBean implements Serializable {
     @QueryResult(column = "password")
     private String password;
 
-    private List<IngredientBean> shoppingCard;
-
-    public UserBean() {
-        shoppingCard = new ArrayList<>();
-    }
+    public UserBean() { }
 
     public boolean isLoggedIn() {
         return id != 0;
@@ -34,13 +28,5 @@ public class UserBean implements Serializable {
 
     public String getPassword() {
         return password;
-    }
-
-    public List<IngredientBean> getShoppingCard() {
-        return shoppingCard;
-    }
-
-    public void setShoppingCard(List<IngredientBean> shoppingCard) {
-        this.shoppingCard = shoppingCard;
     }
 }

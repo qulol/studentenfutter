@@ -21,9 +21,9 @@ public class ShoppingCartAddServlet extends AbstractServlet {
         var id = req.getParameter("id");
 
         var count = Float.parseFloat(req.getParameter("numberOfPersons"));
-        var shoppingCart = user.getShoppingCard();
         var dataAccess = getDataAccess();
 
+        //select ingredients from db and multiply by 'numberOfPersons'
         var multipliedIngredients = dataAccess
                 .cachedQuery("sql/select/selectRecipeIngredient.sql")
                 .withParam(id)
@@ -33,7 +33,15 @@ public class ShoppingCartAddServlet extends AbstractServlet {
                 .map(ingredient -> ingredient.multiply(count))
                 .collect(Collectors.toList());
 
-        var updatedIngredients =
+        //select current shopping cart
+        var shoppingCart = getDataAccess()
+                .query("select ingredient, unit, amount from shoppingcart where id_user=?")
+                .withParam(user.getId())
+                .collectAs(IngredientBean.class)
+                .getList();
+
+        //update shopping cart
+        var updatedShoppingCart =
                 new ArrayList<>(Stream
                 .concat(shoppingCart.stream(), multipliedIngredients.stream())
                 .collect(Collectors.toMap(
@@ -41,7 +49,22 @@ public class ShoppingCartAddServlet extends AbstractServlet {
                         Function.identity(),
                         IngredientBean::add)).values());
 
-        user.setShoppingCard(updatedIngredients);
-        res.sendRedirect("/shoppingcart");
+        //clear
+        getDataAccess()
+                .query("delete from shoppingcart where id_user=?")
+                .withParam(user.getId())
+                .run();
+
+        //insert
+        getDataAccess()
+                .cachedQuery("sql/insert/insertShoppingcart.sql")
+                .withParam(user.getId())
+                .withBatchSupplier(index -> updatedShoppingCart.get(index).getName())
+                .withBatchSupplier(index -> updatedShoppingCart.get(index).getUnit())
+                .withBatchSupplier(index -> updatedShoppingCart.get(index).getAmount())
+                .runBatch(updatedShoppingCart.size());
+
+        req.setAttribute("shoppingcart", updatedShoppingCart);
+        req.getRequestDispatcher("/jsp/shoppingcart.jsp").forward(req, res);
     }
 }
