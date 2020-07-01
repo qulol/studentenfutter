@@ -17,55 +17,33 @@
 </head>
 <body>
 <div class="wrapper" id="wrapper">
-    <%@include file="include/background-default.jsp" %>
+    <%@include file="include/background-default.jsp"%>
     <jsp:include page="include/header.jsp"/>
 
     <div class="regular-top-content-wrapper">
-        <% String searchedWord = request.getParameter("search"); %>
-
-        <% if (searchedWord.equals("Fruehstueck") | searchedWord.equals("Mittagessen") | searchedWord.equals("Abendessen")) { %>
-        <h1 class="centered">${requestScope.search}</h1>
-        <% } else { %>
-        <h1 class="centered">Suchergebnisse für: ${requestScope.search}</h1>
-        <% } %>
-
-        <div class="regular-top-content-block scrollbar" id="top-text">
-            <div class="recipes-overview-wrapper">
-
+        <div class="regular-top-content-block" id="top-text">
+            <h1 class="centered">Suchergebnisse für: ${requestScope.search}</h1>
+            <div class="recipes-overview-wrapper scrollbar">
                 <c:if test="${empty requestScope.recipeSearchResult}">
                     <h2 class="search-result-header">
-                        <img class="nothing-found" src="${pageContext.request.contextPath}/images/no_recipe_found.png"
-                             alt="Kein Rezept gefunden">
+                        <img class="nothing-found" src="${pageContext.request.contextPath}/images/no_recipe_found.png" alt="Kein Rezept gefunden">
                     </h2>
                 </c:if>
-
-
-
-                <c:forEach var="recipeSearchResult" items="${requestScope.recipeSearchResult}">
-
-                <% if (searchedWord.equals("Fruehstueck") | searchedWord.equals("Mittagessen") | searchedWord.equals("Abendessen")) { %>
-
-                <% } else { %>
-
-                    <h2 class="search-result-header">
-                        Gefunden unter <c:out value="${recipeSearchResult.prettyColumnName}"/> :
-                    </h2>
-
-                    <% } %>
-
-
-
-                    <div id="recipes-filtered-list">
-                        <c:forEach var="recipe" items="${recipeSearchResult.recipeCards}">
-                            <jsp:include page="/jsp/include/recipe_card.jsp">
-                                <jsp:param name="id" value="${recipe.id}"/>
-                                <jsp:param name="name" value="${recipe.name}"/>
-                                <jsp:param name="previewText" value="${recipe.previewText}"/>
-                                <jsp:param name="author" value="${recipe.author}"/>
-                            </jsp:include>
-                        </c:forEach>
-                    </div>
-                </c:forEach>
+                    <c:forEach var="recipeSearchResult" items="${requestScope.recipeSearchResult}">
+                        <h2 class="search-result-header">
+                            Gefunden unter <c:out value="${recipeSearchResult.prettyColumnName}"/> :
+                        </h2>
+                        <div id="recipes-filtered-list">
+                            <c:forEach var="recipe" items="${recipeSearchResult.recipeCards}">
+                                <jsp:include page="/jsp/include/recipe_card.jsp">
+                                    <jsp:param name="id" value="${recipe.id}"/>
+                                    <jsp:param name="name" value="${recipe.name}"/>
+                                    <jsp:param name="previewText" value="${recipe.previewText}"/>
+                                    <jsp:param name="author" value="${recipe.author}"/>
+                                </jsp:include>
+                            </c:forEach>
+                        </div>
+                    </c:forEach>
             </div>
         </div>
     </div>
