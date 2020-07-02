@@ -26,7 +26,7 @@
         <div class="regular-top-content-block white-bg">
 
             <div class="create-recipe">
-                <form method="post" action="${pageContext.request.contextPath}/add" enctype="multipart/form-data">
+                <form method="post" action="${pageContext.request.contextPath}/add" enctype="multipart/form-data" autocomplete="off">
 
                     <h1>Rezeptinfos</h1>
                     <div class="addRecipeHead">
