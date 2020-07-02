@@ -67,6 +67,7 @@
                     <url>http://studentenfutter.it.dh-karlsruhe.de/manager/text</url>
                     <server>TomcatServerTrailMix</server>
                     <uriEncoding>utf-8</uriEncoding>
+                    <path>/</path>
                 </configuration>
             </plugin>
         </plugins>
