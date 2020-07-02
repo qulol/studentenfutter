@@ -977,7 +977,6 @@ textarea {
 }
 
 
-
 .addRecipe {
 
 }
@@ -1029,4 +1028,53 @@ textarea {
     display: inline-block;
     position: fixed;
     width: 2.4%;
+}
+
+.faq-content {
+    display: block;
+    margin: 1% 2%;
+    position: static;
+}
+
+.faq-image {
+    width: 75vmin;
+    margin-left: 2%;
+    margin-bottom: 1%;
+}
+
+.faq-headlines {
+    position: static;
+    display: block;
+    background-color: #dbe1e1;
+    color: black;
+    font-size: 2vmin;
+    margin-top: 5%;
+    margin-bottom: 0.1%;
+    border: 0.5px solid #333333;
+    width: 97.9%;
+}
+
+.faq-content p {
+    padding: 0;
+    margin-left: 2%;
+    margin-top: -0.15%;
+}
+
+.faq-text-head {
+    margin-bottom: -0.15%;
+}
+
+.faq-panic-button {
+    width: 30vmin;
+    margin: 1% 35%;
+}
+
+.faq-panic-button-text {
+    text-align: center;
+}
+
+.overview {
+    margin: 0 auto;
+    font-family: "Roboto-Light", sans-serif;
+font-size: 1.5vmin;
 }
