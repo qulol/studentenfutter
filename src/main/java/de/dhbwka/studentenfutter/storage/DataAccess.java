@@ -1,7 +1,7 @@
-package de.dhbwka.studentenfutter.data;
+package de.dhbwka.studentenfutter.storage;
 
-import de.dhbwka.studentenfutter.data.file.FileAccess;
-import de.dhbwka.studentenfutter.database.DatabaseAccess;
+import de.dhbwka.studentenfutter.storage.file.FileAccess;
+import de.dhbwka.studentenfutter.storage.database.DatabaseAccess;
 
 public class DataAccess {
     public static final String ATTRIBUTE_ACCESS_KEY = DatabaseAccess.class.getName();

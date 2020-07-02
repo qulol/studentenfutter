@@ -1,4 +1,4 @@
-package de.dhbwka.studentenfutter.database.query;
+package de.dhbwka.studentenfutter.storage.database.query;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

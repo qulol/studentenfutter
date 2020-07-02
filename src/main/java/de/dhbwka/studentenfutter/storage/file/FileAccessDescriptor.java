@@ -1,4 +1,4 @@
-package de.dhbwka.studentenfutter.data.file;
+package de.dhbwka.studentenfutter.storage.file;
 
 import java.nio.file.Path;
 

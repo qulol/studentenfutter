@@ -1,8 +1,8 @@
 package de.dhbwka.studentenfutter.servlets;
 
-import de.dhbwka.studentenfutter.data.DataAccess;
-import de.dhbwka.studentenfutter.data.file.FileAccess;
-import de.dhbwka.studentenfutter.database.DatabaseAccess;
+import de.dhbwka.studentenfutter.storage.DataAccess;
+import de.dhbwka.studentenfutter.storage.file.FileAccess;
+import de.dhbwka.studentenfutter.storage.database.DatabaseAccess;
 import de.dhbwka.studentenfutter.util.ServletMethodNotImplementedException;
 
 import javax.servlet.ServletException;

@@ -1,4 +1,4 @@
-package de.dhbwka.studentenfutter.database;
+package de.dhbwka.studentenfutter.storage.database;
 
 /**
  * A simple Database descriptor used by a {@link DatabaseAccess} to establish a connection

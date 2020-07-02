@@ -1,6 +1,6 @@
-package de.dhbwka.studentenfutter.database.query.param;
+package de.dhbwka.studentenfutter.storage.database.query.param;
 
-import de.dhbwka.studentenfutter.database.query.BatchCounter;
+import de.dhbwka.studentenfutter.storage.database.query.BatchCounter;
 
 import java.util.function.Function;
 

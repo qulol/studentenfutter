@@ -1,10 +1,9 @@
-package de.dhbwka.studentenfutter.database;
+package de.dhbwka.studentenfutter.storage.database;
 
-import de.dhbwka.studentenfutter.database.query.IConnectionSupplier;
-import de.dhbwka.studentenfutter.database.query.QueryBuilder;
-import de.dhbwka.studentenfutter.database.query.QueryExecutor;
-import de.dhbwka.studentenfutter.system.SQLLoader;
-import de.dhbwka.studentenfutter.servlets.AbstractServlet;
+import de.dhbwka.studentenfutter.storage.database.query.IConnectionSupplier;
+import de.dhbwka.studentenfutter.storage.database.query.QueryBuilder;
+import de.dhbwka.studentenfutter.storage.database.query.QueryExecutor;
+import de.dhbwka.studentenfutter.util.SQLLoader;
 
 import java.io.IOException;
 import java.sql.Connection;

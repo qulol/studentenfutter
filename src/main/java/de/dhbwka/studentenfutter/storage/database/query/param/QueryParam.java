@@ -1,4 +1,4 @@
-package de.dhbwka.studentenfutter.database.query.param;
+package de.dhbwka.studentenfutter.storage.database.query.param;
 
 public class QueryParam implements IQueryParam {
     private final Object param;

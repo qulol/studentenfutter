@@ -1,19 +1,17 @@
 package de.dhbwka.studentenfutter;
 
-import de.dhbwka.studentenfutter.data.DataAccess;
-import de.dhbwka.studentenfutter.data.file.FileAccess;
-import de.dhbwka.studentenfutter.data.file.FileAccessDescriptor;
-import de.dhbwka.studentenfutter.database.DatabaseAccess;
-import de.dhbwka.studentenfutter.database.DatabaseAccessDescriptor;
+import de.dhbwka.studentenfutter.storage.DataAccess;
+import de.dhbwka.studentenfutter.storage.file.FileAccess;
+import de.dhbwka.studentenfutter.storage.file.FileAccessDescriptor;
+import de.dhbwka.studentenfutter.storage.database.DatabaseAccess;
+import de.dhbwka.studentenfutter.storage.database.DatabaseAccessDescriptor;
 
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
-import java.io.File;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.sql.SQLException;
-import java.text.MessageFormat;
 
 /**
  * Listener to initialize server from @{@link javax.servlet.ServletContext}.

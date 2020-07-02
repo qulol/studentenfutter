@@ -1,6 +1,6 @@
 package de.dhbwka.studentenfutter.bean;
 
-import de.dhbwka.studentenfutter.database.query.QueryResult;
+import de.dhbwka.studentenfutter.storage.database.query.QueryResult;
 
 public class RecipeCardBean {
     @QueryResult(column = "id_recipe")
