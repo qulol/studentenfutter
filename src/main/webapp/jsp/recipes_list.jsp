@@ -36,7 +36,7 @@
                                 <jsp:include page="/jsp/include/recipe_card.jsp">
                                     <jsp:param name="id" value="${recipe.id}"/>
                                     <jsp:param name="name" value="${recipe.name}"/>
-                                    <jsp:param name="previewText" value="${recipe.previewText}"/>
+                                    <jsp:param name="previewText" value="${recipe.shortDescription}"/>
                                     <jsp:param name="author" value="${recipe.author}"/>
                                 </jsp:include>
                             </c:forEach>

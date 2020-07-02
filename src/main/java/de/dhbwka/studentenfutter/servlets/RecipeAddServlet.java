@@ -9,8 +9,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 @WebServlet(urlPatterns = "/add")
 @MultipartConfig
@@ -35,26 +35,28 @@ public class RecipeAddServlet extends AbstractServlet {
         var img = req.getPart("img");
         //todo save img under recipe id
         var category = req.getParameter("category");
+        var shortDescription = req.getParameter("shortDescription");
 
-        List<IngredientBean> ingredients = new ArrayList<>();
-        for (int i = 1; i <= ingredientCount; i++) {
-            var ingredientAmount = req.getParameter("amount" + i);
-            var ingredientUnit   = req.getParameter("unit" + i);
-            var ingredientName = req.getParameter("ingredient" + i);
+        var ingredients = IntStream
+                .rangeClosed(1, ingredientCount)
+                .mapToObj(index -> {
+                    var ingredientName = req.getParameter("ingredient" + index);
+                    var ingredientUnit   = req.getParameter("unit" + index);
+                    var ingredientAmount = Float.parseFloat(req.getParameter("amount" + index));
+                    return new IngredientBean(ingredientName, ingredientUnit, ingredientAmount); })
+                .collect(Collectors.toList());
 
-            ingredients.add(new IngredientBean(ingredientName, ingredientUnit, Float.parseFloat(ingredientAmount)));
-        }
-
-        List<DescriptionBean> descriptions = new ArrayList<>();
-        for (int i = 1; i <= descriptionCount; i++) {
-            descriptions.add( new DescriptionBean(i, req.getParameter("description" + i)));
-        }
+        var descriptions = IntStream
+                .rangeClosed(1, descriptionCount)
+                .mapToObj(index -> new DescriptionBean(index, req.getParameter("description" + index)))
+                .collect(Collectors.toList());
 
         var db = getDataAccess();
         var id = db.cachedQuery("sql/insert/insertRecipe.sql")
                 .withParam(user.getUsername())
                 .withParam(name)
                 .withParam(category)
+                .withParam(shortDescription)
                 .collectGeneratedKey()
                 .orElseThrow(SQLException::new);
 

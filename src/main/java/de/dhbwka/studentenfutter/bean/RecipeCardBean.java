@@ -9,10 +9,8 @@ public class RecipeCardBean {
     private String name;
     @QueryResult(column = "author")
     private String author;
-
-    @SuppressWarnings({"FieldMayBeFinal", "FieldCanBeLocal"})
-    private String previewText = "Hier könnte eine leckere Kurzbeschreibung stehen :)";
-
+    @QueryResult(column = "short_description")
+    private String shortDescription;
 
     public int getId() {
         return id;
@@ -22,8 +20,8 @@ public class RecipeCardBean {
         return name;
     }
 
-    public String getPreviewText() {
-        return previewText;
+    public String getShortDescription() {
+        return shortDescription;
     }
 
     public String getAuthor() {
