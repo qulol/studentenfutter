@@ -3,13 +3,13 @@ package de.dhbwka.studentenfutter.storage;
 import de.dhbwka.studentenfutter.storage.file.FileAccess;
 import de.dhbwka.studentenfutter.storage.database.DatabaseAccess;
 
-public class DataAccess {
-    public static final String ATTRIBUTE_ACCESS_KEY = DatabaseAccess.class.getName();
+public class StorageAccess {
+    public static final String ATTRIBUTE_ACCESS_KEY = StorageAccess.class.getName();
 
     private final FileAccess fileAccess;
     private final DatabaseAccess databaseAccess;
 
-    public DataAccess(FileAccess fileAccess, DatabaseAccess databaseAccess) {
+    public StorageAccess(FileAccess fileAccess, DatabaseAccess databaseAccess) {
         this.fileAccess = fileAccess;
         this.databaseAccess = databaseAccess;
     }

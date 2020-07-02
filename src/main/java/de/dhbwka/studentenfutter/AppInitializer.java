@@ -1,6 +1,6 @@
 package de.dhbwka.studentenfutter;
 
-import de.dhbwka.studentenfutter.storage.DataAccess;
+import de.dhbwka.studentenfutter.storage.StorageAccess;
 import de.dhbwka.studentenfutter.storage.file.FileAccess;
 import de.dhbwka.studentenfutter.storage.file.FileAccessDescriptor;
 import de.dhbwka.studentenfutter.storage.database.DatabaseAccess;
@@ -38,7 +38,7 @@ public class AppInitializer implements ServletContextListener {
             e.printStackTrace();
         }
 
-        var dataAccess = new DataAccess(fileAccess, databaseAccess);
-        sce.getServletContext().setAttribute(DataAccess.ATTRIBUTE_ACCESS_KEY, dataAccess);
+        var storageAccess = new StorageAccess(fileAccess, databaseAccess);
+        sce.getServletContext().setAttribute(StorageAccess.ATTRIBUTE_ACCESS_KEY, storageAccess);
     }
 }
