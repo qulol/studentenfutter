@@ -67,7 +67,7 @@
                         </div>
 
                         <input type="hidden" id="ingredientCount" name="ingredientCount">
-                        <div class="ingredientsContainer scrollbar" id="ingredientContainer"
+                        <div class="ingredientsContainer scrollbar-auto" id="ingredientContainer"
                              data-maxCount="${requestScope.maxIngredientCount}">
                             <%--                            filled dynmic from script--%>
                         </div>

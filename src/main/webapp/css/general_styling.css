@@ -348,6 +348,10 @@ header {
     overflow-y: scroll;
 }
 
+.scrollbar-auto {
+    overflow-y: auto;
+}
+
 .index-middle-content-wrapper {
     position: absolute;
     justify-content: center;
@@ -966,6 +970,7 @@ textarea {
 }
 
 .ingredientRow {
+    white-space: nowrap;
     width: 100%;
 }
 
@@ -993,13 +998,14 @@ textarea {
 }
 
 .ingredientsContainer {
-    height: 17%;
+    height: 17.5%;
     width: auto;
     position: static;
     display: grid;
     grid-row-gap: 3px;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(5, 1fr);
+    grid-auto-flow: column;
     margin-left: 5%;
 }
 

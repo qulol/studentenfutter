@@ -23,7 +23,7 @@
     <div class="regular-top-content-wrapper">
         <div class="regular-top-content-block" id="top-text">
             <h1 class="centered">Suchergebnisse für: ${requestScope.search}</h1>
-            <div class="recipes-overview-wrapper scrollbar">
+            <div class="recipes-overview-wrapper scrollbar-auto">
                 <c:if test="${empty requestScope.recipeSearchResult}">
                     <img class="nothing-found" src="${pageContext.request.contextPath}/images/no_recipe_found.png" alt="Kein Rezept gefunden">
                 </c:if>
