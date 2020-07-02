@@ -8,6 +8,7 @@ import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.File;
 import java.sql.SQLException;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
@@ -33,6 +34,7 @@ public class RecipeAddServlet extends AbstractServlet {
 
         var name = req.getParameter("name");
         var img = req.getPart("img");
+        System.out.println(new File("").getAbsolutePath());
         //todo save img under recipe id
         var category = req.getParameter("category");
         var shortDescription = req.getParameter("shortDescription");
@@ -51,7 +53,7 @@ public class RecipeAddServlet extends AbstractServlet {
                 .mapToObj(index -> new DescriptionBean(index, req.getParameter("description" + index)))
                 .collect(Collectors.toList());
 
-        var db = getDataAccess();
+        var db = getDataBaseAccess();
         var id = db.cachedQuery("sql/insert/insertRecipe.sql")
                 .withParam(user.getUsername())
                 .withParam(name)

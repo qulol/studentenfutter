@@ -13,7 +13,7 @@ public class ShoppingCartServlet extends AbstractServlet {
     @Override
     protected void handleDoGet(HttpServletRequest req, HttpServletResponse res) throws Exception {
         var user = (UserBean) req.getSession().getAttribute("user");
-        var shoppingcart = getDataAccess()
+        var shoppingcart = getDataBaseAccess()
                 .query("select ingredient, unit, amount from shoppingcart where id_user=?")
                 .withParam(user.getId())
                 .collectAs(IngredientBean.class)

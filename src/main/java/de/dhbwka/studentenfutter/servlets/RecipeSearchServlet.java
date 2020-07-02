@@ -68,7 +68,7 @@ public class RecipeSearchServlet extends AbstractServlet {
     protected void handleDoGet(HttpServletRequest req, HttpServletResponse res) throws Exception {
         var search = req.getParameter("search").stripLeading().stripTrailing();
 
-        var access = getDataAccess();
+        var access = getDataBaseAccess();
         var recipesSearchResult = selectors.stream()
                 .filter(selector -> selector.matches(search))
                 .sorted(Comparator.comparing(RecipeSearchSelector::getPriority))

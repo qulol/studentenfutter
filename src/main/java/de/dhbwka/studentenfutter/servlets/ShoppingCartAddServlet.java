@@ -21,7 +21,7 @@ public class ShoppingCartAddServlet extends AbstractServlet {
         var id = req.getParameter("id");
 
         var count = Float.parseFloat(req.getParameter("numberOfPersons"));
-        var dataAccess = getDataAccess();
+        var dataAccess = getDataBaseAccess();
 
         //select ingredients from db and multiply by 'numberOfPersons'
         var multipliedIngredients = dataAccess
@@ -34,7 +34,7 @@ public class ShoppingCartAddServlet extends AbstractServlet {
                 .collect(Collectors.toList());
 
         //select current shopping cart
-        var shoppingCart = getDataAccess()
+        var shoppingCart = getDataBaseAccess()
                 .query("select ingredient, unit, amount from shoppingcart where id_user=?")
                 .withParam(user.getId())
                 .collectAs(IngredientBean.class)
@@ -50,13 +50,13 @@ public class ShoppingCartAddServlet extends AbstractServlet {
                         IngredientBean::add)).values());
 
         //clear
-        getDataAccess()
+        getDataBaseAccess()
                 .query("delete from shoppingcart where id_user=?")
                 .withParam(user.getId())
                 .run();
 
         //insert
-        getDataAccess()
+        getDataBaseAccess()
                 .cachedQuery("sql/insert/insertShoppingcart.sql")
                 .withParam(user.getId())
                 .withBatchSupplier(index -> updatedShoppingCart.get(index).getName())

@@ -1,8 +1,9 @@
 package de.dhbwka.studentenfutter.database;
 
+import de.dhbwka.studentenfutter.database.query.IConnectionSupplier;
 import de.dhbwka.studentenfutter.database.query.QueryBuilder;
 import de.dhbwka.studentenfutter.database.query.QueryExecutor;
-import de.dhbwka.studentenfutter.file.SQLLoader;
+import de.dhbwka.studentenfutter.system.SQLLoader;
 import de.dhbwka.studentenfutter.servlets.AbstractServlet;
 
 import java.io.IOException;
@@ -26,25 +27,17 @@ import java.util.concurrent.ConcurrentHashMap;
  * (like in the example above) to retrieve the result as a {@link java.util.List}.
  * </pre>
  * The {@link DatabaseAccess} runs on jdbc which is specified via the
- * {@link DatabaseConnectionDescriptor}.
+ * {@link DatabaseAccessDescriptor}.
  */
 public class DatabaseAccess {
-    /**
-     * The key to access the singleton database from the {@link javax.servlet.ServletContext},
-     * for example inside a {@link javax.servlet.http.HttpServlet}.
-     * However {@link AbstractServlet#getDataAccess()} makes the access more convenient by wrapping
-     * the access via this key in a simple getter method.
-     */
-    public static final String ATTRIBUTE_KEY = DatabaseAccess.class.getName();
-
     private final ConcurrentHashMap<String, String> queryCache = new ConcurrentHashMap<>();
-    private final DatabaseConnectionDescriptor descriptor;
+    private final DatabaseAccessDescriptor descriptor;
 
     /**
      * Constructor
-     * @param descriptor {@link DatabaseConnectionDescriptor}
+     * @param descriptor {@link DatabaseAccessDescriptor}
      */
-    public DatabaseAccess(DatabaseConnectionDescriptor descriptor) {
+    public DatabaseAccess(DatabaseAccessDescriptor descriptor) {
         this.descriptor = descriptor;
     }
 

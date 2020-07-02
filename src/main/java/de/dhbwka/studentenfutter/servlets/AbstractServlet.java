@@ -1,5 +1,7 @@
 package de.dhbwka.studentenfutter.servlets;
 
+import de.dhbwka.studentenfutter.data.DataAccess;
+import de.dhbwka.studentenfutter.data.file.FileAccess;
 import de.dhbwka.studentenfutter.database.DatabaseAccess;
 import de.dhbwka.studentenfutter.util.ServletMethodNotImplementedException;
 
@@ -47,7 +49,15 @@ public abstract class AbstractServlet extends HttpServlet {
         throw new ServletMethodNotImplementedException(req);
     }
 
-    protected DatabaseAccess getDataAccess() {
-        return (DatabaseAccess) getServletContext().getAttribute(DatabaseAccess.ATTRIBUTE_KEY);
+    protected DatabaseAccess getDataBaseAccess() {
+        return getDataAccess().getDatabaseAccess();
+    }
+
+    protected FileAccess getFileAccess() {
+        return getDataAccess().getFileAccess();
+    }
+
+    protected DataAccess getDataAccess() {
+        return (DataAccess) getServletContext().getAttribute(DataAccess.ATTRIBUTE_ACCESS_KEY);
     }
 }

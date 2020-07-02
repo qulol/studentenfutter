@@ -19,7 +19,7 @@ public class LoginServlet extends AbstractServlet {
         String inputUsername = req.getParameter("username");
         String inputPassword = req.getParameter("password");
 
-        var optionalUserBean = getDataAccess()
+        var optionalUserBean = getDataBaseAccess()
                 .query("select id_user, name, password from user where name=?")
                 .withParam(inputUsername)
                 .collectAs(UserBean.class)

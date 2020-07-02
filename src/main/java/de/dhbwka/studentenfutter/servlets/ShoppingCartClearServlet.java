@@ -15,7 +15,7 @@ public class ShoppingCartClearServlet extends AbstractServlet {
     protected void handleDoGet(HttpServletRequest req, HttpServletResponse res) throws Exception {
         var user = (UserBean)req.getSession().getAttribute("user");
 
-        getDataAccess()
+        getDataBaseAccess()
                 .query("delete from shoppingcart where id_user=?")
                 .withParam(user.getId())
                 .run();

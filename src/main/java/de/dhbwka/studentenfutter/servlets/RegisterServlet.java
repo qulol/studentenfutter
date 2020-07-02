@@ -19,7 +19,7 @@ public class RegisterServlet extends AbstractServlet {
         String inputPassword = req.getParameter("password");
         String inputPasswordRepeat = req.getParameter("password_repeat");
 
-        var db = getDataAccess();
+        var db = getDataBaseAccess();
 
         var userExists =
                 db.query("select id_user from user where name=?")

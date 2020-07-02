@@ -9,9 +9,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <a href='${pageContext.request.contextPath}/recipedetail?id=${param.id}#ingredientsTab'>
     <div class='single-recipe-block filtered-list'>
-        <img src="${pageContext.request.contextPath}/images/default_recipe_image.jpg" class='recipe-list-image' alt='Rezeptbild'>
+        <img src="${pageContext.request.contextPath}/files/images/recipe?id=${param.id}" class='recipe-list-image' alt='Rezeptbild'>
         <div class='recipe-list-text'>${param.previewText}</div>
-        <div class='recipe-list-author'>${param.author}</div>
+        <div class='recipe-list-author'>von:<br>${param.author}</div>
         <h5 class='recipe-list-headline'>${param.name}</h5>
     </div>
 </a>

@@ -1,6 +1,5 @@
 package de.dhbwka.studentenfutter.database.query;
 
-import de.dhbwka.studentenfutter.database.IConnectionSupplier;
 import de.dhbwka.studentenfutter.database.query.encoder.QueryResultEncoder;
 import de.dhbwka.studentenfutter.database.query.param.BatchQueryParam;
 import de.dhbwka.studentenfutter.database.query.param.IQueryParam;
