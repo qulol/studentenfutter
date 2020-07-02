@@ -25,9 +25,7 @@
             <h1 class="centered">Suchergebnisse für: ${requestScope.search}</h1>
             <div class="recipes-overview-wrapper scrollbar">
                 <c:if test="${empty requestScope.recipeSearchResult}">
-                    <h2 class="search-result-header">
-                        <img class="nothing-found" src="${pageContext.request.contextPath}/images/no_recipe_found.png" alt="Kein Rezept gefunden">
-                    </h2>
+                    <img class="nothing-found" src="${pageContext.request.contextPath}/images/no_recipe_found.png" alt="Kein Rezept gefunden">
                 </c:if>
                     <c:forEach var="recipeSearchResult" items="${requestScope.recipeSearchResult}">
                         <h2 class="search-result-header">
@@ -38,7 +36,7 @@
                                 <jsp:include page="/jsp/include/recipe_card.jsp">
                                     <jsp:param name="id" value="${recipe.id}"/>
                                     <jsp:param name="name" value="${recipe.name}"/>
-                                    <jsp:param name="previewText" value="${recipe.previewText}"/>
+                                    <jsp:param name="previewText" value="${recipe.shortDescription}"/>
                                     <jsp:param name="author" value="${recipe.author}"/>
                                 </jsp:include>
                             </c:forEach>

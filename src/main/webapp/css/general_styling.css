@@ -436,6 +436,11 @@ header {
     margin-top: 2%;
 }
 
+h2.search-result-header {
+    font-size: 4.0vmin;
+    padding: 0;
+}
+
 .single-recipe-block {
     width: 93%;
     position: static;

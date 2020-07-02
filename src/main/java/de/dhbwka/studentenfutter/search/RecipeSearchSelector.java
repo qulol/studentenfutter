@@ -40,8 +40,10 @@ public abstract class RecipeSearchSelector {
         }
     }
 
-    private String getSQL() { //need dynamic format coz preparedstatement just support var column params
-        return MessageFormat.format("select id_recipe, name, author from recipe where {0} like ?", column);
+    private String getSQL() {
+        //need dynamic format --> preparedStatement don't support var column params
+        return MessageFormat
+                .format("select id_recipe, name, author, short_description from recipe where {0} like ?", column);
     }
 
     public String getPrettyColumnName() {
