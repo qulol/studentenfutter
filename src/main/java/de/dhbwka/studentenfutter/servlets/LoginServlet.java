@@ -1,12 +1,10 @@
 package de.dhbwka.studentenfutter.servlets;
 
-import de.dhbwka.studentenfutter.bean.IngredientBean;
 import de.dhbwka.studentenfutter.bean.UserBean;
 
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 @WebServlet(urlPatterns = "/login")
 public class LoginServlet extends AbstractServlet {
