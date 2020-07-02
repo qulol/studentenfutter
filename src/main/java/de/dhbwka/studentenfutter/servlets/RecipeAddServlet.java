@@ -10,14 +10,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @WebServlet(urlPatterns = "/add")
 @MultipartConfig
 public class RecipeAddServlet extends AbstractServlet {
-    private static final int maxIngredientCount =   10;
+    private static final int maxIngredientCount =   15;
     private static final int maxDescriptionCount =  10;
 
     @Override
@@ -44,8 +42,6 @@ public class RecipeAddServlet extends AbstractServlet {
             var ingredientUnit   = req.getParameter("unit" + i);
             var ingredientName = req.getParameter("ingredient" + i);
 
-            //set max count for malicious data
-            //check for invalid data (empty string, high numbers)
             ingredients.add(new IngredientBean(ingredientName, ingredientUnit, Float.parseFloat(ingredientAmount)));
         }
 
@@ -61,8 +57,6 @@ public class RecipeAddServlet extends AbstractServlet {
                 .withParam(category)
                 .collectGeneratedKey()
                 .orElseThrow(SQLException::new);
-
-        //todo description into separate table..
 
         db.cachedQuery("sql/insert/insertRecipeDescription.sql")
                 .withParam(id)
