@@ -222,23 +222,12 @@ header {
     padding: 0.05%;
 }
 
-#helloUser {
-    text-transform: none;
-}
-
-.navbar a:hover, .dropdown:hover .dropbtn, .footer-content-block a:hover, #helloUser {
+.navbar a:hover, .dropdown:hover .dropbtn, .footer-content-block a:hover {
     background-color: #4aa121;
-}
-
-.logout {
-    background-color: #dbe1e1;
-    color: black !important;
-    font-weight: bold;
 }
 
 .logout:hover {
     background-color: #e60005 !important;
-    color: white !important;
 }
 
 .index-top-content-wrapper {
