@@ -22,7 +22,7 @@ public class RecipeSearchServlet extends AbstractServlet {
                 return search;
             }
         });
-        selectors.add(new RecipeSearchSelector(".*", "name", "Namen") {
+        selectors.add(new RecipeSearchSelector(".*", "name", "Rezepte") {
             @Override
             protected String toSQLPattern(String search) {
                 return "%" + search + "%";

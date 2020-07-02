@@ -2,6 +2,7 @@ package de.dhbwka.studentenfutter.servlets;
 
 import de.dhbwka.studentenfutter.bean.DescriptionBean;
 import de.dhbwka.studentenfutter.bean.IngredientBean;
+import de.dhbwka.studentenfutter.bean.UserBean;
 
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
@@ -30,6 +31,7 @@ public class RecipeAddServlet extends AbstractServlet {
     protected void handleDoPost(HttpServletRequest req, HttpServletResponse res) throws Exception {
         var ingredientCount = Integer.parseInt(req.getParameter("ingredientCount"));
         var descriptionCount = Integer.parseInt(req.getParameter("descriptionCount"));
+        var user = (UserBean)req.getSession().getAttribute("user");
 
         var name = req.getParameter("name");
         var img = req.getPart("img");
@@ -54,7 +56,7 @@ public class RecipeAddServlet extends AbstractServlet {
 
         var db = getDataAccess();
         var id = db.cachedQuery("sql/insert/insertRecipe.sql")
-                .withParam(null) //user
+                .withParam(user.getUsername())
                 .withParam(name)
                 .withParam(category)
                 .collectGeneratedKey()
