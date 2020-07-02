@@ -49,10 +49,10 @@ function addIngredient() {
     nameInput.setAttribute("required", "true");
 
     if (index === 1) { //just added the first one, so we can delete
-        document.getElementById("removeIngredientButton").style.display = "block";
+        document.getElementById("removeIngredientButton").disabled = false;
     }
     else if (index === maxIngredientCount) {
-        document.getElementById("addIngredientButton").style.display = "none";
+        document.getElementById("addIngredientButton").disabled = true;
     }
 }
 
@@ -62,10 +62,10 @@ function removeIngredient() {
     toRemove.parentNode.removeChild(toRemove);
 
     if (ingredients.length === maxIngredientCount - 1) { //we can add new
-        document.getElementById("addIngredientButton").style.display = "block";
+        document.getElementById("addIngredientButton").disabled = false;
     }
     if (ingredients.length === 0) {
-        document.getElementById("removeIngredientButton").style.display = "none";
+        document.getElementById("removeIngredientButton").disabled = true;
     }
 }
 
