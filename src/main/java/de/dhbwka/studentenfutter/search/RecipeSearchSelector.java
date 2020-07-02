@@ -25,6 +25,8 @@ public abstract class RecipeSearchSelector {
 
     protected abstract String toSQLPattern(String search);
 
+    public abstract int getPriority();
+
     public List<RecipeCardBean> select(DatabaseAccess dataAccess, String search) {
         //wrap to rte due stream.foreach()
         try {
