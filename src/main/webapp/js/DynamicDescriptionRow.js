@@ -29,10 +29,10 @@ function addDescription() {
     descriptionField.setAttribute("required", "true");
 
     if (index === 1) { //just added the first one, so we can delete
-        document.getElementById("removeDescriptionButton").style.display = "block";
+        document.getElementById("removeDescriptionButton").disabled = false;
     }
     else if (index === maxDescriptionCount) {
-        document.getElementById("addDescriptionButton").style.display = "none";
+        document.getElementById("addDescriptionButton").disabled = true;
     }
 }
 
@@ -42,9 +42,9 @@ function removeDescription() {
     toRemove.parentNode.removeChild(toRemove);
 
     if (descriptions.length === maxDescriptionCount - 1) { //we can add new
-        document.getElementById("addDescriptionButton").style.display = "block";
+        document.getElementById("addDescriptionButton").disabled = false;
     }
     if (descriptions.length === 0) {
-        document.getElementById("removeDescriptionButton").style.display = "none";
+        document.getElementById("removeDescriptionButton").disabled = true;
     }
 }
