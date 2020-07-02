@@ -27,7 +27,7 @@
             <div class="recipes-overview-wrapper">
                 <div class="categories-block">
                     <div class="categories-block" id="recipes">
-                        <a href='${contextPath}/recipes?search=Fruehstueck'>
+                        <a href='${contextPath}/recipes?search=Frühstück'>
                             <div class='categories-block'>
                                 <img src='${contextPath}/images/category/breakfast.jpg' id='breakfast-image' alt="">
                                 <h5>Frühstück</h5>
