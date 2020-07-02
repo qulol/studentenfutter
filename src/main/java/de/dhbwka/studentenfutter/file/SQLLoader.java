@@ -1,4 +1,4 @@
-package de.dhbwka.studentenfutter.loader;
+package de.dhbwka.studentenfutter.file;
 
 import java.io.IOException;
 import java.nio.file.Files;

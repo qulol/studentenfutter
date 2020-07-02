@@ -2,7 +2,7 @@ package de.dhbwka.studentenfutter.database;
 
 import de.dhbwka.studentenfutter.database.query.QueryBuilder;
 import de.dhbwka.studentenfutter.database.query.QueryExecutor;
-import de.dhbwka.studentenfutter.loader.SQLLoader;
+import de.dhbwka.studentenfutter.file.SQLLoader;
 import de.dhbwka.studentenfutter.servlets.AbstractServlet;
 
 import java.io.IOException;
