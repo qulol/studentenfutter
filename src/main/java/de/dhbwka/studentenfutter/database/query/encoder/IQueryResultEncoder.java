@@ -1,4 +1,4 @@
-package de.dhbwka.studentenfutter.storage.database.query.encoder;
+package de.dhbwka.studentenfutter.database.query.encoder;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;

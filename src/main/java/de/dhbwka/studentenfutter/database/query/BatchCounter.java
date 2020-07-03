@@ -1,4 +1,4 @@
-package de.dhbwka.studentenfutter.storage.database.query;
+package de.dhbwka.studentenfutter.database.query;
 
 public class BatchCounter {
     private int counter;

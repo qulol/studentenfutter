@@ -1,4 +1,4 @@
-package de.dhbwka.studentenfutter.storage.database.query;
+package de.dhbwka.studentenfutter.database;
 
 import de.dhbwka.studentenfutter.util.CheckedSupplier;
 

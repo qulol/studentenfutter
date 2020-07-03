@@ -1,8 +1,7 @@
-package de.dhbwka.studentenfutter.storage.database;
+package de.dhbwka.studentenfutter.database;
 
-import de.dhbwka.studentenfutter.storage.database.query.IConnectionSupplier;
-import de.dhbwka.studentenfutter.storage.database.query.QueryBuilder;
-import de.dhbwka.studentenfutter.storage.database.query.QueryExecutor;
+import de.dhbwka.studentenfutter.database.query.QueryBuilder;
+import de.dhbwka.studentenfutter.database.query.QueryExecutor;
 import de.dhbwka.studentenfutter.util.SQLLoader;
 
 import java.io.IOException;
@@ -29,6 +28,8 @@ import java.util.concurrent.ConcurrentHashMap;
  * {@link DatabaseAccessDescriptor}.
  */
 public class DatabaseAccess {
+    public static final String ATTRIBUTE_ACCESS_KEY = DatabaseAccess.class.getName();
+
     private final ConcurrentHashMap<String, String> queryCache = new ConcurrentHashMap<>();
     private final DatabaseAccessDescriptor descriptor;
 

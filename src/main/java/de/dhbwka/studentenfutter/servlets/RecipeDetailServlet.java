@@ -17,7 +17,7 @@ public class RecipeDetailServlet extends AbstractServlet {
     protected void handleDoGet(HttpServletRequest req, HttpServletResponse res) throws Exception {
         var id = req.getParameter("id");
 
-        var db = getDataBaseAccess();
+        var db = getDataAccess();
         var optionalRecipeBean = db
                 .cachedQuery("sql/select/selectRecipe.sql")
                 .withParam(id)

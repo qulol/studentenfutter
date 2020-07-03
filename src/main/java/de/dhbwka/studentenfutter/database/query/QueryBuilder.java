@@ -1,9 +1,10 @@
-package de.dhbwka.studentenfutter.storage.database.query;
+package de.dhbwka.studentenfutter.database.query;
 
-import de.dhbwka.studentenfutter.storage.database.query.encoder.QueryResultEncoder;
-import de.dhbwka.studentenfutter.storage.database.query.param.BatchQueryParam;
-import de.dhbwka.studentenfutter.storage.database.query.param.IQueryParam;
-import de.dhbwka.studentenfutter.storage.database.query.param.QueryParam;
+import de.dhbwka.studentenfutter.database.IConnectionSupplier;
+import de.dhbwka.studentenfutter.database.query.encoder.QueryResultEncoder;
+import de.dhbwka.studentenfutter.database.query.param.BatchQueryParam;
+import de.dhbwka.studentenfutter.database.query.param.IQueryParam;
+import de.dhbwka.studentenfutter.database.query.param.QueryParam;
 
 import java.sql.SQLException;
 import java.sql.Statement;

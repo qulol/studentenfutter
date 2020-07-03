@@ -1,6 +1,7 @@
-package de.dhbwka.studentenfutter.storage.database.query;
+package de.dhbwka.studentenfutter.database.query;
 
-import de.dhbwka.studentenfutter.storage.database.query.param.IQueryParam;
+import de.dhbwka.studentenfutter.database.IConnectionSupplier;
+import de.dhbwka.studentenfutter.database.query.param.IQueryParam;
 import de.dhbwka.studentenfutter.util.CheckedFunction;
 
 import java.sql.PreparedStatement;

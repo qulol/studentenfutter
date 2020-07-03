@@ -1,6 +1,6 @@
-package de.dhbwka.studentenfutter.storage.database.query.encoder;
+package de.dhbwka.studentenfutter.database.query.encoder;
 
-import de.dhbwka.studentenfutter.storage.database.query.QueryResult;
+import de.dhbwka.studentenfutter.database.query.QueryResult;
 
 import java.sql.Date;
 import java.sql.ResultSet;

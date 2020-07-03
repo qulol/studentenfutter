@@ -1,6 +1,6 @@
 package de.dhbwka.studentenfutter.bean;
 
-import de.dhbwka.studentenfutter.storage.database.query.QueryResult;
+import de.dhbwka.studentenfutter.database.query.QueryResult;
 import de.dhbwka.studentenfutter.util.TypeMissMatchException;
 
 import java.io.Serializable;

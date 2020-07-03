@@ -1,7 +1,7 @@
 package de.dhbwka.studentenfutter.search;
 
 import de.dhbwka.studentenfutter.bean.RecipeCardBean;
-import de.dhbwka.studentenfutter.storage.database.DatabaseAccess;
+import de.dhbwka.studentenfutter.database.DatabaseAccess;
 
 import java.sql.SQLException;
 import java.text.MessageFormat;

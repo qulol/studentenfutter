@@ -3,7 +3,6 @@ package de.dhbwka.studentenfutter.servlets;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.sql.SQLException;
 
 @WebServlet(urlPatterns = "/register")
 public class RegisterServlet extends AbstractServlet {
@@ -19,7 +18,7 @@ public class RegisterServlet extends AbstractServlet {
         String inputPassword = req.getParameter("password");
         String inputPasswordRepeat = req.getParameter("password_repeat");
 
-        var db = getDataBaseAccess();
+        var db = getDataAccess();
 
         var userExists =
                 db.query("select id_user from user where name=?")
