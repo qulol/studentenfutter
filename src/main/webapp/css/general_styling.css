@@ -547,8 +547,14 @@ h2.search-result-header {
 
 #recipe-image-detail {
     display: block;
-    position: relative;
-    margin: 8.2% auto 0 auto;
+
+    max-width:90%;
+    max-height:100%;
+
+    width: auto;
+    height: 100%;
+
+    margin: auto;
 }
 
 .user-image {
@@ -560,11 +566,11 @@ h2.search-result-header {
 
 .recipe-detail-image-wrapper {
     background-color: black;
-    height: auto;
     width: 60%;
+    height: 40%;
     position: static;
     display: block;
-    margin: 0 auto;
+    margin: auto;
 }
 
 article.infobox .tab {

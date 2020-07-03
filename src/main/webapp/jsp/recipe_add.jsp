@@ -37,7 +37,7 @@
 
                         <label for="category"></label>
                         <select id="category" name="category" class="addRecipeCategory">
-                            <option value="Fruehstueck">Frühstück</option>
+                            <option value="Frühstück">Frühstück</option>
                             <option value="Mittagessen">Mittagessen</option>
                             <option value="Abendessen">Abendessen</option>
                         </select>

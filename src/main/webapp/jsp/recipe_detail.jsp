@@ -14,12 +14,12 @@
 <div class="wrapper" id="wrapper">
     <%@include file="include/background-default.jsp"%>
     <jsp:include page="include/header.jsp"/>
-
+    <c:set var="recipe" value="${requestScope.recipe}"/>
     <div class="regular-top-content-wrapper">
-            <h1 class="centered" id="headline">${requestScope.recipe.name}</h1>
+            <h1 class="centered" id="headline">${recipe.name}</h1>
         <div class="regular-top-content-block black-bg" id="top-text">
             <div class="recipe-detail-image-wrapper">
-                <img id="recipe-image-detail" src="${pageContext.request.contextPath}/images/default/default_recipe_image.jpg" alt="recipe-image-detail">
+                <img id="recipe-image-detail" src="${pageContext.request.contextPath}/files/images/recipe?id=${recipe.id}" alt="recipe-image-detail">
             </div>
             <div class="recipe-detail">
                 <article class="infobox">
@@ -27,7 +27,7 @@
                         <h4><a href="#ingredientsTab">Zutaten</a></h4>
                         <div class="calculateIngredientsAmount">
                             <form action="${pageContext.request.contextPath}/addtoshoppingcard" method="post" target="shoppingcart">
-                                <input type="hidden" name="id" value="${requestScope.recipe.id}">
+                                <input type="hidden" name="id" value="${recipe.id}">
                                 <label for="numberOfPersons">Portionen: </label>
                                 <input name="numberOfPersons" id="numberOfPersons"
                                        oninput="calculateIngredientsAmount()" value="1"
@@ -54,7 +54,7 @@
                                 </tr>
                                 </thead>
                                 <tbody id="ingredientsTable">
-                                    <c:forEach var="ingredient" items="${requestScope.recipe.ingredients}">
+                                    <c:forEach var="ingredient" items="${recipe.ingredients}">
                                         <tr>
                                             <td class="amount">${ingredient.amount}</td>
                                             <td class="unit">${ingredient.unit}</td>
@@ -71,7 +71,7 @@
                         <div class="instructionsListWrapper">
                             <div class="instructionsList" id="instructionsList">
                                 <ol class="instructions scrollbar" id="instructions">
-                                    <c:forEach var="description" items="${requestScope.recipe.descriptions}">
+                                    <c:forEach var="description" items="${recipe.descriptions}">
                                         <li>${description.description}</li>
                                     </c:forEach>
                                 </ol>
