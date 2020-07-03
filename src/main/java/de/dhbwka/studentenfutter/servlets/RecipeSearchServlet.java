@@ -40,7 +40,7 @@ public class RecipeSearchServlet extends AbstractServlet {
                 return 0;
             }
         });
-        selectors.add(new RecipeSearchSelector("\\w*", "category", "Kategorien") {
+        selectors.add(new RecipeSearchSelector("(\\w|\u00E4|\u00C4|\u00F6|\u00D6|\u00FC|\u00DC)*", "category", "Kategorien") {
             @Override
             protected String toSQLPattern(String search) {
                 return "%" + search + "%";
@@ -51,7 +51,7 @@ public class RecipeSearchServlet extends AbstractServlet {
                 return 1;
             }
         });
-        selectors.add(new RecipeSearchSelector("\\w*", "author", "Autoren") {
+        selectors.add(new RecipeSearchSelector(".*", "author", "Autoren") {
             @Override
             protected String toSQLPattern(String search) {
                 return "%" + search + "%";
