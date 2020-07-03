@@ -1,12 +1,12 @@
 package de.dhbwka.studentenfutter.servlets;
 
 import de.dhbwka.studentenfutter.bean.RecipeImageBean;
+import de.dhbwka.studentenfutter.util.FilesUtility;
 
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.nio.file.Files;
-import java.nio.file.Path;
+import java.io.IOException;
 
 @WebServlet(urlPatterns = "/files/images/recipe")
 public class RecipeImageFileServlet extends AbstractServlet {
@@ -20,7 +20,13 @@ public class RecipeImageFileServlet extends AbstractServlet {
                 .withParam(id)
                 .collectAs(RecipeImageBean.class)
                 .get()
-                .orElse(new RecipeImageBean("image/jpg", Files.readAllBytes(Path.of("C:\\Users\\alex\\DHBW\\studentenfutter\\src\\main\\resources\\recipe_default.jpg"))));
+                .or(() -> {
+                    var context = getServletContext();
+                    var imgLocation = context.getRealPath("/images/recipe_default.jpg");
+                    return FilesUtility
+                            .readFile(imgLocation)
+                            .map(content -> new RecipeImageBean(context.getMimeType(imgLocation), content));
+                }).orElseThrow(IOException::new);
 
         res.setContentType(image.getContentType());
         res.getOutputStream().write(image.getContent());
