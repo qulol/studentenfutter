@@ -1,6 +1,6 @@
 package de.dhbwka.studentenfutter;
 
-import de.dhbwka.studentenfutter.bean.UserBean;
+import de.dhbwka.studentenfutter.bean.data.UserBean;
 
 import javax.servlet.annotation.WebListener;
 import javax.servlet.http.HttpSessionEvent;

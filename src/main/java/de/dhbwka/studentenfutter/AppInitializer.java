@@ -1,5 +1,8 @@
 package de.dhbwka.studentenfutter;
 
+import de.dhbwka.studentenfutter.bean.verification.RecipeAddVerificationBean;
+import de.dhbwka.studentenfutter.bean.verification.RecipeSearchVerificationBean;
+import de.dhbwka.studentenfutter.bean.verification.RegisterVerificationBean;
 import de.dhbwka.studentenfutter.database.DatabaseAccess;
 import de.dhbwka.studentenfutter.database.DatabaseAccessDescriptor;
 
@@ -15,6 +18,10 @@ import java.sql.SQLException;
  */
 @WebListener()
 public class AppInitializer implements ServletContextListener {
+    public static final String DATABASE_ACCESS_ACCESS_KEY = "database";
+    public static final String REGISTER_VERIFICATION_ACCESS_KEY = "registerVerification";
+    public static final String RECIPE_ADD_VERIFICATION_ACCESS_KEY = "recipeAddVerification";
+    public static final String RECIPE_SEARCH_VERIFICATION_ACCESS_KEY = "recipeSearchVerification";
 
     public AppInitializer() { }
 
@@ -31,6 +38,13 @@ public class AppInitializer implements ServletContextListener {
             e.printStackTrace();
         }
 
-        sce.getServletContext().setAttribute(DatabaseAccess.ATTRIBUTE_ACCESS_KEY, dataAccess);
+        var context = sce.getServletContext();
+        context.setAttribute(DATABASE_ACCESS_ACCESS_KEY, dataAccess);
+        context.setAttribute(REGISTER_VERIFICATION_ACCESS_KEY,
+                new RegisterVerificationBean());
+        context.setAttribute(RECIPE_ADD_VERIFICATION_ACCESS_KEY,
+                new RecipeAddVerificationBean());
+        context.setAttribute(RECIPE_SEARCH_VERIFICATION_ACCESS_KEY,
+                new RecipeSearchVerificationBean());
     }
 }

@@ -28,8 +28,6 @@ import java.util.concurrent.ConcurrentHashMap;
  * {@link DatabaseAccessDescriptor}.
  */
 public class DatabaseAccess {
-    public static final String ATTRIBUTE_ACCESS_KEY = DatabaseAccess.class.getName();
-
     private final ConcurrentHashMap<String, String> queryCache = new ConcurrentHashMap<>();
     private final DatabaseAccessDescriptor descriptor;
 

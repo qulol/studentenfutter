@@ -1,6 +1,6 @@
 package de.dhbwka.studentenfutter.servlets;
 
-import de.dhbwka.studentenfutter.bean.RecipeSearchResultBean;
+import de.dhbwka.studentenfutter.bean.data.RecipeSearchResultBean;
 import de.dhbwka.studentenfutter.search.RecipeSearchSelector;
 
 import javax.servlet.annotation.WebServlet;

@@ -1,4 +1,4 @@
-package de.dhbwka.studentenfutter.bean;
+package de.dhbwka.studentenfutter.bean.data;
 
 import de.dhbwka.studentenfutter.database.query.QueryResult;
 import de.dhbwka.studentenfutter.util.TypeMissMatchException;

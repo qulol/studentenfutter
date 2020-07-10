@@ -1,7 +1,7 @@
 package de.dhbwka.studentenfutter.servlets;
 
-import de.dhbwka.studentenfutter.bean.IngredientBean;
-import de.dhbwka.studentenfutter.bean.UserBean;
+import de.dhbwka.studentenfutter.bean.data.IngredientBean;
+import de.dhbwka.studentenfutter.bean.data.UserBean;
 import de.dhbwka.studentenfutter.util.Pair;
 
 import javax.servlet.annotation.WebServlet;

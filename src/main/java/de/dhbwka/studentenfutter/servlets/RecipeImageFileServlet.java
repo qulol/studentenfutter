@@ -1,6 +1,6 @@
 package de.dhbwka.studentenfutter.servlets;
 
-import de.dhbwka.studentenfutter.bean.RecipeImageBean;
+import de.dhbwka.studentenfutter.bean.data.RecipeImageBean;
 import de.dhbwka.studentenfutter.util.FilesUtility;
 
 import javax.servlet.annotation.WebServlet;
