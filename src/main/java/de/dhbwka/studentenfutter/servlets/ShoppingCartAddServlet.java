@@ -18,6 +18,11 @@ public class ShoppingCartAddServlet extends AbstractServlet {
     @Override
     protected void handleDoPost(HttpServletRequest req, HttpServletResponse res) throws Exception {
         var user = (UserBean) req.getSession().getAttribute("user");
+
+        if (!user.isLoggedIn()) {
+            throw new Exception("permission denied");
+        }
+
         var id = req.getParameter("id");
 
         var count = Float.parseFloat(req.getParameter("numberOfPersons"));

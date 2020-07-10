@@ -32,6 +32,6 @@ public class LoginServlet extends AbstractServlet {
         }
 
         req.getSession().setAttribute("user", optionalUserBean.get());
-        res.sendRedirect(req.getContextPath().concat("/index"));
+        res.sendRedirect("/index");
     }
 }

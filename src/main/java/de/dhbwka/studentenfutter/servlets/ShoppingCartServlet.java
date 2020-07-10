@@ -13,6 +13,11 @@ public class ShoppingCartServlet extends AbstractServlet {
     @Override
     protected void handleDoGet(HttpServletRequest req, HttpServletResponse res) throws Exception {
         var user = (UserBean) req.getSession().getAttribute("user");
+
+        if (!user.isLoggedIn()) {
+            throw new Exception("permission denied");
+        }
+
         var shoppingcart = getDataAccess()
                 .query("select ingredient, unit, amount from shoppingcart where id_user=?")
                 .withParam(user.getId())

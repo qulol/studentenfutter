@@ -6,7 +6,7 @@ public class RecipeSearchVerificationBean {
     private final Pattern searchVerification;
 
     public RecipeSearchVerificationBean() {
-        this.searchVerification = Pattern.compile("[a-zA-ZäöüÄÖÜß]");
+        this.searchVerification = Pattern.compile("([a-zA-ZäöüÄÖÜß]|\\d)*");
     }
 
     public Pattern getSearchVerification() {

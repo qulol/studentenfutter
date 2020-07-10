@@ -15,12 +15,15 @@ public class ShoppingCartClearServlet extends AbstractServlet {
     protected void handleDoGet(HttpServletRequest req, HttpServletResponse res) throws Exception {
         var user = (UserBean)req.getSession().getAttribute("user");
 
+        if (!user.isLoggedIn()) {
+            throw new Exception("permission denied");
+        }
+
         getDataAccess()
                 .query("delete from shoppingcart where id_user=?")
                 .withParam(user.getId())
                 .run();
 
-        req.setAttribute("shoppingcart", new ArrayList<IngredientBean>());
-        req.getRequestDispatcher("/jsp/shoppingcart.jsp").forward(req, res);
+        res.sendRedirect("/shoppingcart");
     }
 }
