@@ -48,5 +48,6 @@ public class AppInitializer implements ServletContextListener {
                 new RecipeAddVerificationBean());
         context.setAttribute(RECIPE_SEARCH_VERIFICATION_ACCESS_KEY,
                 new RecipeSearchVerificationBean());
+
     }
 }
