@@ -42,14 +42,9 @@
                                placeholder="Passwort wiederholen">
 
                         <div class="login-message fadeIn fadeOut">
-                            <c:if test="${requestScope.username_exists_error}">
+                            <c:if test="${not empty requestScope.register_error}">
                                 <div class="login-error-message">
-                                    Der Benutzername ist bereits vergeben.
-                                </div>
-                            </c:if>
-                            <c:if test="${requestScope.password_repeat_error}">
-                                <div class="login-error-message">
-                                    Passwörter stimmen nicht überein.
+                                       <c:out value="${requestScope.register_error}"/>
                                 </div>
                             </c:if>
                         </div>

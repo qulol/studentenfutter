@@ -6,7 +6,7 @@ public class RecipeSearchVerificationBean {
     private final Pattern searchVerification;
 
     public RecipeSearchVerificationBean() {
-        this.searchVerification = Pattern.compile("([a-zA-ZäöüÄÖÜß]|\\d)*");
+        this.searchVerification = Pattern.compile("([a-zA-ZäöüÄÖÜß]|\\d)*(\\s([a-zA-ZäöüÄÖÜß]|\\d)+)*");
     }
 
     public Pattern getSearchVerification() {
@@ -15,5 +15,10 @@ public class RecipeSearchVerificationBean {
 
     public boolean isValidSearch(String search) {
         return searchVerification.matcher(search).matches();
+    }
+
+    public String getVerificationMessage() {
+        return "Die Eingabe muss mindestens 1 Buchstaben oder Zahl enthalten," +
+                " und Wörter dürfen von nur einem Leerzeichen getrennt sein.";
     }
 }

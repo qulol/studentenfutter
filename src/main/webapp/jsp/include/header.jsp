@@ -32,7 +32,7 @@
             <label for="searchbar"></label>
             <input type="search" class="search" id="searchbar" name="search" placeholder="Suchbegriff eingeben"
                    required pattern="${applicationScope.recipeSearchVerification.searchVerification.toString()}"
-                   title="Ihre Eingabe darf nur Wörter, Zahlen und Leerzeichen enthalten.">
+                   title="${applicationScope.recipeSearchVerification.verificationMessage}">
             <button type="submit" class="search-button">
                 <i class="fas fa-search"></i>
             </button>

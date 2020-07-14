@@ -33,7 +33,6 @@ public class RecipeAddServlet extends AbstractServlet {
 
         var name = req.getParameter("name");
         var img = req.getPart("img");
-
         var category = req.getParameter("category");
         var shortDescription = req.getParameter("shortDescription");
 
@@ -60,11 +59,15 @@ public class RecipeAddServlet extends AbstractServlet {
                 .collectGeneratedKey()
                 .orElseThrow(SQLException::new);
 
-        db.cachedQuery("sql/insert/insertRecipeImage.sql")
-                .withParam(id)
-                .withParam(img.getContentType())
-                .withParam(img.getInputStream().readAllBytes())
-                .run();
+        if (img.getContentType().equals("image/jpeg")
+                || img.getContentType().equals("image/png")) {
+            //only if image is valid 'more or less'
+            db.cachedQuery("sql/insert/insertRecipeImage.sql")
+                    .withParam(id)
+                    .withParam(img.getContentType())
+                    .withParam(img.getInputStream().readAllBytes())
+                    .run();
+        }
 
         db.cachedQuery("sql/insert/insertRecipeDescription.sql")
                 .withParam(id)
@@ -77,7 +80,7 @@ public class RecipeAddServlet extends AbstractServlet {
                 .withBatchSupplier(index -> ingredients.get(index).getAmount())
                 .withBatchSupplier(index -> ingredients.get(index).getUnit())
                 .withBatchSupplier(index -> ingredients.get(index).getName())
-                .runBatch(ingredients.size()); //check actual count all 3 param != null !
+                .runBatch(ingredients.size());
 
         res.sendRedirect(req.getContextPath().concat("/recipedetail?id=" + id + "#ingredientsTab"));
     }
