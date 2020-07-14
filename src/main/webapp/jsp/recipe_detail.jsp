@@ -16,7 +16,7 @@
     <jsp:include page="include/header.jsp"/>
     <c:set var="recipe" value="${requestScope.recipe}"/>
     <div class="regular-top-content-wrapper">
-            <h1 class="centered" id="headline">${recipe.name}</h1>
+            <h1 class="centered" id="headline"><c:out value="${recipe.name}"/></h1>
         <div class="regular-top-content-block black-bg" id="top-text">
             <div class="recipe-detail-image-wrapper">
                 <img id="recipe-image-detail" src="${pageContext.request.contextPath}/files/images/recipe?id=${recipe.id}" alt="recipe-image-detail">
@@ -56,9 +56,9 @@
                                 <tbody id="ingredientsTable">
                                     <c:forEach var="ingredient" items="${recipe.ingredients}">
                                         <tr>
-                                            <td class="amount">${ingredient.amount}</td>
-                                            <td class="unit">${ingredient.unit}</td>
-                                            <td class="singleIngredient">${ingredient.name}</td>
+                                            <td class="amount"><c:out value="${ingredient.amount}"/></td>
+                                            <td class="unit"><c:out value="${ingredient.unit}"/></td>
+                                            <td class="singleIngredient"><c:out value="${ingredient.name}"/></td>
                                         </tr>
                                     </c:forEach>
                                 </tbody>

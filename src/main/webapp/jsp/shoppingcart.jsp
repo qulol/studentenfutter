@@ -39,9 +39,9 @@
                     <tbody class="with-margin-top" id="shoppingList">
                     <c:forEach var="ingredient" items="${requestScope.shoppingcart}">
                         <tr>
-                            <td class='amount'>${ingredient.amount}</td>
-                            <td class='unit'>${ingredient.unit}</td>
-                            <td class='singleIngredient'>${ingredient.name}</td>
+                            <td class='amount'><c:out value="${ingredient.amount}"/></td>
+                            <td class='unit'><c:out value="${ingredient.unit}"/></td>
+                            <td class='singleIngredient'><c:out value="${ingredient.name}"/></td>
                         </tr>
                     </c:forEach>
                     </tbody>
