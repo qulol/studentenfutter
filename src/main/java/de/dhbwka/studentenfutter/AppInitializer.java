@@ -36,7 +36,7 @@ public class AppInitializer implements ServletContextListener {
             sce.getServletContext().log("Using '" + fileRoot.getParent() + "' as external data storage.");
             dataAccess.onLoad();
         } catch (IOException | SQLException e) {
-            e.printStackTrace();
+            sce.getServletContext().log("Initialization error!", e);
             //should quit
         }
 
