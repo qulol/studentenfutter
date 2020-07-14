@@ -10,6 +10,7 @@ import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
 import java.io.IOException;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.sql.SQLException;
 
@@ -26,16 +27,17 @@ public class AppInitializer implements ServletContextListener {
     public AppInitializer() { }
 
     public void contextInitialized(ServletContextEvent sce) {
-        var fileRoot = Path.of("C:/Users/alex/DHBW/studentenfutter/storage");
-        //var fileRoot = Path.of(System.getProperty("user.home"), "storage");
-
+        var fileRoot = Path.of(System.getProperty("user.home"),"trail-mix", "storage");
         var url = "jdbc:sqlite:" + fileRoot.resolve("studentenfutter.db").toAbsolutePath();
         var dataAccess = new DatabaseAccess(new DatabaseAccessDescriptor(url));
 
         try {
+            Files.createDirectories(fileRoot);
+            sce.getServletContext().log("Using '" + fileRoot.getParent() + "' as external data storage.");
             dataAccess.onLoad();
         } catch (IOException | SQLException e) {
             e.printStackTrace();
+            //should quit
         }
 
         var context = sce.getServletContext();
