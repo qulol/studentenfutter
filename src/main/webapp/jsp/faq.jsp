@@ -46,7 +46,8 @@
                     nicht funktioniert!</h1></a>
 
                 <h1 id="faq-1" class="centered faq-headlines">Erste Übersicht der Funktionen - Header</h1>
-                <img class="faq-image" src="${pageContext.request.contextPath}/images/faq/index1.png" alt="FAQ image">
+                <img class="faq-image" src="${pageContext.request.contextPath}/images/faq/header.png"
+                     alt="FAQ image">
                 <div class="faq-text">
                     <p>
                         Im Header befinden sich die wichtigsten Funktionen zusammengefasst...
@@ -92,7 +93,7 @@
                 </div>
 
                 <h1 id="faq-2" class="centered faq-headlines">Erste Übersicht der Funktionen - Footer</h1>
-                <img class="faq-image" src="${pageContext.request.contextPath}/images/faq/index2.png"
+                <img class="faq-image" src="${pageContext.request.contextPath}/images/faq/footer.png"
                      alt="FAQ image">
                 <p>
                     Im Footer findest du den Link zum Impressum und zum Thema Datenschutz.
@@ -107,7 +108,7 @@
                 </p>
 
                 <h1 id="faq-4" class="centered faq-headlines">Wieso sollte ich mich überhaupt registrieren?</h1>
-                <img class="faq-image" src="${pageContext.request.contextPath}/images/faq/index_after_login.png"
+                <img class="faq-image" src="${pageContext.request.contextPath}/images/faq/register.png"
                      alt="FAQ image">
                 <p>
                     <b>1.</b> Der volle Funktionsumfang (Nutzung der Einkaufsliste) ist nur im angemeldeten Zustand

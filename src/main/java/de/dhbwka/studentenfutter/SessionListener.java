@@ -15,4 +15,9 @@ public class SessionListener implements HttpSessionListener {
         session.setAttribute("user", new UserBean());
         session.setMaxInactiveInterval(3600); //logout after 60min
     }
+
+    @Override
+    public void sessionDestroyed(HttpSessionEvent se) {
+
+    }
 }

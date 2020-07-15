@@ -17,7 +17,7 @@ public abstract class AbstractServlet extends HttpServlet {
         try {
             handleDoGet(req, res);
         } catch (Exception e) {
-            e.printStackTrace(); //log
+            getServletContext().log("ServletError", e);
             if(res.isCommitted()) {
                 return;
             }
@@ -35,7 +35,7 @@ public abstract class AbstractServlet extends HttpServlet {
         try {
             handleDoPost(req, res);
         } catch (Exception e) {
-            e.printStackTrace(); //log
+            getServletContext().log("ServletError", e);
             if(res.isCommitted()) {
                return;
             }
