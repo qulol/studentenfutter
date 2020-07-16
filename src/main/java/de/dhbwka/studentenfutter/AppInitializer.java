@@ -30,12 +30,13 @@ public class AppInitializer implements ServletContextListener {
         var fileRoot = Path.of(System.getProperty("user.home"),"trail-mix", "storage");
         var url = "jdbc:sqlite:" + fileRoot.resolve("studentenfutter.db").toAbsolutePath();
         var dataAccess = new DatabaseAccess(new DatabaseAccessDescriptor(url));
-
         try {
+            //load class to ensure driver registration
+            Class.forName("org.sqlite.JDBC");
             Files.createDirectories(fileRoot);
             sce.getServletContext().log("Using '" + fileRoot.getParent() + "' as external data storage.");
             dataAccess.onLoad();
-        } catch (IOException | SQLException e) {
+        } catch (Exception e) {
             sce.getServletContext().log("Initialization error!", e);
             //should quit
         }
