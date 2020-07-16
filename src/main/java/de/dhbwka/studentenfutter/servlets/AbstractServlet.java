@@ -4,7 +4,6 @@ import de.dhbwka.studentenfutter.AppInitializer;
 import de.dhbwka.studentenfutter.database.DatabaseAccess;
 import de.dhbwka.studentenfutter.util.ServletMethodNotImplementedException;
 
-import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
