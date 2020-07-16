@@ -31,7 +31,9 @@
                     <h1>Rezeptinfos</h1>
                     <div class="addRecipeHead">
                         <label for="name"></label>
-                        <input class="addRecipeTitle" type="text" id="name" name="name" placeholder="Rezepttitel">
+                        <input class="addRecipeTitle" type="text" id="name" name="name" placeholder="Rezepttitel"
+                               pattern="${applicationScope.recipeAddVerification.recipeTitleVerification}"
+                               title="${applicationScope.recipeAddVerification.recipeTitleVerificationMessage}" required>
                         <input class="addRecipeImage" type="file" name="img" accept="image/*">
 
 
