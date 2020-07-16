@@ -106,9 +106,10 @@
                     Über die Navigationsleiste kommst du zum Login, solltest du dich aber noch nicht registriert haben,
                     kannst du über den unten befindlichen Link die Möglichkeit zur Registrierung finden.
                 </p>
-
-                <h1 id="faq-4" class="centered faq-headlines">Wieso sollte ich mich überhaupt registrieren?</h1>
                 <img class="faq-image" src="${pageContext.request.contextPath}/images/faq/register.png"
+                     alt="FAQ image">
+                <h1 id="faq-4" class="centered faq-headlines">Wieso sollte ich mich überhaupt registrieren?</h1>
+                <img class="faq-image" src="${pageContext.request.contextPath}/images/faq/header-loggedin.png"
                      alt="FAQ image">
                 <p>
                     <b>1.</b> Der volle Funktionsumfang (Nutzung der Einkaufsliste) ist nur im angemeldeten Zustand
@@ -121,7 +122,7 @@
                 </p>
 
                 <h1 id="faq-5" class="centered faq-headlines">Welche Rezept-Kategorien sind vorhanden?</h1>
-                <img class="faq-image" src="${pageContext.request.contextPath}/images/faq/recipe_categories.png"
+                <img class="faq-image" src="${pageContext.request.contextPath}/images/faq/categories.png"
                      alt="FAQ image">
                 <p>
                     Wenn ihr dem Link "Rezepte" gefolgt seit, erhaltet ihr eine Übersicht der vorhandenen Kategorien.
@@ -131,7 +132,7 @@
                 </p>
 
                 <h1 id="faq-6" class="centered faq-headlines">Wie komme ich nun zu der Rezept-Detailseite?</h1>
-                <img class="faq-image" src="${pageContext.request.contextPath}/images/faq/recipe_list.png"
+                <img class="faq-image" src="${pageContext.request.contextPath}/images/faq/recipe-detail.png"
                      alt="FAQ image">
                 <p>
                     Eure gefilterte Liste enthält alle vorhandenen Rezepte, die ihr auch wieder per Klick erreichen
@@ -143,7 +144,7 @@
                 </p>
 
                 <h1 id="faq-7" class="centered faq-headlines">Kann ich auch eigene Rezepte hinzufügen?</h1>
-                <img class="faq-image" src="${pageContext.request.contextPath}/images/faq/add_recipe.png"
+                <img class="faq-image" src="${pageContext.request.contextPath}/images/faq/recipe-add.png"
                      alt="FAQ image">
                 <p>
                     Wenn du eigene Rezepte hinzufügen möchtest, musst du das Formular in "Rezept hinzufügen" ausfüllen.
@@ -185,11 +186,11 @@
                 </p>
 
                 <h1 id="faq-8" class="centered faq-headlines">Wie ist die Detail-Ansicht der Rezepte aufgebaut?</h1>
-                <img class="faq-image" src="${pageContext.request.contextPath}/images/faq/recipe_detail1.png"
-                     alt="FAQ image">
                 <p class="faq-text-head">
                     <b>1. Auswahl der benötigten Menge</b>
                 </p>
+                <img class="faq-image" src="${pageContext.request.contextPath}/images/faq/ingredient-tab.png"
+                     alt="FAQ image">
                 <p>
                     Auf der Detailseite kannst du nun das Rezept auf die gewünschte Portionsanzahl umrechnen lassen.
                 </p>
@@ -203,16 +204,16 @@
                 <p class="faq-text-head">
                     <b>2. Anleitung</b>
                 </p>
+                <img class="faq-image" src="${pageContext.request.contextPath}/images/faq/description-tab.png"
+                     alt="FAQ image">
                 <p>
                     Über die oberhalb befindlichen Reiter kannst du jederzeit zwischen Zutatenliste und der Schritt für
                     Schritt Anleitung hin und her wechseln.
                 </p>
 
-                <img class="faq-image" src="${pageContext.request.contextPath}/images/faq/recipe_detail2.png"
-                     alt="FAQ image">
 
                 <h1 id="faq-9" class="centered faq-headlines">Meine Einkaufsliste ist nun also fertig... was nun?</h1>
-                <img class="faq-image" src="${pageContext.request.contextPath}/images/faq/shopping_card.png"
+                <img class="faq-image" src="${pageContext.request.contextPath}/images/faq/shoppingcart.png"
                      alt="FAQ image">
                 <p>
                     Navigiere einfach über die Navigationsleiste zur Einkaufsliste und lass dir deine bisher
