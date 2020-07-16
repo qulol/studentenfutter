@@ -13,7 +13,7 @@ import java.io.IOException;
 public abstract class AbstractServlet extends HttpServlet {
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException {
         try {
             handleDoGet(req, res);
         } catch (Exception e) {
@@ -26,12 +26,11 @@ public abstract class AbstractServlet extends HttpServlet {
     }
 
     protected void handleDoGet(HttpServletRequest req, HttpServletResponse res) throws Exception {
-        //logging
         throw new ServletMethodNotImplementedException(req);
     }
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest req, HttpServletResponse res) throws IOException {
         try {
             handleDoPost(req, res);
         } catch (Exception e) {
@@ -44,7 +43,6 @@ public abstract class AbstractServlet extends HttpServlet {
     }
 
     protected void handleDoPost(HttpServletRequest req, HttpServletResponse res) throws Exception {
-        //logging
         throw new ServletMethodNotImplementedException(req);
     }
 

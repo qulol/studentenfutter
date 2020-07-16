@@ -18,6 +18,6 @@ public class SessionListener implements HttpSessionListener {
 
     @Override
     public void sessionDestroyed(HttpSessionEvent se) {
-
+        //embedded tomcat version cant handle default interface methods smh..
     }
 }

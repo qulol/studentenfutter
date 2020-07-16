@@ -17,7 +17,7 @@ import java.util.concurrent.ConcurrentHashMap;
  * Example:
  * <pre>
  *     {@code
- *          query("select name from user").runAs(String.class).getList();
+ *          query("select name from user").collectAs(String.class).getList();
  *      }
  * This statement will run the sql query and returns the 'name' Column,
  * where each column entity is encoded as a {@link String} object.
@@ -50,7 +50,7 @@ public class DatabaseAccess {
      * you should use the {@link #query(String)} method instead.
      *
      * @return a new connection
-     * @throws SQLException
+     * @throws SQLException if {@link DriverManager#getConnection(String)} throws
      */
     public Connection getConnection() throws SQLException {
         return DriverManager.getConnection(getUrl());
@@ -69,29 +69,15 @@ public class DatabaseAccess {
         query(SQLLoader.load("sql/initialize/create_user.sql")).run();
     }
 
-    /**
-     * Currently not used.
-     * Gets called when tomcat shuts down.
-     */
     public void onShutdown() {
         //shutdown sth.
     }
 
-    /**
-     * TODO
-     * @param sql
-     * @return
-     */
     public QueryBuilder query(String sql) {
         return new QueryBuilder(getConnectionSupplier(), sql);
     }
 
-    /**
-     *
-     * @param path
-     * @return
-     * @throws IOException
-     */
+
     public QueryBuilder cachedQuery(String path) throws IOException {
         if (queryCache.contains(path)) {
             return query(queryCache.get(path));
