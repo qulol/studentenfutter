@@ -6,7 +6,7 @@
 
     <groupId>de.dhbwka.studentenfutter</groupId>
     <artifactId>studentenfutter</artifactId>
-    <version>0.1-SNAPSHOT</version>
+    <version>1.0.0</version>
     <url>http://maven.apache.org</url>
     <name>Studentenfutter</name>
     <packaging>war</packaging>
@@ -50,6 +50,7 @@
     </dependencies>
 
     <build>
+        <finalName>studentenfutter</finalName>
         <resources>
             <resource>
                 <directory>src/main/resources</directory>
